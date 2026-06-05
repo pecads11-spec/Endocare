@@ -15,16 +15,7 @@
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => document.querySelectorAll(sel);
 
-    const fab = $('#chatbot-fab');
-    const overlay = $('#chatbot-overlay');
-    const closeBtn = $('#chatbot-close');
-    const messagesEl = $('#chatbot-messages');
-    const inputEl = $('#chatbot-input');
-    const sendBtn = $('#chatbot-send');
-    const charCount = $('#chatbot-char-count');
-    const quickRepliesEl = $('#chatbot-quick-replies');
-    const networkBanner = $('#chatbot-network-banner');
-    const typingEl = document.getElementById('chatbot-typing');
+    let fab, overlay, closeBtn, messagesEl, inputEl, sendBtn, charCount, quickRepliesEl, networkBanner;
 
     // ─── Utils ───────────────────────────────────────────────────────────────
     function generateUUID() {
@@ -348,11 +339,19 @@
     }
 
     // ─── Open / Close ────────────────────────────────────────────────────────
-    function openChat() {
+    function openChat(e) {
+        if (e) {
+            e.stopPropagation();
+        }
+        if (!fab.classList.contains('expanded')) {
+            fab.classList.add('expanded');
+            return;
+        }
         if (STATE.isOpen) return;
         STATE.isOpen = true;
         overlay.classList.add('open');
         fab.style.display = 'none';
+        fab.classList.remove('expanded'); // Reset expanded state
         showWelcome();
         setTimeout(function () { inputEl.focus(); }, 400);
     }
@@ -374,8 +373,87 @@
         sendMessage(label);
     }
 
+    // ─── Inject HTML ─────────────────────────────────────────────────────────
+    function injectChatbotHTML() {
+        if (document.getElementById('chatbot-overlay')) return; // Already injected
+        
+        const html = `
+    <!-- Chat Overlay -->
+    <div id="chatbot-overlay" class="chatbot-overlay">
+        <div class="chatbot-container">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <div>
+                        <h5 class="chatbot-title">مساعد Endocare AI</h5>
+                        <span class="chatbot-status">متصل - جاهز للإجابة على استفساراتك الطبية واللوجستية</span>
+                    </div>
+                </div>
+                <button id="chatbot-close" class="btn btn-sm chatbot-close-btn" aria-label="إغلاق">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <!-- Messages -->
+            <div id="chatbot-messages" class="chatbot-messages">
+                <!-- Messages will be rendered here by JS -->
+            </div>
+
+            <!-- Quick Replies (Triage) -->
+            <div id="chatbot-quick-replies" class="chatbot-quick-replies">
+                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="شحنة">
+                    <i class="bi bi-truck ms-1"></i>استفسار عن شحنة
+                </button>
+                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="علمي">
+                    <i class="bi bi-flask ms-1"></i>أسئلة علمية عن الفيتامينات
+                </button>
+                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="كتالوج">
+                    <i class="bi bi-book ms-1"></i>كتالوج الهرمونات المتاحة
+                </button>
+            </div>
+
+            <!-- Network Banner -->
+            <div id="chatbot-network-banner" class="chatbot-network-banner d-none">
+                <i class="bi bi-wifi-off ms-2"></i>
+                <span>عذراً، أنت غير متصل بالإنترنت. سيتم حفظ رسالتك.</span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chatbot-input-area">
+                <div class="chatbot-input-wrapper">
+                    <textarea id="chatbot-input" class="chatbot-input" rows="1" placeholder="اكتب سؤالك هنا حول الهرمونات، الفيتامينات، أو خدماتنا..." maxlength="500"></textarea>
+                    <button id="chatbot-send" class="btn btn-primary chatbot-send-btn" aria-label="إرسال">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+                <div class="chatbot-char-count"><span id="chatbot-char-count">0</span>/500</div>
+            </div>
+        </div>
+    </div>`;
+        const container = document.createElement('div');
+        container.id = 'endocare-chatbot-wrapper';
+        container.innerHTML = html;
+        document.body.appendChild(container);
+    }
+
     // ─── Init ────────────────────────────────────────────────────────────────
     function init() {
+        injectChatbotHTML();
+        
+        // Initialize DOM refs
+        fab = $('#chatbot-fab');
+        overlay = $('#chatbot-overlay');
+        closeBtn = $('#chatbot-close');
+        messagesEl = $('#chatbot-messages');
+        inputEl = $('#chatbot-input');
+        sendBtn = $('#chatbot-send');
+        charCount = $('#chatbot-char-count');
+        quickRepliesEl = $('#chatbot-quick-replies');
+        networkBanner = $('#chatbot-network-banner');
+
         // Event listeners
         fab.addEventListener('click', openChat);
         closeBtn.addEventListener('click', closeChat);

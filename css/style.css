@@ -28,7 +28,8 @@
   --bs-success: #168a68; /* لون النجاح والنمو (السهم الأخضر) */
   --bs-info: #3b84a1; /* لون المعلومات والتفاصيل */
   --bs-warning: #ffc107; 
-  --bs-danger: #dc3545; 
+  --bs-danger: #dc3545;
+  --bg-danger: #fef4f9;   
   --bs-light: #ebf2f5; /* خلفية هادئة ورسمية بدلاً من الأبيض الصارخ */
   --bs-dark: #031e2c; /* لون النصوص الأساسية المريحة للعين */
 
@@ -252,6 +253,45 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
     background-color: transparent !important;
 }
 
+
+/* =========================================
+   Logo Image Styles (أحجام الشعارات)
+   ========================================= */
+.logo-img {
+    height: 55px; /* حجم الشعار في شريط التنقل للموبايل */
+    width: auto;
+    max-width: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo2-img {
+    height: 70px; /* حجم الشعار الرئيسي في شاشة الكمبيوتر */
+    width: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* تأثيرات حركية بسيطة عند تمرير الماوس */
+.logo-img:hover,
+.logo2-img:hover {
+    transform: scale(1.02);
+}
+
+/* تصغير الأحجام في الشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .logo-img {
+        height: 40px;
+    }
+    .logo2-img {
+        height: 70px;
+    }
+}
+
+
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 18px 0;
@@ -273,6 +313,7 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
     vertical-align: middle;
     margin-right: 8px;
 }
+ 
 
 @media (max-width: 991.98px) {
     .navbar-toggler {
@@ -306,6 +347,7 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
     .navbar .navbar-collapse {
         order: 3;
     }
+	 
 }
 
 @media (min-width: 992px) {
@@ -936,30 +978,130 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
 .copyright i {
     font-size: 13px;
 }
+ 
+ 
+ 
+.Pharmacovigilance-fab {
+    position: fixed;
+    bottom: 35px;
+    right: 0;
+    width: 170px;
+    height: 50px;
+    z-index: 9999;
+    font-size: 17px;
+    background: var(--bg-danger);
+    box-shadow: 0 4px 20px rgba(16, 89, 120, 0.4);
+    cursor: pointer;
+    transition: transform .4s ease, box-shadow .3s, filter .3s;
+    border-radius: 15px 0 0 15px;
+	border:1px solid var(--bs-danger);
+	border-right:none;
+	font-weight:600;
+	display:flex;
+	flex-direction:row;
+	gap:10px;
+	justify-content:center;
+	align-items:center;
+	color:var(--bs-danger);
+    transform: translateX(120px); /* Collapsed by default */
+}
+.Pharmacovigilance-fab.expanded,
+.Pharmacovigilance-fab:hover {
+    transform: translateX(0); /* Expanded state */
+}
 
-
+.Pharmacovigilance-fab i{
+	font-size: 27px;
+	color:var(--bs-danger);
+}
+.Pharmacovigilance-fab:hover {
+    filter: brightness(1.05);
+}
+.Pharmacovigilance-fab i {
+    line-height: 1;
+}
 /*** Endocare AI Chatbot ***/
 .chatbot-fab {
     position: fixed;
-    bottom: 30px;
-    left: 25px;
-    width: 48px;
-    height: 48px;
+    bottom: 35px;
+    left: 0;
+    width: 170px;
+    height: 50px;
     z-index: 9999;
-    font-size: 22px;
-    background: var(--gradient-primary);
+    font-size: 19px;
+    background: var(--color-teal-50);
     box-shadow: 0 4px 20px rgba(16, 89, 120, 0.4);
     cursor: pointer;
-    transition: transform .3s, box-shadow .3s;
-    border: none;
+    transition: transform .4s ease, box-shadow .3s, filter .3s;
+    border-radius: 0 15px 15px 0;
+	border:1px solid var(--color-teal-500);
+	border-left:none;
+	font-weight:600;
+	display:flex;
+	flex-direction:row;
+	gap:10px;
+	justify-content:center;
+	align-items:center;
+	color: var(--color-teal-500);
+    transform: translateX(-120px); /* Collapsed by default */
+}
+.chatbot-fab.expanded,
+.chatbot-fab:hover {
+    transform: translateX(0); /* Expanded state */
+}
+
+.chatbot-fab i{
+	font-size: 27px;
+	color: var(--color-teal-500);
 }
 .chatbot-fab:hover {
-    transform: scale(1.08);
-    background: var(--gradient-dark);
-    box-shadow: 0 6px 28px rgba(16, 89, 120, 0.55);
+    filter: brightness(0.95);
 }
 .chatbot-fab i {
     line-height: 1;
+}
+@media (max-width: 480px) {
+    
+    /* تنسيق زر Pharmacovigilance */
+    .Pharmacovigilance-fab {
+        width: auto;
+        min-width: 120px;
+        height: 42px;
+        bottom: 20px;
+        font-size: 12px;
+        gap: 6px;
+        padding: 0 12px;
+        border-radius: 12px 0 0 12px;
+        transform: translateX(88px); /* Collapsed state on mobile */
+    }
+
+    /* تنسيق أيقونة زر Pharmacovigilance */
+    .Pharmacovigilance-fab i {
+        font-size: 20px;
+    }
+
+    /* تنسيق زر Endocare AI Chatbot */
+    .chatbot-fab {
+        width: auto;
+        min-width: 120px;
+        height: 42px;
+        bottom: 20px;
+        font-size: 13px;
+        gap: 6px;
+        padding: 0 12px;
+        border-radius: 0 12px 12px 0;
+        transform: translateX(-79px); /* Collapsed state on mobile */
+    }
+
+    /* تنسيق أيقونة زر Endocare AI Chatbot */
+    .chatbot-fab i {
+        font-size: 20px;
+    }
+
+    .Pharmacovigilance-fab.expanded, .chatbot-fab.expanded,
+    .Pharmacovigilance-fab:hover, .chatbot-fab:hover {
+        transform: translateX(0); /* Expanded state on mobile */
+    }
 }
 
 .chatbot-overlay {
@@ -1196,8 +1338,8 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
     display: none;
 }
 .quick-reply-btn {
-    font-size: 12px;
-    padding: 6px 12px !important;
+    font-size: 11px;
+    padding: 4px 10px !important;
     border-radius: 20px !important;
     border-width: 1.5px;
     white-space: nowrap;
@@ -1279,13 +1421,7 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
 
 /*** Chatbot Responsive <= 480px ***/
 @media (max-width: 480px) {
-    .chatbot-fab {
-        bottom: 30px;
-        left: 15px;
-        width: 48px;
-        height: 48px;
-        font-size: 22px;
-    }
+    
     .chatbot-overlay {
         bottom: 75px;
         left: 15px;
@@ -1317,8 +1453,8 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
         padding: 8px 12px;
     }
     .quick-reply-btn {
-        font-size: 11px;
-        padding: 5px 10px !important;
+        font-size: 10px;
+        padding: 3px 8px !important;
     }
     .chatbot-input {
         font-size: 13px;
@@ -1776,89 +1912,517 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-6 {
     font-size: 14px;
 }
 
-/*** Segments Served ***/
+/*** Segments Served (قطاعات الخدمات) ***/
 .segments-section {
     background: var(--gradient-light);
+    padding: 60px 0;
 }
-.segment-card {
-    display: block;
+
+.pharma-slider-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    gap: 20px; /* المسافة بين البطاقات */
+    position: relative;
+}
+
+/* Card Design with Background Image */
+.pharma-card {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* دفع المحتوى للأسفل */
+    padding: 35px 30px;
+    overflow: hidden;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(3, 30, 44, 0.08);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
     text-decoration: none;
-    color: inherit;
-    background: var(--bs-white);
-    padding: 36px 28px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-    border: 1px solid var(--color-teal-50);
-    text-align: center;
-    transition: transform .4s, box-shadow .4s, border-color .4s;
-    height: 100%;
 }
-.segment-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(16, 89, 120, 0.12);
-    border-color: var(--color-teal-200);
+
+.pharma-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(3, 30, 44, 0.2);
+    color: #fff; /* تأكيد بقاء النص باللون الأبيض عند التمرير */
 }
-.segment-icon {
-    width: 72px;
-    height: 72px;
+
+/* Card Background Image Zoom */
+.pharma-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.pharma-card.card-hospitals::before {
+    background-image: url('../img/about-1.jpg');
+}
+
+.pharma-card.card-pharmacies::before {
+    background-image: url('../img/about-2.jpg');
+}
+
+.pharma-card.card-manufacturers::before {
+    background-image: url('../img/about-3.jpg');
+}
+
+.pharma-card:hover::before {
+    transform: scale(1.08);
+}
+
+/* Dark overlay for readability */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* تدرج ناعم يعتمد على لون الهوية الداكن للموقع */
+    background: linear-gradient(to bottom, rgba(3, 30, 44, 0.1) 0%, rgba(3, 30, 44, 0.85) 100%);
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+
+.pharma-card:hover .card-overlay {
+    background: linear-gradient(to bottom, rgba(3, 30, 44, 0.2) 0%, rgba(3, 30, 44, 0.95) 100%);
+}
+
+/* Content Container */
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Category Badge with theme success color */
+.card-category {
+    display: inline-block;
+    color: var(--bs-success);
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 0.5px;
+    background-color: rgba(22, 138, 104, 0.18); /* خلفية شبه شفافة تناسب الهوية */
+    padding: 3px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pharma-card:hover .card-category {
+    background-color: var(--bs-success);
+    color: #fff;
+}
+
+/* Title styling */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 1px 1px 3px rgba(3, 30, 44, 0.5);
+    color: #ffffff;
+}
+
+/* Footer / Meta info */
+.card-meta {
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.card-meta .separator {
+    color: #fff;
+    opacity: 0.7;
+    margin: 0 2px;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .slider-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pharma-card {
+        min-height: 300px;
+        padding: 25px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================
+   Pharmacovigilance Modal (التيقظ الدوائي)
+   ========================================= */
+.pv-glass-modal {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(3, 30, 44, 0.15);
+}
+
+.pv-glass-modal .modal-header {
+    border-bottom: 1px solid rgba(16, 89, 120, 0.1);
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.pv-glass-modal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+
+.pv-glass-modal .btn-close {
+    background-color: rgba(16, 89, 120, 0.1);
     border-radius: 50%;
-    background: var(--gradient-light);
+    opacity: 1;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.pv-glass-modal .btn-close:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    transform: rotate(90deg);
+}
+
+.pv-glass-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.pv-glass-modal .modal-footer {
+    border-top: 1px solid rgba(16, 89, 120, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 16px 16px;
+    padding: 1.25rem 1.5rem;
+}
+
+.pv-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pv-section {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid rgba(16, 89, 120, 0.05);
+}
+
+/* High Density Inputs */
+.pv-density .form-control {
+    min-height: 45px;
+    height: 45px;
+    padding-top: 1.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 13px;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 89, 120, 0.2);
+}
+
+.pv-density .form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(16, 89, 120, 0.15);
+}
+
+.pv-density label {
+    padding: 0.6rem 0.75rem;
+    font-size: 12px;
+    color: var(--bs-gray);
+}
+
+.pv-density textarea.form-control {
+    height: 50px !important;
+    min-height: 50px !important;
+}
+
+/* Checkbox Cards */
+.pv-check-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.pv-check-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.pv-check-content {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid rgba(16, 89, 120, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--bs-dark);
+    transition: all 0.2s ease;
+}
+
+.pv-check-input:checked ~ .pv-check-content {
+    background: var(--color-teal-50);
+    border-color: var(--bs-primary);
+    box-shadow: 0 4px 10px rgba(16, 89, 120, 0.1);
+}
+
+.pv-check-input:checked ~ .pv-check-content::after {
+    content: '\F26A'; /* bootstrap icon check-circle-fill */
+    font-family: 'bootstrap-icons';
+    margin-right: auto;
+    color: var(--bs-primary);
+    font-size: 16px;
+}
+
+.pv-submit-btn {
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--bs-danger), #b02a37);
+    border: none;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pv-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* =========================================
+   Responsive Pharmacovigilance Modal (480px)
+   ========================================= */
+@media (max-width: 480px) {
+    .pv-glass-modal {
+        border-radius: 12px;
+    }
+    
+    .pv-glass-modal .modal-header h5 {
+        font-size: 16px;
+    }
+    
+    .pv-glass-modal .modal-header .btn-close {
+        padding: 0.35rem;
+        font-size: 0.75rem;
+        margin-right: auto !important;
+        margin-left: 0 !important;
+    }
+    
+    .pv-section {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .pv-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        margin-bottom: 6px;
+    }
+    
+    .pv-density .form-control {
+        height: 38px;
+        min-height: 38px;
+        font-size: 12px;
+        padding-top: 1rem;
+    }
+    
+    .pv-density label {
+        font-size: 10px;
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .pv-density textarea.form-control {
+        height: 45px !important;
+        min-height: 45px !important;
+    }
+    
+    .pv-check-content {
+        padding: 8px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .pv-check-content i {
+        font-size: 16px !important; /* تقليل حجم الأيقونات الجانبية */
+        margin-left: 6px !important; /* تقليل المسافة بين الأيقونة والنص (استخدام ms-2 أصلاً) */
+    }
+    
+    .pv-check-input:checked ~ .pv-check-content::after {
+        font-size: 14px;
+    }
+    
+    .pv-submit-btn {
+        font-size: 14px;
+        padding: 10px !important;
+        border-radius: 10px;
+    }
+    
+    /* تقليل المسافات بين الأقسام */
+    .mt-3 {
+        margin-top: 0.75rem !important;
+    }
+    
+    /* تقليل مسافات الـ Grid (row g-2) أكثر في الشاشات الصغيرة */
+    .row.g-2 {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+}
+
+/* =========================================
+   Strategic Partners - Infinite Logo Marquee
+   ========================================= */
+.logo-marquee-wrapper {
+    direction: ltr; /* Force LTR layout for consistent right-to-left marquee motion across all page directions */
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 30px 0;
+    background: transparent;
+    user-select: none;
+}
+
+/* Linear gradients on edges to create a fading/shadowed entry and exit effect */
+.logo-marquee-wrapper::before,
+.logo-marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 45s linear infinite;
+}
+
+/* Pause animation on hover */
+.logo-marquee-wrapper:hover .logo-marquee-track {
+    animation-play-state: paused;
+}
+
+.logo-marquee-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-shrink: 0;
+}
+
+.logo-marquee-item {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 18px;
-    font-size: 32px;
-    color: var(--bs-primary);
-    transition: background .4s, color .4s, transform .4s;
-}
-.segment-card:hover .segment-icon {
-    background: var(--gradient-primary);
-    color: #fff;
-    transform: scale(1.1);
-}
-.segment-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--bs-dark);
-    margin-bottom: 12px;
-    font-family: 'Cairo', sans-serif;
-}
-.segment-desc {
-    font-size: 14px;
-    color: var(--bs-gray);
-    line-height: 1.7;
-    margin-bottom: 18px;
-}
-.segment-btn {
-    display: inline-block;
-    font-weight: 500;
-    padding: 10px 28px;
-    background: var(--gradient-primary);
-    color: #fff;
-    border: 1px solid var(--bs-primary);
-    font-size: 14px;
-    transition: background .4s, border-color .4s;
-    cursor: pointer;
-}
-.segment-card:hover .segment-btn {
-    background: var(--gradient-dark);
-    border-color: var(--color-teal-700);
+    height: 85px;
+    width: 170px;
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    .segment-card {
-        padding: 24px 20px;
+.logo-marquee-item:hover {
+    transform: scale(1.05);
+}
+
+.logo-marquee-item svg,
+.logo-marquee-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Highlight brand on hover */
+.logo-marquee-item:hover svg,
+.logo-marquee-item:hover img {
+    filter: grayscale(0) opacity(1);
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
     }
-    .segment-icon {
-        width: 56px;
-        height: 56px;
-        font-size: 26px;
-        margin-bottom: 14px;
-    }
-    .segment-title {
-        font-size: 18px;
-    }
-    .segment-desc {
-        font-size: 13px;
+    100% {
+        transform: translate3d(-50%, 0, 0);
     }
 }
+
+/* Responsive Styles for Logo Marquee */
+@media (max-width: 992px) {
+    .logo-marquee-content {
+        gap: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .logo-marquee-item {
+        height: 55px;
+        width: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-marquee-wrapper {
+        padding: 20px 0;
+    }
+    .logo-marquee-wrapper::before,
+    .logo-marquee-wrapper::after {
+        width: 10%;
+    }
+    .logo-marquee-content {
+        gap: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .logo-marquee-item {
+        height: 38px;
+        width: 100px;
+    }
+}
+
 

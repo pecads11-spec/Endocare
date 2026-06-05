@@ -64,7 +64,7 @@
                         <span>+967 712 345 678</span>
                     </div>
                 </div>
-                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" style="height: 75px; border-radius: 8px;"></a>
+                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" class="logo2-img"></a>
                 <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
@@ -83,7 +83,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand d-lg-none">
-                    <img src="img/logo.png" alt="EndoCare" style="height: 45px; border-radius: 6px;">
+                    <img src="img/logo.png" alt="EndoCare" class="logo-img">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -93,12 +93,10 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link active"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
                         <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
-                        <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>المنتجات</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
                             <div class="dropdown-menu bg-light m-0">
                                 <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
-                                <a href="appoinment.html" class="dropdown-item"><i class="bi bi-file-earmark-text me-2"></i>طلب عرض سعر</a>
                                 <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
                                 <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المدونة</a>
                                 <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
@@ -108,8 +106,7 @@
                     </div>
                     <div class="ms-auto d-none d-lg-flex">
                         <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-search"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-person"></i></a>
+                      <a class="btn btn-sm-square btn-primary ms-2" href="#supply-request" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
                     </div>
                 </div>
             </nav>
@@ -120,107 +117,415 @@
 
     <!-- Hero Start -->
     <div class="container-fluid hero-header px-0 mb-5">
-        <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-1.jpg');">
-                        <video class="hero-video" autoplay muted loop playsinline poster="img/carousel-1.jpg">
-                            <source src="img/hero-bg.mp4" type="video/mp4">
-                        </video>
-                        <div class="hero-overlay"></div>
-                        <div class="container position-relative">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10 text-center">
-                                    <span class="hero-tagline animated slideInDown">Vital Ingredients for Better Lives</span>
-                                    <h1 class="hero-title animated slideInDown mt-3">شريكك المعتمد في توريد<br>الفيتامينات والهرمونات</h1>
-                                    <p class="hero-desc animated slideInDown">أكثر من 150 عميلاً من المستشفيات والصيدليات يثقون في توريداتنا المعتمدة GMP ذات سلسلة التبريد المتطورة</p>
-                                    <div class="d-flex justify-content-center gap-3 flex-wrap animated slideInUp">
-                                        <a href="service.html" class="btn btn-primary hero-cta">تصفح المنتجات</a>
-                                        <a href="appoinment.html" class="btn btn-outline-light hero-cta-outline">طلب عرض سعر فوري</a>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-1.jpg');">
+            <video class="hero-video" autoplay muted loop playsinline poster="img/carousel-1.jpg">
+                <source src="img/hero-bg.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <span class="hero-tagline animated slideInDown">Vital Ingredients for Better Lives</span>
+                        <h1 class="hero-title animated slideInDown mt-3">شريكك الاستراتيجي في توريد<br>المواد الفعالة والهرمونات الطبية</h1>
+                        <p class="hero-desc animated slideInDown">نحوّل سلاسل التوريد الدوائية إلى ميزة تنافسية للمستشفيات والصيدليات والمصنّعين في جميع محافظات اليمن</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap animated slideInUp">
+                            <a href="#portfolio" class="btn btn-primary hero-cta">محفظة الجزيئات</a>
+                            <a href="contact.html" class="btn btn-outline-light hero-cta-outline">تواصل مع فريق التوريد</a>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-2.jpg');">
-                        <video class="hero-video" autoplay muted loop playsinline poster="img/carousel-2.jpg">
-                            <source src="img/hero-bg.mp4" type="video/mp4">
-                        </video>
-                        <div class="hero-overlay"></div>
-                        <div class="container position-relative">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-11 text-center">
-                                    <span class="hero-tagline animated slideInDown">Quality You Can Trust</span>
-                                    <h1 class="hero-title animated slideInDown mt-3">منتجات أصلية 100%<br>مع ضمان الجودة والتوصيل المبرد</h1>
-                                    <p class="hero-desc animated slideInDown">شهادات GMP و ISO تغطي جميع المنتجات. سلسلة تبريد متطورة من الميناء إلى مستودعك تضمن وصول المنتجات بأعلى جودة</p>
-                                    <div class="row g-4 justify-content-center mt-4 animated slideInUp">
-                                        <div class="col-sm-3 col-6">
-                                            <h2 class="hero-stat">150</h2>
-                                            <p class="hero-stat-label">عميلاً موثوقاً</p>
-                                        </div>
-                                        <div class="col-sm-3 col-6">
-                                            <h2 class="hero-stat">100%</h2>
-                                            <p class="hero-stat-label">منتجات أصلية</p>
-                                        </div>
-                                        <div class="col-sm-3 col-6">
-                                            <h2 class="hero-stat">24/7</h2>
-                                            <p class="hero-stat-label">دعم فني</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-indicators">
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             </div>
         </div>
     </div>
     <!-- Hero End -->
 
 
-    <!-- Segments Served Start  -->
+
+
+
+    <!-- Molecules Portfolio Start -->
+    <div class="container-fluid py-5" id="portfolio">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 mb-3 text-primary">محفظة الجزيئات والمواد الفعالة</h1>
+                <p class="mb-5">منظومة متكاملة من المواد الخام والمنتجات الصيدلانية والهرمونية المطابقة لأعلى معايير الجودة العالمية، متوفرة عبر شبكة توريد معتمدة.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center">
+                        <div class="icon-box-primary mb-4">
+                            <i class="bi bi-capsule-pill service-icon"></i>
+                        </div>
+                        <div class="d-flex align-items-baseline justify-content-center mb-2">
+                            <h1 class="display-4 text-primary mb-0 fw-bold">400</h1>
+                            <span class="fs-5 text-muted me-1">+</span>
+                        </div>
+                        <h5 class="mb-2">مادة فعالة</h5>
+                        <p class="mb-0 small">فيتامينات، هرمونات، مكملات، ومواد خام معتمدة بمصادر موثقة</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center">
+                        <div class="icon-box-primary mb-4">
+                            <i class="bi bi-building service-icon"></i>
+                        </div>
+                        <div class="d-flex align-items-baseline justify-content-center mb-2">
+                            <h1 class="display-4 text-primary mb-0 fw-bold">12</h1>
+                            <span class="fs-5 text-muted me-1">+</span>
+                        </div>
+                        <h5 class="mb-2">شريك تصنيع عالمي</h5>
+                        <p class="mb-0 small">مصنّعون معتمدون بخبرات تمتد لعقود في الأسواق الأوروبية والآسيوية</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center">
+                        <div class="icon-box-primary mb-4">
+                            <i class="bi bi bi-building-check service-icon"></i>
+                        </div>
+                        <div class="d-flex align-items-baseline justify-content-center mb-2">
+                            <h1 class="display-4 text-primary mb-0 fw-bold">22</h1>
+                            <span class="fs-5 text-muted me-1">محافظة</span>
+                        </div>
+                        <h5 class="mb-2">تغطية وطنية</h5>
+                        <p class="mb-0 small">شبكة توزيع ولوجستيا مبرّدة تغطي جميع محافظات الجمهورية اليمنية</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center">
+                        <div class="icon-box-primary mb-4">
+                            <i class="bi bi-file-earmark-pdf service-icon"></i>
+                        </div>
+                        <div class="d-flex align-items-baseline justify-content-center mb-2">
+                            <h1 class="display-4 text-primary mb-0 fw-bold">100</h1>
+                            <span class="fs-5 text-muted me-1">%</span>
+                        </div>
+                        <h5 class="mb-2">توثيق لكل شحنة</h5>
+                        <p class="mb-0 small">شهادات تحليل CoA ومستندات المنشأ وسجل الحرارة مرفقة مع كل طلبية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Molecules Portfolio End -->
+
+
+    <!-- Strategic Partners Start -->
+    <div class="container-fluid py-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px; margin-bottom: 1.5rem;">
+                <span class="text-primary text-uppercase fw-bold" style="font-size: 0.85rem; letter-spacing: 1px;">Global Alliances</span>
+                <h2 class="display-7 fw-bold text-dark mt-1 mb-2" style="font-size: 1.75rem;">شركاؤنا الاستراتيجيون</h2>
+                <p class="text-muted small mb-0" style="max-width: 600px; margin: 0 auto;">نتعاون مع نخبة من أبرز المصنّعين والموزّعين العالميين لضمان أعلى مستويات الجودة والموثوقية في سلاسل التوريد الدوائية.</p>
+            </div>
+            
+            <!-- Logo Marquee Wrapper -->
+            <div class="logo-marquee-wrapper wow fadeInUp" data-wow-delay="0.3s">
+                <div class="logo-marquee-track">
+                    <!-- First Set of Logos -->
+                    <div class="logo-marquee-content">
+                        <div class="logo-marquee-item">
+                            <!-- Pfizer SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <ellipse cx="60" cy="25" rx="52" ry="20" fill="#005A9C" transform="rotate(-7 60 25)" />
+                                <text x="60" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-style="italic" font-size="19" fill="#FFFFFF" text-anchor="middle" transform="rotate(-7 60 25)">Pfizer</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Lonza SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 12 L20 12 L20 38 L34 38 L34 43 L15 43 Z" fill="#0b3c5d" />
+                                <circle cx="20" cy="12" r="3.5" fill="#00a8cc" />
+                                <text x="75" y="36" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="25" fill="#0b3c5d" text-anchor="middle">Lonza</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- BASF SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(10, 11)">
+                                    <rect x="0" y="10" width="18" height="18" stroke="#00A0E9" stroke-width="4.5" fill="none" />
+                                    <rect x="13" y="0" width="10" height="10" fill="#00A0E9" />
+                                </g>
+                                <text x="82" y="35" font-family="'Arial', 'Helvetica', sans-serif" font-weight="bold" font-size="28" fill="#00A0E9" letter-spacing="-0.5" text-anchor="middle">BASF</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Euroapi SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <text x="68" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="21" fill="#0d1b2a" letter-spacing="-0.5" text-anchor="middle">euroapi</text>
+                                <circle cx="16" cy="25" r="7" fill="#e63946" />
+                                <circle cx="25" cy="21" r="4.5" fill="#3a86c8" />
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Novartis SVG -->
+                            <svg viewBox="0 0 145 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 6)">
+                                    <path d="M10 30 C10 18, 15 12, 25 6 C20 14, 18 20, 20 30 Z" fill="#EC6608" />
+                                    <path d="M20 30 C20 18, 26 12, 32 6 C28 14, 25 20, 25 30 Z" fill="#D32F2F" />
+                                    <path d="M5 30 C5 22, 10 18, 15 12 C12 18, 10 24, 10 30 Z" fill="#FFC107" />
+                                </g>
+                                <text x="92" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="20" fill="#0D2C54" letter-spacing="-0.2" text-anchor="middle">NOVARTIS</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Sanofi SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="34" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="25" fill="#3D0066" text-anchor="middle">sanofi</text>
+                                <circle cx="94" cy="22" r="5" fill="#E6007E" />
+                                <circle cx="102" cy="22" r="3" fill="#6B2D91" />
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- AstraZeneca SVG -->
+                            <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 12)">
+                                    <path d="M8 2 C12 2, 20 6, 20 13 C20 20, 10 24, 5 24 C8 21, 10 17, 10 13 C10 8, 5 2, 8 2 Z" fill="#C4D600" />
+                                    <path d="M14 8 C16 8, 22 12, 22 18 C22 22, 16 25, 12 25 C14 22, 15 19, 15 18 C15 14, 12 8, 14 8 Z" fill="#84207E" opacity="0.35" />
+                                </g>
+                                <text x="92" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="19" fill="#3C1053" letter-spacing="-0.3" text-anchor="middle">AstraZeneca</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Bayer SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(10, 5)">
+                                    <circle cx="20" cy="20" r="17" fill="none" stroke="#00bcff" stroke-width="2.5" />
+                                    <path d="M20 3 A 17 17 0 0 1 37 20" stroke="#8cc63f" stroke-width="2.5" fill="none" />
+                                    <text x="20" y="15" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">B</text>
+                                    <text x="20" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">A</text>
+                                    <text x="20" y="29" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">Y</text>
+                                    <text x="20" y="36" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">E</text>
+                                    <text x="20" y="43" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">R</text>
+                                </g>
+                                <text x="82" y="29" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#00bcff" text-anchor="middle">Bayer</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Solgar SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="6" width="110" height="38" rx="6" fill="#F0C420" opacity="0.1" />
+                                <circle cx="25" cy="25" r="14" fill="#786020" />
+                                <circle cx="25" cy="25" r="12" fill="#F0C420" />
+                                <text x="25" y="29" font-family="'Georgia', serif" font-weight="bold" font-size="12" fill="#786020" text-anchor="middle">S</text>
+                                <text x="75" y="31" font-family="'Georgia', serif" font-weight="bold" font-size="19" fill="#786020" letter-spacing="1" text-anchor="middle">SOLGAR</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- NOW Foods SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 10 Q30 5 60 10 T110 10 Q115 25 110 40 T60 40 Q30 45 10 40 Z" fill="#FF7F00" opacity="0.2" />
+                                <text x="45" y="33" font-family="'Arial Black', sans-serif" font-weight="900" font-size="28" fill="#FF7F00" font-style="italic" text-anchor="middle">now</text>
+                                <text x="88" y="32" font-family="'Arial', sans-serif" font-weight="bold" font-size="14" fill="#5A2A85" text-anchor="middle">foods</text>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicated Set of Logos for Infinite Loop (aria-hidden for screen readers) -->
+                    <div class="logo-marquee-content" aria-hidden="true">
+                        <div class="logo-marquee-item">
+                            <!-- Pfizer SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <ellipse cx="60" cy="25" rx="52" ry="20" fill="#005A9C" transform="rotate(-7 60 25)" />
+                                <text x="60" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-style="italic" font-size="19" fill="#FFFFFF" text-anchor="middle" transform="rotate(-7 60 25)">Pfizer</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Lonza SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 12 L20 12 L20 38 L34 38 L34 43 L15 43 Z" fill="#0b3c5d" />
+                                <circle cx="20" cy="12" r="3.5" fill="#00a8cc" />
+                                <text x="75" y="36" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="25" fill="#0b3c5d" text-anchor="middle">Lonza</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- BASF SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(10, 11)">
+                                    <rect x="0" y="10" width="18" height="18" stroke="#00A0E9" stroke-width="4.5" fill="none" />
+                                    <rect x="13" y="0" width="10" height="10" fill="#00A0E9" />
+                                </g>
+                                <text x="82" y="35" font-family="'Arial', 'Helvetica', sans-serif" font-weight="bold" font-size="28" fill="#00A0E9" letter-spacing="-0.5" text-anchor="middle">BASF</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Euroapi SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <text x="68" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="21" fill="#0d1b2a" letter-spacing="-0.5" text-anchor="middle">euroapi</text>
+                                <circle cx="16" cy="25" r="7" fill="#e63946" />
+                                <circle cx="25" cy="21" r="4.5" fill="#3a86c8" />
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Novartis SVG -->
+                            <svg viewBox="0 0 145 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 6)">
+                                    <path d="M10 30 C10 18, 15 12, 25 6 C20 14, 18 20, 20 30 Z" fill="#EC6608" />
+                                    <path d="M20 30 C20 18, 26 12, 32 6 C28 14, 25 20, 25 30 Z" fill="#D32F2F" />
+                                    <path d="M5 30 C5 22, 10 18, 15 12 C12 18, 10 24, 10 30 Z" fill="#FFC107" />
+                                </g>
+                                <text x="92" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="20" fill="#0D2C54" letter-spacing="-0.2" text-anchor="middle">NOVARTIS</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Sanofi SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="34" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="25" fill="#3D0066" text-anchor="middle">sanofi</text>
+                                <circle cx="94" cy="22" r="5" fill="#E6007E" />
+                                <circle cx="102" cy="22" r="3" fill="#6B2D91" />
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- AstraZeneca SVG -->
+                            <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 12)">
+                                    <path d="M8 2 C12 2, 20 6, 20 13 C20 20, 10 24, 5 24 C8 21, 10 17, 10 13 C10 8, 5 2, 8 2 Z" fill="#C4D600" />
+                                    <path d="M14 8 C16 8, 22 12, 22 18 C22 22, 16 25, 12 25 C14 22, 15 19, 15 18 C15 14, 12 8, 14 8 Z" fill="#84207E" opacity="0.35" />
+                                </g>
+                                <text x="92" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="19" fill="#3C1053" letter-spacing="-0.3" text-anchor="middle">AstraZeneca</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Bayer SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(10, 5)">
+                                    <circle cx="20" cy="20" r="17" fill="none" stroke="#00bcff" stroke-width="2.5" />
+                                    <path d="M20 3 A 17 17 0 0 1 37 20" stroke="#8cc63f" stroke-width="2.5" fill="none" />
+                                    <text x="20" y="15" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">B</text>
+                                    <text x="20" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">A</text>
+                                    <text x="20" y="29" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">Y</text>
+                                    <text x="20" y="36" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">E</text>
+                                    <text x="20" y="43" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#4a4a4a" text-anchor="middle">R</text>
+                                </g>
+                                <text x="82" y="29" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#00bcff" text-anchor="middle">Bayer</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- Solgar SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="6" width="110" height="38" rx="6" fill="#F0C420" opacity="0.1" />
+                                <circle cx="25" cy="25" r="14" fill="#786020" />
+                                <circle cx="25" cy="25" r="12" fill="#F0C420" />
+                                <text x="25" y="29" font-family="'Georgia', serif" font-weight="bold" font-size="12" fill="#786020" text-anchor="middle">S</text>
+                                <text x="75" y="31" font-family="'Georgia', serif" font-weight="bold" font-size="19" fill="#786020" letter-spacing="1" text-anchor="middle">SOLGAR</text>
+                            </svg>
+                        </div>
+                        <div class="logo-marquee-item">
+                            <!-- NOW Foods SVG -->
+                            <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 10 Q30 5 60 10 T110 10 Q115 25 110 40 T60 40 Q30 45 10 40 Z" fill="#FF7F00" opacity="0.2" />
+                                <text x="45" y="33" font-family="'Arial Black', sans-serif" font-weight="900" font-size="28" fill="#FF7F00" font-style="italic" text-anchor="middle">now</text>
+                                <text x="88" y="32" font-family="'Arial', sans-serif" font-weight="bold" font-size="14" fill="#5A2A85" text-anchor="middle">foods</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="contact.html" class="btn btn-outline-primary px-5 py-3">اطلب قائمة الشركاء المعتمدين</a>
+            </div>
+        </div>
+    </div>
+    <!-- Strategic Partners End -->
+
+
+    <!-- Quality & Compliance Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="mb-4"><span class="display-6 text-primary">الامتثال والجودة</span> <span class="fs-5 fw-normal text-green">هي أساس شراكاتنا</span></h1>
+                    <p>نلتزم بتوفير منتجات من موردين ومصنّعين مطابقين للمتطلبات التنظيمية في بلد التسجيل، مع توفير المستندات الداعمة وشهادات التحليل لكل شحنة. سلسلة التبريد المطوّرة لدينا معتمدة وفق المعايير الدولية.</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="quality.html" class="text-decoration-none">
+                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>GMP</h5>
+                                <small>ممارسات التصنيع الجيدة — اضغط للتفاصيل</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="quality.html" class="text-decoration-none">
+                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>GDP</h5>
+                                <small>ممارسات التوزيع الجيدة — اضغط للتفاصيل</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="quality.html" class="text-decoration-none">
+                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>ISO 9001:2015</h5>
+                                <small>نظام إدارة الجودة — اضغط للتفاصيل</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="quality.html" class="text-decoration-none">
+                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>CoA & Trace</h5>
+                                <small>شهادة تحليل وتتبع لكل شحنة — اضغط للتفاصيل</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="quality.html" class="btn btn-primary py-3 px-5">عرض سياسة الجودة والامتثال</a>
+                        <a href="contact.html" class="btn btn-outline-primary py-3 px-5">تواصل مع مسؤول الجودة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quality & Compliance End -->
+	
+	
+	    <!-- Segments Served Start  -->
     <div class="container-fluid segments-section py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 600px;">
                 <h1 class="display-6 mb-3 text-primary">نخدم قطاعك</h1>
                 <p class="mb-0">اختر قطاعك لتصفح الحلول والعروض المخصصة لاحتياجاتك</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <a href="service.html?segment=hospitals" class="segment-card">
-                        <div class="segment-icon">
-                            <i class="bi bi-hospital"></i>
+            
+            <div class="pharma-slider-section">
+                <div class="slider-container">
+                    
+                    <!-- Hospitals Card -->
+                    <a href="contact.html" class="pharma-card card-hospitals">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="card-category">المستشفيات</span>
+                            <h2 class="card-title">حلول توريد متكاملة للمستشفيات والمراكز الطبيّة تشمل الفيتامينات، الهرمونات، والمكملات الدوائية.</h2>
+                            <div class="card-meta">
+                                <span>توريد موثوق</span> <span class="separator">|</span> 
+                                <span>جودة معتمدة</span> <span class="separator">|</span> 
+                                <span>دعم 24/7</span>
+                            </div>
                         </div>
-                        <h3 class="segment-title">المستشفيات</h3>
-                        <p class="segment-desc">حلول توريد متكاملة للمستشفيات والمراكز الطبية تشمل الفيتامينات، الهرمونات، والمكملات الدوائية</p>
-                        <span class="segment-btn">تصفح حلولنا</span>
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a href="service.html?segment=pharmacies" class="segment-card">
-                        <div class="segment-icon">
-                            <i class="bi bi-shop"></i>
+
+                    <!-- Pharmacies Card -->
+                    <a href="contact.html" class="pharma-card card-pharmacies">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="card-category">الصيدليات</span>
+                            <h2 class="card-title">تشكيلة واسعة من الفيتامينات والهرمونات المعتمدة للصيدليات المجتمعية وسلاسل الصيدليات.</h2>
+                            <div class="card-meta">
+                                <span>منتجات أصلية</span> <span class="separator">|</span> 
+                                <span>توصيل سريع</span> <span class="separator">|</span> 
+                                <span>عروض تنافسية</span>
+                            </div>
                         </div>
-                        <h3 class="segment-title">الصيدليات</h3>
-                        <p class="segment-desc">تشكيلة واسعة من الفيتامينات والهرمونات المعتمدة للصيدليات المجتمعية وسلاسل الصيدليات</p>
-                        <span class="segment-btn">تصفح حلولنا</span>
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a href="service.html?segment=manufacturers" class="segment-card">
-                        <div class="segment-icon">
-                            <i class="bi bi-gear-wide-connected"></i>
+
+                    <!-- Manufacturers Card -->
+                    <a href="contact.html" class="pharma-card card-manufacturers">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="card-category">المصنعون الدوائيون</span>
+                            <h2 class="card-title">مواد خام عالية النقاوة لخطوط الإنتاج الدوائي مع شهادات تحليل معتمدة وسلسلة تبريد متطورة.</h2>
+                            <div class="card-meta">
+                                <span>نقاوة عالية</span> <span class="separator">|</span> 
+                                <span>سلسلة تبريد</span> <span class="separator">|</span> 
+                                <span>شهادات معتمدة</span>
+                            </div>
                         </div>
-                        <h3 class="segment-title">المصنعون الدوائيون</h3>
-                        <p class="segment-desc">مواد خام عالية النقاوة لخطوط الإنتاج الدوائي مع شهادات تحليل معتمدة وسلسلة تبريد متطورة</p>
-                        <span class="segment-btn">تصفح حلولنا</span>
                     </a>
+
                 </div>
             </div>
         </div>
@@ -228,237 +533,6 @@
     <!--  Segments Served End -->
 
 
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container pb-5">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="row g-0">
-                        <div class="col-6">
-                            <img class="img-fluid" src="img/about-1.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img class="img-fluid" src="img/about-2.jpg">
-                        </div>
-                        <div class="col-6">
-                            <img class="img-fluid" src="img/about-3.jpg">
-                        </div>
-                        <div class="col-6">
-                            <div class="bg-primary w-100 h-100 mt-n5 ms-n5 d-flex flex-column align-items-center justify-content-center">
-                                <div class="icon-box-light">
-                                    <i class="bi bi-award text-green-light"></i>
-                                </div>
-                                <h1 class="display-1 text-white mb-0" data-toggle="counter-up">7</h1>
-                                <small class="fs-5 text-white">سنوات من الخبرة</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4"><span class="display-6 text-primary">شريكك الموثوق</span> <span class="fs-5 fw-normal text-green">في توريد الفيتامينات والهرمونات</span></h1>
-                    <p class="mb-4">في إندوكير، ندرك أن الحصول على منتجات صحية آمنة وفعالة ليس ترفاً بل حق أساسي. لذلك نكرس جهودنا لسد احتياجات السوق اليمني من خلال استيراد وتوريد الفيتامينات والهرمونات المطابقة لأعلى المواصفات العالمية (FDA، EMA، WHO).</p>
-                    <div class="row g-3 g-sm-5 justify-content-center">
-                        <div class="col-6">
-                            <div class="about-fact btn-square flex-column rounded-circle bg-primary ms-auto ms-sm-auto text-center">
-                                <i class="bi bi-person-check fs-1 text-white mb-1"></i>
-                                <p class="text-white mb-0">عميل معتمد</p>
-                                <h1 class="text-white mb-0" data-toggle="counter-up">150</h1>
-                            </div>
-                        </div>
-                        <div class="col-6 text-start">
-                            <div class="about-fact btn-square flex-column rounded-circle bg-green-light me-auto me-sm-auto text-center">
-                                <i class="bi bi-geo-alt fs-1 text-white mb-1"></i>
-                                <p class="text-white mb-0">محافظة مغطاة</p>
-                                <h1 class="text-white mb-0" data-toggle="counter-up">22</h1>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="about-fact mt-n130 btn-square flex-column rounded-circle bg-dark mx-auto text-center">
-                                <i class="bi bi-globe fs-1 text-white mb-1"></i>
-                                <p class="text-white mb-0">شراكة عالمية</p>
-                                <h1 class="text-white mb-0" data-toggle="counter-up">12</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid container-service py-5">
-        <div class="container pt-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3 text-primary">ما الذي نقدمه في أندوكير بلس</h1>
-                <p class="mb-5">نوفر تشكيلة واسعة من الفيتامينات والهرمونات والمكملات الغذائية عالية الجودة لتلبية احتياجات السوق اليمني.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="icon-box-primary mb-4">
-                            <i class="bi bi-capsule-pill service-icon"></i>
-                        </div>
-                        <h5 class="mb-3">الفيتامينات المتعددة</h5>
-                            <p class="mb-4">فيتامين D3، فيتامين C مع زنك، فيتامين B-complex لدعم المناعة والطاقة وصحة العظام.</p>
-                        <a class="btn btn-light px-3" href="service.html">اقرأ المزيد<i class="bi bi-chevron-double-left ms-1"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="icon-box-primary mb-4">
-                            <i class="bi bi-heart-pulse service-icon"></i>
-                        </div>
-                        <h5 class="mb-3">الهرمونات البديلة</h5>
-                            <p class="mb-4">هرمون النمو (HGH)، هرمون الغدة الدرقية، هرمون التستوستيرون لعلاج قصور الغدة وتأخر النمو.</p>
-                        <a class="btn btn-light px-3" href="service.html">اقرأ المزيد<i class="bi bi-chevron-double-left ms-1"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="icon-box-primary mb-4">
-                            <i class="bi bi-droplet service-icon"></i>
-                        </div>
-                        <h5 class="mb-3">هرمونات الخصوبة</h5>
-                            <p class="mb-4">FSH، LH، hCG لتحفيز التبويض وعلاج العقم لدى الرجال والنساء.</p>
-                        <a class="btn btn-light px-3" href="service.html">اقرأ المزيد<i class="bi bi-chevron-double-left ms-1"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item">
-                        <div class="icon-box-primary mb-4">
-                            <i class="bi bi-flower1 service-icon"></i>
-                        </div>
-                        <h5 class="mb-3">المكملات المتخصصة</h5>
-                            <p class="mb-4">أوميغا 3، الحديد الوريدي، الكالسيوم مع فيتامين K2 لدعم القلب وعلاج فقر الدم.</p>
-                        <a class="btn btn-light px-3" href="service.html">اقرأ المزيد<i class="bi bi-chevron-double-left ms-1"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-
-    <!-- Quality Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    
-					<h1 class="mb-4"><span class="display-6 text-primary">الجودة و السلامة</span> <span class="fs-5 fw-normal text-green">هي أولويتنا القصوى</span></h1>
-                    <p>نطبق أعلى معايير الجودة في التخزين والنقل لضمان وصول منتجاتكم بأفضل حالة. جميع منتجاتنا معتمدة من FDA و EMA وتخضع لسلسلة تبريد متطورة.</p>
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <h5 class="quality-title"><i class="bi bi-check-circle text-green " style="margin-left: 6px;" ></i>GMP</h5>
-                            <small>ممارسات التصنيع الجيدة</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="quality-title"><i class="bi bi-check-circle text-green " style="margin-left: 6px;"></i>GDP</h5>
-                            <small>ممارسات التوزيع الجيدة</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="quality-title"><i class="bi bi-check-circle text-green " style="margin-left: 6px;"></i>ISO 9001:2023</h5>
-                            <small>نظام إدارة الجودة</small>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="quality-title"><i class="bi bi-check-circle text-green " style="margin-left: 6px;"></i>COA</h5>
-                            <small>شهادة تحليل لكل منتج</small>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="btn btn-primary py-3 px-5">اطلب عرض سعر</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quality End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid container-team py-5">
-        <div class="container pb-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3 text-primary">أبرز منتجاتنا</h1>
-                <p class="mb-5">نوفر لكم باقة مختارة من أفضل المكملات الغذائية والفيتامينات العالمية الأكثر طلباً وموثوقية.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <a href="service.html">
-                                <img class="img-fluid w-100" src="img/Centrum.png" alt="Centrum (سنتروم)">
-                            </a>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-1">Centrum (سنتروم)</h5>
-                            <span>العلامة الأكثر شهرة لدعم المناعة والطاقة اليومية.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <a href="service.html">
-                                <img class="img-fluid w-100" src="img/Solgar-Skin.png" alt="Solgar Skin, Nails & Hair">
-                            </a>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-1">Solgar Skin, Nails & Hair</h5>
-                            <span>تركيبة مشهورة جداً لدعم الجمال والصحة العامة.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <a href="service.html">
-                                <img class="img-fluid w-100" src="img/NOW-Foods-Ashwagandha.png" alt="NOW Foods Ashwagandha">
-                            </a>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-1">NOW Foods Ashwagandha</h5>
-                            <span>عشبة الأشواغاندا لتنظيم هرمون الكورتيزول ودعم التستوستيرون.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <a href="service.html">
-                                <img class="img-fluid w-100" src="img/Evlution-Nutrition-EVOTEST.png" alt="Evlution Nutrition EVOTEST">
-                            </a>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-1">Evlution Nutrition EVOTEST</h5>
-                            <span>محفز طبيعي لهرمون التستوستيرون للرياضيين.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
 
 
     <!-- Quick Inquiry Start -->
@@ -524,7 +598,7 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <img src="img/logo2.png" alt="EndoCare" style="height: 65px; border-radius: 6px; margin-bottom: 15px;">
+                        <img src="img/logo3.png" alt="EndoCare" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
                     </a>
                     <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
                     <p><i class="bi bi-geo-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>
@@ -543,9 +617,8 @@
                             <h5 class="text-light mb-3">روابط سريعة</h5>
                             <a class="btn btn-link" href="index.html">الرئيسية</a>
                             <a class="btn btn-link" href="about.html">من نحن</a>
-                            <a class="btn btn-link" href="service.html">المنتجات</a>
+                            <a class="btn btn-link" href="product.html">المنتجات</a>
                             <a class="btn btn-link" href="contact.html">اتصل بنا</a>
-                            <a class="btn btn-link" href="appoinment.html">طلب عرض سعر</a>
                         </div>
                         <div class="col-sm-6">
                             <h5 class="text-light mb-3">روابط مهمة</h5>
@@ -592,72 +665,18 @@
     <!-- Copyright End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- Endocare AI Chatbot Start -->
-    <!-- FAB -->
-    <button id="chatbot-fab" class="btn btn-primary btn-lg-square rounded-circle chatbot-fab" aria-label="فتح المساعد الذكي">
-        <i class="bi bi-cpu"></i>
+    <!-- Pharmacovigilance FAB -->
+    <button id="Pharmacovigilance" class="Pharmacovigilance-fab" aria-label="فتح نموذج التيقظ الدوائي">
+      التيقظ الدوائي  <i class="bi bi-shield-plus"></i> 
     </button>
 
-    <!-- Chat Overlay -->
-    <div id="chatbot-overlay" class="chatbot-overlay">
-        <div class="chatbot-container">
-            <!-- Header -->
-            <div class="chatbot-header">
-                <div class="chatbot-header-info">
-                    <div class="chatbot-avatar">
-                        <i class="bi bi-robot"></i>
-                    </div>
-                    <div>
-                        <h5 class="chatbot-title">مساعد Endocare AI  </h5>
-                        <span class="chatbot-status">متصل - جاهز للإجابة على استفساراتك الطبية واللوجستية</span>
-                    </div>
-                </div>
-                <button id="chatbot-close" class="btn btn-sm chatbot-close-btn" aria-label="إغلاق">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
+    <!-- Chatbot FAB -->
+    <button id="chatbot-fab" class="chatbot-fab" aria-label="فتح المساعد الذكي">
+        <i class="bi bi-cpu"></i> Endocare AI
+    </button>
 
-            <!-- Messages -->
-            <div id="chatbot-messages" class="chatbot-messages">
-                <!-- Messages will be rendered here by JS -->
-            </div>
 
-            <!-- Quick Replies (Triage) -->
-            <div id="chatbot-quick-replies" class="chatbot-quick-replies">
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="شحنة">
-                    <i class="bi bi-truck ms-1"></i>استفسار عن شحنة
-                </button>
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="علمي">
-                    <i class="bi bi-flask ms-1"></i>أسئلة علمية عن الفيتامينات
-                </button>
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="كتالوج">
-                    <i class="bi bi-book ms-1"></i>كتالوج الهرمونات المتاحة
-                </button>
-            </div>
 
-            <!-- Network Banner -->
-            <div id="chatbot-network-banner" class="chatbot-network-banner d-none">
-                <i class="bi bi-wifi-off ms-2"></i>
-                <span>عذراً، أنت غير متصل بالإنترنت. سيتم حفظ رسالتك.</span>
-            </div>
-
-            <!-- Input Area -->
-            <div class="chatbot-input-area">
-                <div class="chatbot-input-wrapper">
-                    <textarea id="chatbot-input" class="chatbot-input" rows="1" placeholder="اكتب سؤالك هنا حول الهرمونات، الفيتامينات، أو خدماتنا..." maxlength="500"></textarea>
-                    <button id="chatbot-send" class="btn btn-primary chatbot-send-btn" aria-label="إرسال">
-                        <i class="bi bi-send"></i>
-                    </button>
-                </div>
-                <div class="chatbot-char-count"><span id="chatbot-char-count">0</span>/500</div>
-            </div>
-        </div>
-    </div>
-    <!-- Endocare AI Chatbot End -->
 
 
     <!-- JavaScript Libraries -->
@@ -672,6 +691,8 @@
     <script src="js/main.js"></script>
     <!-- Chatbot Javascript -->
     <script src="js/chatbot.js"></script>
+    <!-- Pharmacovigilance Javascript -->
+    <script src="js/pharmacovigilance.js"></script>
 </body>
 
 </html>

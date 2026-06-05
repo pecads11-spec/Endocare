@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قطاعات الخدمات الدوائية</title>
+    <style>
+        /* إعدادات عامة */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+        }
+
+        /* الحاوية الرئيسية */
+        .pharma-slider-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider-container {
+            display: flex;
+            gap: 15px; /* المسافة بين البطاقات كما في الصورة */
+            position: relative;
+        }
+
+        /* تصميم البطاقة */
+        .pharma-card {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* دفع المحتوى للأسفل */
+            padding: 30px;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* الغطاء الداكن للصورة */
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* تدرج لوني داكن يتركز في الأسفل لضمان وضوح النص */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+        }
+
+        /* حاوية المحتوى النصي */
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* تصنيف القطاع (مثل: المستشفيات) */
+        .card-category {
+            display: inline-block;
+            color: #f67222; /* لون برتقالي مطابق للصورة */
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* عنوان البطاقة (الوصف) */
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* العناصر السفلية (شريط المعلومات) */
+        .card-meta {
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .card-meta .separator {
+            color: #fff;
+            opacity: 0.7;
+            margin: 0 2px;
+        }
+
+        /* أسهم التمرير الجانبية (محاكاة للصورة) */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-right {
+            right: 0; /* في أقصى اليمين للغة العربية */
+        }
+
+        .arrow-left {
+            left: 0; /* في أقصى اليسار للغة العربية */
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .slider-container {
+                flex-direction: column;
+            }
+            .slider-arrow {
+                display: none; /* إخفاء الأسهم في شاشات الجوال */
+            }
+            .pharma-card {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pharma-slider-section">
+        <div class="slider-container">
+            
+            <div class="slider-arrow arrow-right">&#10095;</div>
+
+            <div class="pharma-card" style="background-image: url('img/1.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <span class="card-category">المستشفيات</span>
+                    <h2 class="card-title">حلول توريد متكاملة للمستشفيات والمراكز الطبيّة تشمل الفيتامينات، الهرمونات، والمكملات الدوائية.</h2>
+                    <div class="card-meta">
+                        <span>توريد موثوق</span> <span class="separator">|</span> 
+                        <span>جودة معتمدة</span> <span class="separator">|</span> 
+                        <span>دعم 24/7</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pharma-card" style="background-image: url('img/2.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <span class="card-category">الصيدليات</span>
+                    <h2 class="card-title">تشكيلة واسعة من الفيتامينات والهرمونات المعتمدة للصيدليات المجتمعية وسلاسل الصيدليات.</h2>
+                    <div class="card-meta">
+                        <span>منتجات أصلية</span> <span class="separator">|</span> 
+                        <span>توصيل سريع</span> <span class="separator">|</span> 
+                        <span>عروض تنافسية</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pharma-card" style="background-image: url('img/3.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <span class="card-category">المصنعون الدوائيون</span>
+                    <h2 class="card-title">مواد خام عالية النقاوة لخطوط الإنتاج الدوائي مع شهادات تحليل معتمدة وسلسلة تبريد متطورة.</h2>
+                    <div class="card-meta">
+                        <span>نقاوة عالية</span> <span class="separator">|</span> 
+                        <span>سلسلة تبريد</span> <span class="separator">|</span> 
+                        <span>شهادات معتمدة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-arrow arrow-left">&#10094;</div>
+
+        </div>
+    </div>
+
+</body>
+</html>
