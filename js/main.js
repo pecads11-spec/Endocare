@@ -48,6 +48,15 @@
     
     // FABs Click Logic
     $(document).ready(function() {
+        // Navbar Search Toggle
+        $('#navSearchToggle').click(function(e) {
+            e.preventDefault();
+            $('#navSearchInput').toggleClass('active');
+            if ($('#navSearchInput').hasClass('active')) {
+                $('#navSearchInput').focus();
+            }
+        });
+
         // Pharmacovigilance Expand/Trigger
         $('#Pharmacovigilance').click(function(e) {
             e.stopPropagation(); // Prevent document click from firing
@@ -65,6 +74,9 @@
 
         // Close expanded FABs if clicked outside
         $(document).click(function(e) {
+            if (!$(e.target).closest('#navSearchToggle').length && !$(e.target).closest('#navSearchInput').length) {
+                $('#navSearchInput').removeClass('active');
+            }
             if (!$(e.target).closest('#Pharmacovigilance').length) {
                 $('#Pharmacovigilance').removeClass('expanded');
             }

@@ -104,9 +104,10 @@
                         </div>
                         <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
                     </div>
-                    <div class="ms-auto d-none d-lg-flex">
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-search"></i></a>
-                      <a class="btn btn-sm-square btn-primary ms-2" href="#supply-request" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
+                    <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
                     </div>
                 </div>
             </nav>
@@ -422,7 +423,7 @@
             </div>
             
             <div class="text-center mt-5">
-                <a href="contact.html" class="btn btn-outline-primary px-5 py-3">اطلب قائمة الشركاء المعتمدين</a>
+                <a href="contact.html" class="btn btn-outline-primary px-5 py-3 partners-btn">اطلب قائمة الشركاء المعتمدين</a>
             </div>
         </div>
     </div>
@@ -434,37 +435,37 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="mb-4"><span class="display-6 text-primary">الامتثال والجودة</span> <span class="fs-5 fw-normal text-green">هي أساس شراكاتنا</span></h1>
-                    <p>نلتزم بتوفير منتجات من موردين ومصنّعين مطابقين للمتطلبات التنظيمية في بلد التسجيل، مع توفير المستندات الداعمة وشهادات التحليل لكل شحنة. سلسلة التبريد المطوّرة لدينا معتمدة وفق المعايير الدولية.</p>
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6 col-lg-3">
-                            <a href="quality.html" class="text-decoration-none">
-                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>GMP</h5>
-                                <small>ممارسات التصنيع الجيدة — اضغط للتفاصيل</small>
+                    <h1 class="mb-4 quality-header-title"><span class="display-6 text-primary fw-bold">الامتثال والجودة</span> <span class="quality-header-subtitle">هي أساس شراكاتنا</span></h1>
+                    <p class="fs-5 mb-5 text-muted">نلتزم بتوفير منتجات من موردين ومصنّعين مطابقين للمتطلبات التنظيمية في بلد التسجيل، مع توفير المستندات الداعمة وشهادات التحليل لكل شحنة. سلسلة التبريد المطوّرة لدينا معتمدة وفق المعايير الدولية.</p>
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6 col-md-3">
+                            <a href="quality.html" class="text-decoration-none quality-item">
+                                <h5 class="quality-title"><i class="bi bi-check-circle-fill text-primary" style="margin-left: 8px;"></i>GMP</h5>
+                                <p>ممارسات التصنيع الجيدة — اضغط للتفاصيل</p>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <a href="quality.html" class="text-decoration-none">
-                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>GDP</h5>
-                                <small>ممارسات التوزيع الجيدة — اضغط للتفاصيل</small>
+                        <div class="col-sm-6 col-md-3">
+                            <a href="quality.html" class="text-decoration-none quality-item">
+                                <h5 class="quality-title"><i class="bi bi-check-circle-fill text-primary" style="margin-left: 8px;"></i>GDP</h5>
+                                <p>ممارسات التوزيع الجيدة — اضغط للتفاصيل</p>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <a href="quality.html" class="text-decoration-none">
-                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>ISO 9001:2015</h5>
-                                <small>نظام إدارة الجودة — اضغط للتفاصيل</small>
+                        <div class="col-sm-6 col-md-3">
+                            <a href="quality.html" class="text-decoration-none quality-item">
+                                <h5 class="quality-title"><i class="bi bi-check-circle-fill text-primary" style="margin-left: 8px;"></i>ISO 9001:2015</h5>
+                                <p>نظام إدارة الجودة — اضغط للتفاصيل</p>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <a href="quality.html" class="text-decoration-none">
-                                <h5 class="quality-title"><i class="bi bi-check-circle text-green" style="margin-left: 6px;"></i>CoA & Trace</h5>
-                                <small>شهادة تحليل وتتبع لكل شحنة — اضغط للتفاصيل</small>
+                        <div class="col-sm-6 col-md-3">
+                            <a href="quality.html" class="text-decoration-none quality-item">
+                                <h5 class="quality-title"><i class="bi bi-check-circle-fill text-primary" style="margin-left: 8px;"></i>CoA & Trace</h5>
+                                <p>شهادة وتتبع لكل شحنة — اضغط للتفاصيل</p>
                             </a>
                         </div>
                     </div>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="quality.html" class="btn btn-primary py-3 px-5">عرض سياسة الجودة والامتثال</a>
-                        <a href="contact.html" class="btn btn-outline-primary py-3 px-5">تواصل مع مسؤول الجودة</a>
+                        <a href="quality.html" class="btn btn-primary py-3 px-5 rounded-pill quality-action-btn">عرض سياسة الجودة والامتثال</a>
+                        <a href="contact.html" class="btn btn-outline-primary py-3 px-5 rounded-pill quality-action-btn">تواصل مع مسؤول الجودة</a>
                     </div>
                 </div>
             </div>
@@ -598,7 +599,7 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <img src="img/logo3.png" alt="EndoCare" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                        <img src="img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
                     </a>
                     <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
                     <p><i class="bi bi-geo-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>

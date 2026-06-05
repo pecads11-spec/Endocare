@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <title>طلب حصة توريدية - EndoCare اليمن</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Cairo:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-evenly align-items-center">
+                <small><i class="bi bi-snow2 me-2"></i>توصيل مبرد مضمون من الميناء إلى المستودع</small>
+                <small><i class="bi bi-patch-check me-2"></i>شهادات GMP و ISO لجميع المنتجات</small>
+                <small><i class="bi bi-headset me-2"></i>دعم فني وطوارئ 24/7</small>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">اتصل بنا</h5>
+                        <span>+967 712 345 678</span>
+                    </div>
+                </div>
+                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" class="logo2-img"></a>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">راسلنا</h5>
+                        <span>info@endocare-ye.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <img src="img/logo.png" alt="EndoCare" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
+                                <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المدونة</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">طلب حصة توريدية</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                    <li class="breadcrumb-item" aria-current="page">طلب حصة توريدية</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Form Section Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 mb-3">النظام الذكي لطلبات التوريد</h1>
+                <p class="mb-5 text-muted">صمم هذا النظام لتقليل الوقت المستغرق في المراسلات، يُرجى تعبئة التفاصيل بدقة لضمان معالجة طلبكم باحترافية وسرعة فائقة.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bg-white form-container-shadow rounded-4 p-4 p-md-5 wow fadeInUp" data-wow-delay="0.2s">
+                        
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="successMessage" class="alert alert-success d-none mb-4 text-center">
+                            <i class="bi bi-check-circle-fill fs-1 text-success mb-3"></i>
+                            <h4 class="alert-heading">تم استلام طلبكم بنجاح!</h4>
+                            <p>سيقوم مدير حسابات التوريد بمراجعة الطلب والتواصل معكم خلال ساعة عمل واحدة لتأكيد الحصة وتفاصيل الشحن.</p>
+                            <hr>
+                            <p class="mb-0"><a href="index.html" class="btn btn-success mt-2">العودة للرئيسية</a></p>
+                        </div>
+
+                        <!-- Supply Request Form -->
+                        <form id="supplyRequestForm">
+                            
+                            <!-- 1. معلومات الجهة الطالبة -->
+                            <h4 class="mb-4 text-primary border-bottom pb-2"><i class="bi bi-building me-2"></i>1. معلومات الجهة الطالبة</h4>
+                            <div class="row g-3 mb-5">
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="facilityName" placeholder="اسم المؤسسة/العيادة" required>
+                                        <label for="facilityName">اسم المؤسسة/العيادة</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="activityType" required>
+                                            <option value="" disabled selected>اختر النوع...</option>
+                                            <option value="pharmacy">صيدلية</option>
+                                            <option value="hospital">مستشفى / مركز طبي</option>
+                                            <option value="cosmetic">مركز تجميل</option>
+                                            <option value="distributor">موزع معتمد</option>
+                                        </select>
+                                        <label for="activityType">نوع النشاط</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="licenseNumber" placeholder="رقم الترخيص التجاري" required>
+                                        <label for="licenseNumber">رقم الترخيص التجاري</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. تفاصيل الحصة التوريدية -->
+                            <h4 class="mb-4 text-primary border-bottom pb-2 d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-box-seam me-2"></i>2. تفاصيل الحصة</span>
+                            </h4>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="productCategory" required>
+                                            <option value="" disabled selected>اختر التصنيف الأساسي...</option>
+                                            <option value="hormones">هرمونات طبية</option>
+                                            <option value="vitamins">فيتامينات</option>
+                                            <option value="supplements">مكملات طبية</option>
+                                            <option value="tools">أدوات ومستلزمات مساعدة</option>
+                                        </select>
+                                        <label for="productCategory">نوع المنتجات المراد توريدها</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="orderFrequency" required>
+                                            <option value="one-time">طلب لمرة واحدة</option>
+                                            <option value="monthly">طلب شهري متكرر (اشتراك استراتيجي)</option>
+                                            <option value="quarterly">طلب ربع سنوي</option>
+                                        </select>
+                                        <label for="orderFrequency">تكرارية الطلب</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Items Table -->
+                            <div class="table-responsive mb-4 custom-table-wrapper">
+                                <table class="table align-middle" id="itemsTable">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 50%;">اسم المنتج / المادة الفعالة</th>
+                                            <th style="width: 20%;">الكمية</th>
+                                            <th style="width: 20%;">وحدة القياس</th>
+                                            <th style="width: 10%; text-align: center;">إجراء</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="form-control" name="itemName[]" placeholder="مثال: Testoviron Depot 250mg" required>
+                                            </td>
+                                            <td>
+                                                <input type="number" class="form-control" name="itemQty[]" min="1" placeholder="0" required>
+                                            </td>
+                                            <td>
+                                                <select class="form-select" name="itemUnit[]" required>
+                                                    <option value="packs">عبوات</option>
+                                                    <option value="ampoules">أمبولات</option>
+                                                    <option value="strips">شرائط</option>
+                                                </select>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn btn-outline-danger btn-sm remove-row" disabled><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mb-5 text-end">
+                                <button type="button" class="btn btn-sm btn-outline-primary px-3 rounded-pill" id="addRowBtn"><i class="bi bi-plus-lg me-1"></i>إضافة صنف آخر</button>
+                            </div>
+
+                            <!-- 3. اللوجستيات والملاحظات -->
+                            <h4 class="mb-4 text-primary border-bottom pb-2"><i class="bi bi-truck me-2"></i>3. اللوجستيات والملاحظات</h4>
+                            <div class="row g-3 mb-5">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="deliveryDate" required>
+                                        <label for="deliveryDate">تاريخ التوريد المطلوب</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="تعليمات الشحن..." id="technicalNotes" style="height: 100px"></textarea>
+                                        <label for="technicalNotes">ملاحظات فنية (متطلبات النقل المبرد أو شروط التخزين الخاصة)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4. Submit Area -->
+                            <div class="text-center pt-3">
+                                <button class="btn btn-primary btn-lg px-5 py-3 rounded-pill" type="submit">
+                                    <i class="bi bi-send-check me-2"></i> إرسال طلب التوريد الذكي
+                                </button>
+                                <p class="text-muted mt-3 mb-4" style="font-size: 14px;">سيقوم مدير حساباتك بمراجعة الطلب والتواصل معك خلال ساعة عمل لتأكيد التفاصيل</p>
+                                
+                                <div class="alert alert-secondary py-2 px-3 d-inline-block text-start" style="font-size: 13px;">
+                                    <i class="bi bi-shield-check text-success me-2"></i> <strong>دليل الجودة:</strong> يتم معالجة ونقل جميع الطلبات وفقاً لمعايير التخزين والتبريد المعتمدة للمواد الحساسة والطبية (GDP compliance).
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form Section End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/logo3.png" alt="EndoCare" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                    </a>
+                    <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>
+                    <p><i class="bi bi-telephone me-2"></i>+967 712 345 678</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@endocare-ye.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">روابط سريعة</h5>
+                            <a class="btn btn-link" href="index.html">الرئيسية</a>
+                            <a class="btn btn-link" href="about.html">من نحن</a>
+                            <a class="btn btn-link" href="product.html">المنتجات</a>
+                            <a class="btn btn-link" href="contact.html">اتصل بنا</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">روابط مهمة</h5>
+                            <a class="btn btn-link" href="team.html">فريق العمل</a>
+                            <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
+                            <a class="btn btn-link" href="blog.html">المدونة</a>
+                            <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
+                            <a class="btn btn-link" href="#">سياسة الخصوصية</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5 class="text-light mb-3">النشرة البريدية</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="بريدك الإلكتروني"><button class="btn btn-primary px-4">اشتراك</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">تطوير / <a href="#" class="text-white">سمارت ون للحلول البرمجية &copy; 2026</a></p>
+                </div>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="tel:+967712345678" title="اتصال"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="https://wa.me/967712345678" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="mailto:info@smartone.com" title="البريد الإلكتروني"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="#" title="الموقع الإلكتروني"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Page Script -->
+    <script>
+        $(document).ready(function() {
+            // Add new row to items table
+            $('#addRowBtn').click(function() {
+                var newRow = `
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" name="itemName[]" placeholder="مثال: Testoviron Depot 250mg" required>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" name="itemQty[]" min="1" placeholder="0" required>
+                        </td>
+                        <td>
+                            <select class="form-select" name="itemUnit[]" required>
+                                <option value="packs">عبوات</option>
+                                <option value="ampoules">أمبولات</option>
+                                <option value="strips">شرائط</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-outline-danger btn-sm remove-row"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+                $('#itemsTable tbody').append(newRow);
+                updateRemoveButtons();
+            });
+
+            // Remove a row
+            $(document).on('click', '.remove-row', function() {
+                if ($('#itemsTable tbody tr').length > 1) {
+                    $(this).closest('tr').remove();
+                    updateRemoveButtons();
+                }
+            });
+
+            // Handle remove button state (disable if only 1 row)
+            function updateRemoveButtons() {
+                var rowCount = $('#itemsTable tbody tr').length;
+                if (rowCount === 1) {
+                    $('.remove-row').prop('disabled', true);
+                } else {
+                    $('.remove-row').prop('disabled', false);
+                }
+            }
+
+            // Set min delivery date to today
+            var today = new Date().toISOString().split('T')[0];
+            $('#deliveryDate').attr('min', today);
+
+            // Form Submit Logic
+            $('#supplyRequestForm').submit(function(e) {
+                e.preventDefault();
+                
+                // Simulate AJAX request
+                var btn = $(this).find('button[type="submit"]');
+                var originalText = btn.html();
+                
+                btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> جاري معالجة الطلب...');
+                
+                setTimeout(function() {
+                    $('#supplyRequestForm').fadeOut(300, function() {
+                        $('#successMessage').removeClass('d-none').hide().fadeIn(400);
+                        // Optional: scrollTo top of box
+                        $('html, body').animate({
+                            scrollTop: $("#successMessage").offset().top - 150
+                        }, 500);
+                    });
+                }, 1500); // 1.5 second loading simulation
+            });
+        });
+    </script>
+</body>
+
+</html>
