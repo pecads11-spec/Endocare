@@ -150,9 +150,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer border-0 pt-0 justify-content-center">
-                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">إلغاء</button>
-                    <button type="button" class="btn btn-danger px-5 py-3 fw-bold" id="pv-submit-btn">
+                <div class="modal-footer border-0 pt-0 justify-content-center gap-2">
+                    <button type="button" class="btn btn-outline-secondary pv-action-btn" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger fw-bold pv-action-btn pv-submit-btn" id="pv-submit-btn">
                         <i class="bi bi-send-check me-2"></i>إرسال التقرير
                     </button>
                 </div>

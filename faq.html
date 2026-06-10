@@ -41,17 +41,12 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid py-2 d-none d-lg-flex">
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
         <div class="container">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <small class="me-3"><i class="bi bi-truck me-2"></i>شحن سريع لجميع محافظات اليمن</small>
-                    <small class="me-3"><i class="bi bi-clock me-2"></i>الأحد - الخميس 9ص - 8م</small>
-                </div>
-                <div>
-                    <small class="me-3"><i class="bi bi-telephone me-2"></i>+967 712 345 678</small>
-                    <small class="me-3"><i class="bi bi-tag me-2"></i>خصم 15% على أول طلب</small>
-                </div>
+            <div class="d-flex justify-content-evenly align-items-center">
+                <small><i class="bi bi-snow2 me-2"></i>توصيل مبرد مضمون من الميناء إلى المستودع</small>
+                <small><i class="bi bi-patch-check me-2"></i>شهادات GMP و ISO لجميع المنتجات</small>
+                <small><i class="bi bi-headset me-2"></i>دعم فني وطوارئ 24/7</small>
             </div>
         </div>
     </div>
@@ -69,7 +64,7 @@
                         <span>+967 712 345 678</span>
                     </div>
                 </div>
-                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" style="height: 75px; border-radius: 8px;"></a>
+                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" class="logo2-img"></a>
                 <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
@@ -88,7 +83,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand d-lg-none">
-                    <img src="img/logo.png" alt="EndoCare" style="height: 45px; border-radius: 6px;">
+                    <img src="img/logo.png" alt="EndoCare" class="logo-img">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -96,25 +91,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link  "><i class="bi bi-house-door me-2"></i>الرئيسية</a>
+                        <a href="index.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
                         <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
-                        <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>المنتجات</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
                             <div class="dropdown-menu bg-light m-0">
                                 <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
-                                <a href="appoinment.html" class="dropdown-item"><i class="bi bi-file-earmark-text me-2"></i>طلب عرض سعر</a>
                                 <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
-                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المدونة</a>
-                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المركز المعرفي</a>
+                                <a href="faq.html" class="dropdown-item active"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
+                        <a href="supply-request.html" class="nav-item nav-link"><i class="bi bi-file-earmark-medical me-2"></i>طلب حصة توريدية</a>
                     </div>
-                    <div class="ms-auto d-none d-lg-flex">
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-search"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="bi bi-person"></i></a>
+                    <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
                     </div>
                 </div>
             </nav>
@@ -141,84 +135,175 @@
     <div class="container-fluid py-5">
         <div class="container pb-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">المركز المعرفي</span>
                 <h1 class="display-6 mb-3">الأسئلة الشائعة</h1>
-                <p class="mb-5">إجابات على أكثر الأسئلة شيوعاً حول منتجاتنا وخدماتنا</p>
+                <p class="mb-5 text-secondary">إجابات متخصصة وتنظيمية حول سلاسل الإمداد، الجودة، التعاقد المؤسسي، والسلامة الدوائية لدى إندوكير.</p>
             </div>
+
+            <!-- FAQ Search Bar -->
+            <div class="faq-search-container wow fadeInUp" data-wow-delay="0.2s">
+                <div class="faq-search-input-group">
+                    <input type="text" id="faq-search" class="faq-search-input" placeholder="ابحث عن سؤالك هنا (مثلاً: سلسلة التبريد، RFQ، التراخيص)...">
+                    <i class="bi bi-search faq-search-icon"></i>
+                </div>
+            </div>
+
+            <!-- FAQ Category Tabs -->
+            <div class="faq-tabs-nav wow fadeInUp" data-wow-delay="0.3s">
+                <button class="faq-tab-btn active" data-category="all">الكل</button>
+                <button class="faq-tab-btn" data-category="logistics">التوريد واللوجستيات</button>
+                <button class="faq-tab-btn" data-category="quality">الجودة والامتثال</button>
+                <button class="faq-tab-btn" data-category="contracts">القطاعات والتعاقد</button>
+                <button class="faq-tab-btn" data-category="safety">السلامة واليقظة الدوائية</button>
+            </div>
+
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    هل تبيعون منتجات بالجملة فقط أم يمكن الشراء بالتجزئة؟
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    نخدم كلاً من قطاعي الجملة (المستشفيات، الصيدليات الكبرى، الموزعين) والتجزئة (الأفراد، العيادات الصغيرة). الحد الأدنى للطلب بالتجزئة هو 50 دولاراً أميركياً أو ما يعادله بالريال اليمني.
+                <div class="col-lg-9">
+                    <div class="faq-accordion" id="faqAccordion">
+                        
+                        <!-- CATEGORY: Logistics -->
+                        <div class="faq-accordion-category-section active" id="cat-logistics">
+                            <h4 class="mb-4 text-primary border-bottom pb-2"><i class="bi bi-truck ms-2"></i> الأسئلة المتعلقة بالتوريد واللوجستيات</h4>
+                            
+                            <div class="accordion-item faq-item" data-search-text="ما هي المحافظات والمناطق التي تشملها تغطية التوزيع الدوائي لدى إندوكير تغطيه توصيل صنعاء عدن تعز المكلا الحديدة مأرب">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-log-1">
+                                        ما هي المحافظات والمناطق التي تشملها تغطية التوزيع الدوائي لدى إندوكير؟
+                                    </button>
+                                </h2>
+                                <div id="faq-log-1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نحن نغطي كافة المحافظات الـ 22 للجمهورية اليمنية. نوفر توصيلاً مباشراً تحت التبريد المعتمد إلى المستشفيات والمراكز العلاجية والوكلاء في صنعاء، عدن، تعز، الحديدة، حضرموت (المكلا وسيئون)، مأرب، وباقي المحافظات بالتنسيق مع شبكة مكاتب التوزيع الإقليمية المعتمدة لدينا.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item" data-search-text="كيف تضمن إندوكير المحافظة على سلامة سلسلة التبريد cold chain أثناء النقل للمحافظات البعيدة درجة الحرارة مبرد">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-log-2">
+                                        كيف تضمن إندوكير المحافظة على سلامة سلسلة التبريد (Cold Chain) أثناء النقل للمحافظات البعيدة؟
+                                    </button>
+                                </h2>
+                                <div id="faq-log-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نحن نستخدم حاويات شحن مبردة ومعزولة حرارياً ومزودة بجيل تبريد معتمد، إلى جانب أجهزة مراقبة الحرارة الرقمية (Data Loggers) لمتابعة وتسجيل ظروف التخزين طوال مسار النقل (بين 2 إلى 8 درجات مئوية). نلتزم بالكامل ببروتوكولات ممارسات التوزيع الجيد (GDP) لضمان عدم تعرض المواد الهرمونية والحيوية الحساسة لأي خلل حراري.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    كيف أتأكد من أن المنتجات أصلية وليست مغشوشة؟
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    نوفر كود QR على كل عبوة يمكن مسحه للتحقق من المصدر مباشرة من موقع الشركة المصنعة. كما يمكن طلب شهادة التحليل (COA) الخاصة بكل دفعة.
+
+                        <!-- CATEGORY: Quality -->
+                        <div class="faq-accordion-category-section active" id="cat-quality">
+                            <h4 class="mb-4 text-primary border-bottom pb-2 mt-5"><i class="bi bi-shield-check ms-2"></i> الأسئلة المتعلقة بالجودة والامتثال الرقابي</h4>
+                            
+                            <div class="accordion-item faq-item" data-search-text="هل تتوفر شهادات التحليل الفني coa والمنشأ للمنتجات والمواد التوريدية تفاصيل تشغيله">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-qual-1">
+                                        هل تتوفر شهادات التحليل الفني (CoA) والمنشأ للمنتجات والمواد التوريدية؟
+                                    </button>
+                                </h2>
+                                <div id="faq-qual-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نعم، بكل تأكيد. تلتزم إندوكير بتوفير شهادة التحليل الفني الخاصة بكل تشغيلة (Certificate of Analysis - CoA) بالإضافة إلى أوراق المنشأ الموثقة والتحقق من التراخيص. يمكن للمنشآت الطبية والمصانع المتعاقدة طلب هذه المستندات مباشرة عبر نموذج مسؤول الجودة بصفحة الجودة أو عبر البريد الرسمي للشركة.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item" data-search-text="ما هي الجهات التراخيصية والشهادات الحاصلة عليها الشركة الهيئة العليا للأدوية ترخيص وزارة الصحة iso gdp gmp">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-qual-2">
+                                        ما هي الجهات التراخيصية والشهادات الحاصلة عليها الشركة؟
+                                    </button>
+                                </h2>
+                                <div id="faq-qual-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        إندوكير منشأة مرخصة رسمياً من الهيئة العليا للأدوية والمستلزمات الطبية في اليمن (ترخيص وزارة الصحة رقم MOH-YE-452-2024)، ونظام إدارة الجودة لدينا مطابق لشهادة ISO 9001:2015 المعتمدة من Bureau Veritas، كما نمتثل بالكامل لممارسات التوزيع الجيد (GDP) المعتمدة دولياً.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    ما هي مدة التوصيل إلى المحافظات البعيدة مثل المهرة أو سقطرى؟
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    صنعاء وعدن: 24 ساعة. تعز والحديدة: 48 ساعة. المهرة وسقطرى: 3-5 أيام عبر الشحن الجوي والبحري، مع تأمين خاص لدرجة الحرارة.
+
+                        <!-- CATEGORY: Contracts & Segments -->
+                        <div class="faq-accordion-category-section active" id="cat-contracts">
+                            <h4 class="mb-4 text-primary border-bottom pb-2 mt-5"><i class="bi bi-file-earmark-medical ms-2"></i> الأسئلة المتعلقة بالقطاعات والتعاقد المؤسسي</h4>
+                            
+                            <div class="accordion-item faq-item" data-search-text="كيف تتم آلية طلبات التسعير المجمعة rfq عبر المنصة طلب عرض سعر">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-con-1">
+                                        كيف تتم آلية طلبات التسعير المجمعة (RFQ) عبر المنصة؟
+                                    </button>
+                                </h2>
+                                <div id="faq-con-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        يمكن للمستشفيات والوكلاء والمصانع الدوائية استخدام صفحة طلب التسعير المجمع (`rfq.html`) المخصصة لإضافة المواد الدوائية المطلوبة والكميات والتركيزات دفعة واحدة، ورفع المستندات الرسمية (كالسجل التجاري أو طلب الشراء المؤسسي)، ليقوم قطاع الشؤون التجارية لدينا بدراستها وإصدار عرض السعر وتأكيد توافر المخزون خلال 24-48 ساعة كحد أقصى.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item" data-search-text="ما هي شروط وسياسات التعاقد والتوريد المؤسسي السنوي للمستشفيات">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-con-2">
+                                        ما هي شروط وسياسات التعاقد والتوريد المؤسسي السنوي؟
+                                    </button>
+                                </h2>
+                                <div id="faq-con-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نوفر عقود توريد سنوية مخصصة للمستشفيات والمراكز العلاجية والجهات الحكومية لضمان استقرار وتأمين الاحتياجات الدوائية الدورية وتجنب شح الإمدادات. تشمل هذه العقود شروط دفع مجدولة وتسهيلات ائتمانية وتخصيص حصص مخزون استراتيجي مؤمن بمستودعاتنا.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item" data-search-text="هل توفرون مواداً خاماً ومستلزمات تصنيع للمصانع الدوائية المحلية apis dmf msds gmp التسجيل الدوائي">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-con-3">
+                                        هل تساهم إندوكير في تيسير متطلبات التسجيل الدوائي المحلي للمنتجات الجديدة للمصانع؟
+                                    </button>
+                                </h2>
+                                <div id="faq-con-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نعم، نحن نوفر قطاعاً خاصاً بالمواد الفعالة (APIs) والمواد الخام للمصنعين المحليين، مع توفير كافة الملفات والوثائق التنظيمية المعتمدة (DMF, CoA, MSDS, GMP) لضمان مطابقة المواد لمتطلبات التسجيل الوطني للمستحضرات بالهيئة العليا للأدوية وتسهيل إجراءات ترخيص المستحضرات الجديدة.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                    هل لديكم ترخيص من وزارة الصحة اليمنية؟
-                                </button>
-                            </h2>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    نعم، التراخيص متوفرة ويمكن الاطلاع عليها في صفحة <a href="quality.html">الجودة والسلامة</a> أو طلبها عبر البريد الإلكتروني.
+
+                        <!-- CATEGORY: Safety -->
+                        <div class="faq-accordion-category-section active" id="cat-safety">
+                            <h4 class="mb-4 text-primary border-bottom pb-2 mt-5"><i class="bi bi-shield-exclamation ms-2"></i> الأسئلة المتعلقة بالسلامة واليقظة الدوائية</h4>
+                            
+                            <div class="accordion-item faq-item" data-search-text="كيف أبلغ عن عرض جانبي مشتبه به أو شكوى تخص جودة عبوة دوائية التيقظ الدوائي عرض جانبي">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-saf-1">
+                                        كيف أبلغ عن عرض جانبي مشتبه به أو شكوى تخص جودة عبوة دوائية؟
+                                    </button>
+                                </h2>
+                                <div id="faq-saf-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نحن نولي سلامة المرضى واليقظة الدوائية أهمية قصوى. يمكنك الإبلاغ الفوري عن الأعراض الجانبية عبر الانتقال إلى صفحة التيقظ الدوائي (`pharmacovigilance.html`) وتعبئة نموذج الأعراض الجانبية المعتمد، أو التواصل المباشر مع مسؤول الجودة والامتثال لشكاوى الجودة والتشغيلات المتضررة عبر نموذج الاتصال المتوفر بصفحة الجودة.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item" data-search-text="ما هو بروتوكول الاستدعاء وسحب التشغيلات product recall المعتمد لديكم في حالة الطوارئ">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-saf-2">
+                                        ما هو بروتوكول الاستدعاء وسحب التشغيلات (Product Recall) المعتمد لديكم?
+                                    </button>
+                                </h2>
+                                <div id="faq-saf-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نطبق نظام تتبع للمخازن يتيح لنا مراقبة وتحديد أماكن تواجد عبوات أي تشغيلة دوائية (Batch/Lot) على الفور. في حال وجود إنذار أمان دولي أو محلي، نقوم بتفعيل خطة الاستدعاء الطارئ وسحب التشغيلة كاملة من جميع العملاء والأسواق خلال ساعتين فقط بالتنسيق مع الجهات الرقابية.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                    ماذا أفعل إذا وصل المنتج متضرراً أو مكسوراً؟
-                                </button>
-                            </h2>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    نضمن استبدال أي منتج وصل بحالة سيئة مجاناً، بشرط تصوير العبوة فور استلامها وإرسال الصورة خلال 24 ساعة.
-                                </div>
-                            </div>
+
+                        <!-- FAQ No Results Placeholder -->
+                        <div class="faq-no-results" id="faqNoResults">
+                            <i class="bi bi-search-off fs-1 text-secondary d-block mb-3"></i>
+                            لم نعثر على أي أسئلة مطابقة لبحثك. جرب كلمات مفتاحية أخرى مثل "سلسلة التبريد" أو "الترخيص" أو "RFQ".
                         </div>
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                                    هل يمكن الشحن إلى خارج اليمن؟
-                                </button>
-                            </h2>
-                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    حالياً خدمة الشحن مقتصرة على الأراضي اليمنية فقط، ولكن يمكن استلام الطلبات شخصياً من مقرنا في صنعاء أو عدن.
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -233,7 +318,7 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <img src="img/logo2.png" alt="EndoCare" style="height: 65px; border-radius: 6px; margin-bottom: 15px;">
+                        <img src="img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
                     </a>
                     <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
                     <p><i class="bi bi-geo-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>
@@ -252,15 +337,14 @@
                             <h5 class="text-light mb-3">روابط سريعة</h5>
                             <a class="btn btn-link" href="index.html">الرئيسية</a>
                             <a class="btn btn-link" href="about.html">من نحن</a>
-                            <a class="btn btn-link" href="service.html">المنتجات</a>
+                            <a class="btn btn-link" href="supply-request.html">طلب حصة توريدية</a>
                             <a class="btn btn-link" href="contact.html">اتصل بنا</a>
-                            <a class="btn btn-link" href="appoinment.html">طلب عرض سعر</a>
                         </div>
                         <div class="col-sm-6">
                             <h5 class="text-light mb-3">روابط مهمة</h5>
                             <a class="btn btn-link" href="team.html">فريق العمل</a>
                             <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
-                            <a class="btn btn-link" href="blog.html">المدونة</a>
+                            <a class="btn btn-link" href="blog.html">المركز المعرفي</a>
                             <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
                             <a class="btn btn-link" href="#">سياسة الخصوصية</a>
                         </div>
@@ -369,6 +453,84 @@
     <!-- Endocare AI Chatbot End -->
 
 
+    <!-- FAQ Controller Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('faq-search');
+            const tabButtons = document.querySelectorAll('.faq-tab-btn');
+            const categorySections = document.querySelectorAll('.faq-accordion-category-section');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResultsPlaceholder = document.getElementById('faqNoResults');
+
+            let currentCategory = 'all';
+            let searchQuery = '';
+
+            function filterFAQs() {
+                let visibleItemsCount = 0;
+
+                categorySections.forEach(section => {
+                    const sectionCat = section.getAttribute('id').replace('cat-', '');
+                    const isCatMatch = (currentCategory === 'all' || currentCategory === sectionCat);
+
+                    let sectionVisibleItems = 0;
+                    const itemsInSection = section.querySelectorAll('.faq-item');
+
+                    itemsInSection.forEach(item => {
+                        const searchText = item.getAttribute('data-search-text').toLowerCase();
+                        const isSearchMatch = searchText.includes(searchQuery);
+
+                        if (isCatMatch && isSearchMatch) {
+                            item.style.display = 'block';
+                            sectionVisibleItems++;
+                            visibleItemsCount++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide/Show section header based on whether category matches AND has matching items
+                    const header = section.querySelector('h4');
+                    if (isCatMatch && (sectionVisibleItems > 0 || searchQuery === '')) {
+                        section.style.display = 'block';
+                        if (header) header.style.display = 'block';
+                    } else if (currentCategory === 'all' && sectionVisibleItems === 0) {
+                        // In "All" view, if a section has no search matches, hide its header
+                        if (header) header.style.display = 'none';
+                        // But don't hide the container if we want to show category sections dynamically
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // Handle no results placeholder
+                if (visibleItemsCount === 0) {
+                    noResultsPlaceholder.style.display = 'block';
+                } else {
+                    noResultsPlaceholder.style.display = 'none';
+                }
+            }
+
+            // Tab Click Event
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    currentCategory = this.getAttribute('data-category');
+                    filterFAQs();
+                });
+            });
+
+            // Search Input Event
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    searchQuery = e.target.value.toLowerCase().trim();
+                    filterFAQs();
+                });
+            }
+        });
+    </script>
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -376,11 +538,11 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
-
+ 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <!-- Chatbot Javascript -->
     <script src="js/chatbot.js"></script>
 </body>
-
+ 
 </html>

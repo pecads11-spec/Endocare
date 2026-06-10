@@ -31,6 +31,39 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <title>اتصل بنا - EndoCare اليمن</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Cairo:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
@@ -41,17 +74,12 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid py-2 d-none d-lg-flex">
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
         <div class="container">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <small class="me-3"><i class="fa fa-truck me-2"></i>شحن سريع لجميع محافظات اليمن</small>
-                    <small class="me-3"><i class="fa fa-clock me-2"></i>الأحد - الخميس 9ص - 8م</small>
-                </div>
-                <div>
-                    <small class="me-3"><i class="fa fa-phone-alt me-2"></i>+967 712 345 678</small>
-                    <small class="me-3"><i class="fa fa-tag me-2"></i>خصم 15% على أول طلب</small>
-                </div>
+            <div class="d-flex justify-content-evenly align-items-center">
+                <small><i class="bi bi-snow2 me-2"></i>توصيل مبرد مضمون من الميناء إلى المستودع</small>
+                <small><i class="bi bi-patch-check me-2"></i>شهادات GMP و ISO لجميع المنتجات</small>
+                <small><i class="bi bi-headset me-2"></i>دعم فني وطوارئ 24/7</small>
             </div>
         </div>
     </div>
@@ -69,7 +97,7 @@
                         <span>+967 712 345 678</span>
                     </div>
                 </div>
-                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" style="height: 55px; border-radius: 8px;"></a>
+                <a href="index.html"><img src="img/logo2.png" alt="EndoCare" class="logo2-img"></a>
                 <div class="d-flex">
                     <i class="bi bi-envelope fs-2"></i>
                     <div class="ms-3">
@@ -88,7 +116,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
                 <a href="index.html" class="navbar-brand d-lg-none">
-                    <img src="img/logo.png" alt="EndoCare" style="height: 40px; border-radius: 6px;">
+                    <img src="img/logo.png" alt="EndoCare" class="logo-img">
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -96,25 +124,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link">الرئيسية</a>
-                        <a href="about.html" class="nav-item nav-link">من نحن</a>
-                        <a href="service.html" class="nav-item nav-link">المنتجات</a>
+                        <a href="index.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">المزيد</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
                             <div class="dropdown-menu bg-light m-0">
-                                <a href="team.html" class="dropdown-item">فريق العمل</a>
-                                <a href="appoinment.html" class="dropdown-item">طلب عرض سعر</a>
-                                <a href="quality.html" class="dropdown-item">الجودة والسلامة</a>
-                                <a href="blog.html" class="dropdown-item">المدونة</a>
-                                <a href="faq.html" class="dropdown-item">الأسئلة الشائعة</a>
+                                <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
+                                <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المركز المعرفي</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link active">اتصل بنا</a>
+                        <a href="contact.html" class="nav-item nav-link active"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
+                        <a href="supply-request.html" class="nav-item nav-link"><i class="bi bi-file-earmark-medical me-2"></i>طلب حصة توريدية</a>
                     </div>
-                    <div class="ms-auto d-none d-lg-flex">
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="fa fa-search"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="fa fa-shopping-cart"></i></a>
-                        <a class="btn btn-sm-square btn-primary ms-2" href="#"><i class="fa fa-user"></i></a>
+                    <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
                     </div>
                 </div>
             </nav>
@@ -126,11 +153,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5 mt-4">
-            <h1 class="display-2 text-white mb-3 animated slideInDown">اتصل بنا</h1>
+            <h1 class="display-2 text-white mb-3 animated slideInDown">تواصل معنا</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                    <li class="breadcrumb-item" aria-current="page">اتصل بنا</li>
+                    <li class="breadcrumb-item" aria-current="page">تواصل معنا</li>
                 </ol>
             </nav>
         </div>
@@ -138,90 +165,467 @@
     <!-- Page Header End -->
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3">هل تبحث عن مورد موثوق للفيتامينات والهرمونات في اليمن؟</h1>
-                <p class="mb-5">فريق إندوكير مستعد لتلبية طلباتكم والإجابة على كافة استفساراتكم الطبية والتجارية. تواصلوا معنا اليوم لبناء شراكة صحية مستدامة.</p>
+    <!-- Quick Routing Portal Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">بوابة الاستجابة والاتصال السريع</span>
+                <h2 class="display-6 mb-3">مسارات مخصصة لخدمتكم الفورية</h2>
+                <p class="text-secondary mb-5">يرجى اختيار القسم المناسب لطلبك لضمان توجيهه للمسؤول المختص مباشرة والاستجابة بأسرع وقت ممكن.</p>
             </div>
-            <div class="row contact-info position-relative g-0 mb-5">
-                <div class="col-lg-6">
-                    <a href="tel:+967712345678" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-phone text-dark"></i>
+            <div class="row g-4 justify-content-center">
+                <!-- Pharmacovigilance Route -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="routing-card text-center">
+                        <div class="routing-icon bg-danger-soft text-danger">
+                            <i class="bi bi-shield-exclamation"></i>
                         </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">اتصل بنا</h5>
-                            <h2 class="text-white mb-0">+967 712 345 678</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a href="mailto:info@endocare-ye.com" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-envelope text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">راسلنا</h5>
-                            <h2 class="text-white mb-0">info@endocare-ye.com</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h4 class="mb-4">أرسل لنا رسالة وسنرد عليك في أقرب وقت</h4>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="الاسم">
-                                    <label for="name">الاسم الكامل</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="البريد">
-                                    <label for="email">البريد الإلكتروني</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="الموضوع">
-                                    <label for="subject">الموضوع</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="رسالتك" id="message" style="height: 200px"></textarea>
-                                    <label for="message">رسالتك</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">إرسال الرسالة</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-light p-4 mb-4">
-                        <h5><i class="bi bi-geo-alt text-primary ms-2"></i>العنوان الرئيسي - صنعاء</h5>
-                        <p class="mb-0">شارع حدة، مبنى البركة التجاري، الطابق الثالث، بجوار مستشفى الثورة العام</p>
+                        <h4 class="mb-3 text-dark">اليقظة والسلامة</h4>
+                        <p class="text-secondary small mb-4">الإبلاغ الفوري عن عرض جانبي أو مشكلة أمان متعلقة بأحد المنتجات.</p>
+                        <button type="button" class="btn btn-outline-danger btn-sm w-100 rounded-pill py-2" data-bs-toggle="modal" data-bs-target="#pharmacovigilanceModal">
+                            الإبلاغ عن عرض جانبي <i class="bi bi-arrow-left ms-1"></i>
+                        </button>
                     </div>
-                    <div class="bg-light p-4 mb-4">
-                        <h5><i class="bi bi-geo-alt text-primary ms-2"></i>فرع عدن</h5>
-                        <p class="mb-0">منطقة المنصورة، شارع الستين، مجمع الفردوس الصحي</p>
+                </div>
+
+                <!-- Quality Defect Route -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="routing-card text-center">
+                        <div class="routing-icon bg-warning-soft text-warning">
+                            <i class="bi bi-cone-striped"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">عيب جودة</h4>
+                        <p class="text-secondary small mb-4">تقديم بلاغ فني حول وجود خلل أو اشتباه في تعبئة وتغليف دفعة دوائية.</p>
+                        <a href="quality.html#qa-form" class="btn btn-outline-warning btn-sm w-100 rounded-pill py-2">
+                            الإبلاغ عن عيب جودة <i class="bi bi-arrow-left ms-1"></i>
+                        </a>
                     </div>
-                    <div class="bg-light p-4">
-                        <h5><i class="bi bi-clock text-primary ms-2"></i>ساعات العمل</h5>
-                        <p class="mb-0">الأحد – الخميس: 9:00 صباحاً – 8:00 مساءً (بتوقيت صنعاء)</p>
+                </div>
+
+                <!-- Medical Info Route -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="routing-card text-center">
+                        <div class="routing-icon bg-info-soft text-info">
+                            <i class="bi bi-journal-medical"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">معلومات طبية</h4>
+                        <p class="text-secondary small mb-4">الاستفسار عن الخواص العلمية والطبية أو الجرعات الخاصة بالفيتامينات والهرمونات.</p>
+                        <button type="button" class="btn btn-outline-info btn-sm w-100 rounded-pill py-2" data-bs-toggle="modal" data-bs-target="#medicalInquiryModal">
+                            طلب معلومات طبية <i class="bi bi-arrow-left ms-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quality Complaint Route -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="routing-card text-center">
+                        <div class="routing-icon bg-success-soft text-success">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">شكوى جودة</h4>
+                        <p class="text-secondary small mb-4">شكاوى تجارية وفنية بخصوص صلاحية المنتجات أو سلاسل التوريد والتحليل.</p>
+                        <a href="quality.html#qa-form" class="btn btn-outline-success btn-sm w-100 rounded-pill py-2">
+                            تقديم شكوى جودة <i class="bi bi-arrow-left ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Quick Routing Portal End -->
+
+
+    <!-- General Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white p-5 rounded-4 shadow-sm border border-light">
+                        <h3 class="mb-4 text-dark font-cairo">نموذج الاتصال العام</h3>
+                        <p class="text-secondary mb-4 small">للمراسلات العامة، الاستفسارات التجارية، أو طلبات الشراكة والتوزيع في اليمن، يرجى تعبئة الحقول أدناه:</p>
+                        
+                        <form action="#" method="POST" onsubmit="alert('تم إرسال رسالتك العامة بنجاح. سيقوم فريق خدمة العملاء بالتواصل معك قريباً.'); this.reset(); return false;">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control rounded-3" id="general-name" placeholder="الاسم الكامل" required>
+                                        <label for="general-name">الاسم الكامل / الجهة الصحية</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control rounded-3" id="general-email" placeholder="البريد الإلكتروني" required>
+                                        <label for="general-email">البريد الإلكتروني المهني</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control rounded-3" id="general-phone" placeholder="رقم الهاتف" required>
+                                        <label for="general-phone">رقم الهاتف للتواصل المباشر</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select rounded-3" id="general-inquiry-type" required>
+                                            <option value="" disabled selected>اختر غرض التواصل</option>
+                                            <option value="partnership">طلب شراكة / توزيع</option>
+                                            <option value="rfq">استفسار عن عرض سعر (RFQ)</option>
+                                            <option value="career">طلبات التوظيف والتدريب</option>
+                                            <option value="other">استفسارات عامة أخرى</option>
+                                        </select>
+                                        <label for="general-inquiry-type">نوع الاستفسار</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control rounded-3" id="general-subject" placeholder="الموضوع" required>
+                                        <label for="general-subject">الموضوع</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control rounded-3" placeholder="تفاصيل رسالتك" id="general-message" style="height: 150px" required></textarea>
+                                        <label for="general-message">تفاصيل الاستفسار أو الرسالة</label>
+                                    </div>
+                                </div>
+                                <!-- Mandatory Privacy Consent Checkbox -->
+                                <div class="col-12">
+                                    <div class="form-check d-flex align-items-start gap-2">
+                                        <input class="form-check-input flex-shrink-0" type="checkbox" id="privacy-consent" required style="width: 20px; height: 20px; cursor: pointer;">
+                                        <label class="form-check-label text-secondary small" for="privacy-consent" style="cursor: pointer; user-select: none; line-height: 1.5;">
+                                            أوافق بموجب هذا على سياسة الخصوصية وأقر بصحة البيانات المدخلة، كما أمنح شركة إندوكير الحق في معالجة بياناتي المذكورة للتواصل معي وتلبية طلبي. <span class="text-danger">* (موافقة إلزامية)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold font-cairo shadow-sm" type="submit">إرسال الرسالة <i class="bi bi-send ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Basic Contact Info Side -->
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-light p-5 rounded-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="mb-4 text-dark font-cairo">معلومات الاتصال الأساسية</h3>
+                            <p class="text-secondary mb-4 small">يمكنكم الاتصال مباشرة بإدارة علاقات العملاء والتوريد عبر القنوات الرسمية التالية:</p>
+                            
+                            <div class="d-flex align-items-center mb-4 bg-white p-3 rounded-3 border-light shadow-sm">
+                                <div class="btn-square bg-primary text-white rounded-circle flex-shrink-0">
+                                    <i class="bi bi-telephone fs-5"></i>
+                                </div>
+                                <div class="ms-3 pe-3">
+                                    <span class="text-secondary small d-block">الهاتف المجاني / المباشر</span>
+                                    <a href="tel:+967712345678" class="text-dark fw-bold">+967 712 345 678</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-4 bg-white p-3 rounded-3 border-light shadow-sm">
+                                <div class="btn-square bg-primary text-white rounded-circle flex-shrink-0">
+                                    <i class="bi bi-envelope fs-5"></i>
+                                </div>
+                                <div class="ms-3 pe-3">
+                                    <span class="text-secondary small d-block">البريد الإلكتروني العام</span>
+                                    <a href="mailto:info@endocare-ye.com" class="text-dark fw-bold">info@endocare-ye.com</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-4 bg-white p-3 rounded-3 border-light shadow-sm">
+                                <div class="btn-square bg-primary text-white rounded-circle flex-shrink-0">
+                                    <i class="bi bi-clock fs-5"></i>
+                                </div>
+                                <div class="ms-3 pe-3">
+                                    <span class="text-secondary small d-block">ساعات العمل الرسمية</span>
+                                    <span class="text-dark fw-bold">الأحد - الخميس | 9:00 صباحاً - 8:00 مساءً</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-primary-soft p-4 rounded-3 border border-primary-light">
+                            <h5 class="text-primary font-cairo"><i class="bi bi-info-circle me-1"></i> ملاحظة هامة للمرضى</h5>
+                            <p class="text-secondary small mb-0" style="line-height: 1.6;">بصفتنا شركة توريد دوائية متخصصة، لا نقوم بصرف الأدوية أو الهرمونات مباشرة للجمهور بدون وصفة طبية أصلية ومعتمدة. يرجى التواصل مع طبيبك المختص لتشخيص الحالة ووصف العلاج المناسب.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- General Contact End -->
+
+
+    <!-- Interactive Branches Section Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">فروعنا الجغرافية</span>
+                <h2 class="display-6 mb-3">عناوين وتفاصيل الفروع والمستودعات</h2>
+                <p class="text-secondary mb-5">تتواجد مستودعات ومكاتب إندوكير في أهم المراكز الطبية بالجمهورية لتسهيل الخدمات اللوجستية وتغطية احتياجات عملائنا في جميع المحافظات.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Sana'a Branch Card -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="branch-card bg-white p-4 rounded-4 shadow-sm border border-light active" id="branch-card-sanaa" onclick="switchBranchMap('sanaa')">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="branch-status-badge text-white bg-success ms-2">الفرع الرئيسي</div>
+                            <h4 class="mb-0 text-dark font-cairo"><i class="bi bi-geo-alt-fill text-primary ms-1"></i> فرع العاصمة - صنعاء</h4>
+                        </div>
+                        <p class="text-secondary mb-3 small">يضم الإدارة العامة والمستودع المركزي المكيف والمبرد المعتمد.</p>
+                        <ul class="list-unstyled text-secondary small mb-4">
+                            <li class="mb-2"><i class="bi bi-map ms-2 text-primary"></i> شارع حدة، مبنى البركة التجاري، الطابق الثالث، بجوار مستشفى الثورة العام</li>
+                            <li class="mb-2"><i class="bi bi-telephone-outbound ms-2 text-primary"></i> +967 1 234 567 | +967 712 345 678</li>
+                            <li class="mb-2"><i class="bi bi-envelope-open ms-2 text-primary"></i> sanaa@endocare-ye.com</li>
+                            <li><i class="bi bi-alarm ms-2 text-primary"></i> الأحد - الخميس (9:00 ص - 8:00 م)</li>
+                        </ul>
+                        <div class="d-flex gap-2">
+                            <a href="https://maps.google.com/?q=15.325997,44.205247" target="_blank" class="btn btn-primary btn-sm rounded-pill px-3 py-2">
+                                <i class="bi bi-google-play me-1"></i> فتح في خرائط جوجل
+                            </a>
+                            <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-2">
+                                <i class="bi bi-map-fill me-1"></i> عرض على الخريطة أدناه
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aden Branch Card -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="branch-card bg-white p-4 rounded-4 shadow-sm border border-light" id="branch-card-aden" onclick="switchBranchMap('aden')">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="branch-status-badge text-white bg-info ms-2">مستودع إقليمي</div>
+                            <h4 class="mb-0 text-dark font-cairo"><i class="bi bi-geo-alt-fill text-primary ms-1"></i> فرع عدن والمحافظات الجنوبية</h4>
+                        </div>
+                        <p class="text-secondary mb-3 small">مركز لوجستي متكامل ومجهز بنظام تبريد مستقل لخدمة المحافظات الجنوبية والشرقية.</p>
+                        <ul class="list-unstyled text-secondary small mb-4">
+                            <li class="mb-2"><i class="bi bi-map ms-2 text-primary"></i> مديرية المنصورة، شارع الستين، مجمع الفردوس الصحي</li>
+                            <li class="mb-2"><i class="bi bi-telephone-outbound ms-2 text-primary"></i> +967 2 345 678 | +967 712 345 679</li>
+                            <li class="mb-2"><i class="bi bi-envelope-open ms-2 text-primary"></i> aden@endocare-ye.com</li>
+                            <li><i class="bi bi-alarm ms-2 text-primary"></i> الأحد - الخميس (9:00 ص - 8:00 م)</li>
+                        </ul>
+                        <div class="d-flex gap-2">
+                            <a href="https://maps.google.com/?q=12.833333,45.033333" target="_blank" class="btn btn-primary btn-sm rounded-pill px-3 py-2">
+                                <i class="bi bi-google-play me-1"></i> فتح في خرائط جوجل
+                            </a>
+                            <button type="button" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-2">
+                                <i class="bi bi-map-fill me-1"></i> عرض على الخريطة أدناه
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Google Maps Container -->
+            <div class="row mt-5">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="map-wrapper rounded-4 overflow-hidden border shadow-sm position-relative">
+                        <!-- Sana'a Map Frame -->
+                        <iframe id="map-iframe-sanaa" class="w-100" style="height: 400px; border: 0;" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.056003290947!2d44.205247!3d15.325997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603db0eb4444445%3A0x1234567890abcdef!2sHadda%20St%2C%20Sana'a!5e0!3m2!1sen!2sye!4v1700000000000!5m2!1sen!2sye" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Aden Map Frame (hidden initially) -->
+                        <iframe id="map-iframe-aden" class="w-100 d-none" style="height: 400px; border: 0;" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30767.112002390947!2d45.033333!3d12.833333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603db0eb5555555%3A0xabcdef1234567890!2sAl%20Mansoura%2C%20Aden!5e0!3m2!1sen!2sye!4v1700000000001!5m2!1sen!2sye" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Interactive Branches Section End -->
+
+
+    <!-- Pharmacovigilance Modal Start -->
+    <div class="modal fade" id="pharmacovigilanceModal" tabindex="-1" aria-labelledby="pharmacovigilanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header bg-danger text-white rounded-top-4 py-3">
+                    <h5 class="modal-title font-cairo text-white" id="pharmacovigilanceModalLabel"><i class="bi bi-shield-exclamation me-2"></i> نموذج الإبلاغ عن الأعراض الجانبية (اليقظة الدوائية)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body p-4 text-start">
+                    <div class="alert alert-danger-light d-flex align-items-center gap-2 mb-4">
+                        <i class="bi bi-info-circle-fill text-danger fs-4 flex-shrink-0"></i>
+                        <div class="small text-secondary" style="line-height: 1.5;">
+                            <strong>تنبيه طبي هام:</strong> هذا النموذج ليس مخصصاً لطلب المشورة الطبية العاجلة أو الطوارئ. إذا كنت تواجه عرضاً جانبياً خطيراً يهدد الحياة، يرجى التوجه إلى أقرب مركز طوارئ أو مستشفى فوراً.
+                        </div>
+                    </div>
+                    
+                    <form action="#" method="POST" onsubmit="alert('تم تقديم التقرير الخاص بالأعراض الجانبية بنجاح إلى قسم اليقظة الدوائية بإندوكير. شكراً لمساهمتك في تعزيز السلامة الدوائية.'); bootstrap.Modal.getInstance(document.getElementById('pharmacovigilanceModal')).hide(); this.reset(); return false;">
+                        <div class="row g-3">
+                            <!-- Section 1: Patient Details -->
+                            <div class="col-12 border-bottom pb-2 mb-2">
+                                <h6 class="text-primary font-cairo mb-0"><i class="bi bi-person-bounding-box me-1"></i> معلومات المريض (سرية ومحمية)</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pv-patient-initials" class="form-label text-dark small fw-bold">الحروف الأولى من اسم المريض *</label>
+                                <input type="text" class="form-control rounded-3" id="pv-patient-initials" placeholder="مثال: أ. م. ع" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pv-patient-age" class="form-label text-dark small fw-bold">العمر أو فئة العمر *</label>
+                                <input type="text" class="form-control rounded-3" id="pv-patient-age" placeholder="مثال: 34 سنة أو رضيع" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pv-patient-gender" class="form-label text-dark small fw-bold">الجنس *</label>
+                                <select class="form-select rounded-3" id="pv-patient-gender" required>
+                                    <option value="" disabled selected>اختر الجنس</option>
+                                    <option value="male">ذكر</option>
+                                    <option value="female">أنثى</option>
+                                </select>
+                            </div>
+
+                            <!-- Section 2: Product & Batch Info -->
+                            <div class="col-12 border-bottom pb-2 mb-2 mt-4">
+                                <h6 class="text-primary font-cairo mb-0"><i class="bi bi-capsule me-1"></i> تفاصيل المنتج المشتبه به</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-product-name" class="form-label text-dark small fw-bold">اسم المنتج الدوائي أو الهرموني *</label>
+                                <input type="text" class="form-control rounded-3" id="pv-product-name" placeholder="مثال: هرمون النمو الغدة HGH" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-batch-number" class="form-label text-dark small fw-bold">رقم التشغيلة (Batch/Lot Number)</label>
+                                <input type="text" class="form-control rounded-3" id="pv-batch-number" placeholder="مثال: Batch B5412">
+                            </div>
+
+                            <!-- Section 3: Reaction Details -->
+                            <div class="col-12 border-bottom pb-2 mb-2 mt-4">
+                                <h6 class="text-primary font-cairo mb-0"><i class="bi bi-chat-left-text me-1"></i> وصف العرض الجانبي</h6>
+                            </div>
+                            <div class="col-12">
+                                <label for="pv-reaction-desc" class="form-label text-dark small fw-bold">تفاصيل وأعراض التفاعل الجانبي *</label>
+                                <textarea class="form-control rounded-3" id="pv-reaction-desc" rows="3" placeholder="يرجى كتابة جميع التفاصيل مثل: متى بدأ العرض، كيف تطور، وهل اختفى بعد إيقاف المنتج؟" required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-action-taken" class="form-label text-dark small fw-bold">الإجراء المتخذ بشأن المنتج *</label>
+                                <select class="form-select rounded-3" id="pv-action-taken" required>
+                                    <option value="" disabled selected>اختر الإجراء</option>
+                                    <option value="stopped">تم إيقاف استخدام المنتج بالكامل</option>
+                                    <option value="reduced">تم خفض الجرعة</option>
+                                    <option value="continued">استمر الاستخدام دون تعديل</option>
+                                    <option value="unknown">غير معروف</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-outcome" class="form-label text-dark small fw-bold">حالة المريض الحالية *</label>
+                                <select class="form-select rounded-3" id="pv-outcome" required>
+                                    <option value="" disabled selected>اختر الحالة</option>
+                                    <option value="recovered">تعافى تماماً</option>
+                                    <option value="recovering">في طور التعافي والتحسن</option>
+                                    <option value="no-change">لم يتغير الوضع بعد</option>
+                                    <option value="worse">تراجع الوضع الصحي</option>
+                                </select>
+                            </div>
+
+                            <!-- Section 4: Reporter Details -->
+                            <div class="col-12 border-bottom pb-2 mb-2 mt-4">
+                                <h6 class="text-primary font-cairo mb-0"><i class="bi bi-envelope-open me-1"></i> بيانات الشخص المبلّغ</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-reporter-name" class="form-label text-dark small fw-bold">اسم المبلّغ بالكامل *</label>
+                                <input type="text" class="form-control rounded-3" id="pv-reporter-name" placeholder="مثال: د. محمد علي أو المريض نفسه" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-reporter-type" class="form-label text-dark small fw-bold">صفة المبلّغ المهنية *</label>
+                                <select class="form-select rounded-3" id="pv-reporter-type" required>
+                                    <option value="" disabled selected>اختر الصفة</option>
+                                    <option value="doctor">طبيب معالج</option>
+                                    <option value="pharmacist">صيدلاني</option>
+                                    <option value="nurse">ممرض / ممرضة</option>
+                                    <option value="patient">المريض أو أحد أقاربه</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-reporter-phone" class="form-label text-dark small fw-bold">رقم الهاتف للتواصل والتحقق *</label>
+                                <input type="tel" class="form-control rounded-3" id="pv-reporter-phone" placeholder="+967 712 345 678" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pv-reporter-email" class="form-label text-dark small fw-bold">البريد الإلكتروني للتراسل</label>
+                                <input type="email" class="form-control rounded-3" id="pv-reporter-email" placeholder="name@domain.com">
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <div class="form-check d-flex align-items-start gap-2">
+                                    <input class="form-check-input flex-shrink-0" type="checkbox" id="pv-agreement" required style="width: 18px; height: 18px;">
+                                    <label class="form-check-label text-secondary small" for="pv-agreement" style="line-height: 1.5; cursor: pointer;">
+                                        أقر بموجب هذا بأنني أقدم هذه البيانات طوعاً لمساعدة قسم السلامة الدوائية في إندوكير على تقييم جودة وأمان المنتج، وأوافق على معالجة البيانات بما يتماشى مع لوائح الخصوصية الدوائية المعتمدة. *
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-end">
+                            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-danger rounded-pill px-4 text-white">إرسال التقرير الطبي</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pharmacovigilance Modal End -->
+
+
+    <!-- Medical Inquiry Modal Start -->
+    <div class="modal fade" id="medicalInquiryModal" tabindex="-1" aria-labelledby="medicalInquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header bg-info text-white rounded-top-4 py-3">
+                    <h5 class="modal-title font-cairo text-white" id="medicalInquiryModalLabel"><i class="bi bi-journal-medical me-2"></i> طلب معلومات طبية وعلمية</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body p-4 text-start">
+                    <p class="text-secondary small mb-4">هذا النموذج مخصص لموفري الرعاية الصحية والأطباء والصيادلة الذين يرغبون في الحصول على مستندات علمية، دراسات إكلينيكية، أو تفاصيل استخدام دقيقة للمستحضرات الحيوية والهرمونية المتوفرة لدينا.</p>
+                    
+                    <form action="#" method="POST" onsubmit="alert('تم تقديم طلب الاستفسار العلمي الطبي بنجاح. سيقوم القسم الطبي لدينا بمراجعة طلبك وإعداد المستندات المطلوبة وإرسالها إليك خلال 48 ساعة.'); bootstrap.Modal.getInstance(document.getElementById('medicalInquiryModal')).hide(); this.reset(); return false;">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="med-name" class="form-label text-dark small fw-bold">اسم الطبيب / الممارس الصحي *</label>
+                                <input type="text" class="form-control rounded-3" id="med-name" placeholder="مثال: د. صلاح عبد الله" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="med-specialty" class="form-label text-dark small fw-bold">التخصص الطبي *</label>
+                                <input type="text" class="form-control rounded-3" id="med-specialty" placeholder="مثال: غدد صماء وسكري" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="med-facility" class="form-label text-dark small fw-bold">المستشفى أو المركز الطبي *</label>
+                                <input type="text" class="form-control rounded-3" id="med-facility" placeholder="مثال: مستشفى جامعة العلوم" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="med-email" class="form-label text-dark small fw-bold">البريد الإلكتروني المهني *</label>
+                                <input type="email" class="form-control rounded-3" id="med-email" placeholder="name@domain.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="med-phone" class="form-label text-dark small fw-bold">رقم الهاتف للتواصل المباشر *</label>
+                                <input type="tel" class="form-control rounded-3" id="med-phone" placeholder="+967 712 345 678" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="med-product" class="form-label text-dark small fw-bold">المنتج محل البحث أو الاستفسار *</label>
+                                <input type="text" class="form-control rounded-3" id="med-product" placeholder="مثال: مستحضر الأنسولين أو هرمون FSH" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="pv-message" class="form-label text-dark small fw-bold">تفاصيل الاستفسار العلمي أو الوثائق المطلوبة *</label>
+                                <textarea class="form-control rounded-3" id="pv-message" rows="4" placeholder="اكتب الاستفسار الطبي بالتفصيل أو حدد نوع الدراسات والنشرات الإكلينيكية التي تود استلامها..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check d-flex align-items-start gap-2">
+                                    <input class="form-check-input flex-shrink-0" type="checkbox" id="med-agreement" required style="width: 18px; height: 18px;">
+                                    <label class="form-check-label text-secondary small" for="med-agreement" style="line-height: 1.5; cursor: pointer;">
+                                        أقر بصفتي ممارساً صحياً مرخصاً بطلب هذه المعلومات لأغراض المهنة الطبية ورعاية المرضى فقط. *
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-end">
+                            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-info rounded-pill px-4 text-white">إرسال الاستعلام الطبي</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Medical Inquiry Modal End -->
 
 
     <!-- Footer Start -->
@@ -230,39 +634,38 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-6 pe-lg-5">
                     <a href="index.html" class="navbar-brand">
-                        <img src="img/logo2.png" alt="EndoCare" style="height: 45px; border-radius: 6px;">
+                        <img src="img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
                     </a>
                     <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
-                    <p><i class="fa fa-map-marker-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>
-                    <p><i class="fa fa-phone-alt me-2"></i>+967 712 345 678</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@endocare-ye.com</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</p>
+                    <p><i class="bi bi-telephone me-2"></i>+967 712 345 678</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@endocare-ye.com</p>
                     <div class="d-flex mt-4">
-                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-telegram-plane"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <div class="row g-5">
                         <div class="col-sm-6">
-                            <h4 class="text-light mb-4">روابط سريعة</h4>
+                            <h5 class="text-light mb-3">روابط سريعة</h5>
                             <a class="btn btn-link" href="index.html">الرئيسية</a>
                             <a class="btn btn-link" href="about.html">من نحن</a>
-                            <a class="btn btn-link" href="service.html">المنتجات</a>
+                            <a class="btn btn-link" href="supply-request.html">طلب حصة توريدية</a>
                             <a class="btn btn-link" href="contact.html">اتصل بنا</a>
-                            <a class="btn btn-link" href="appoinment.html">طلب عرض سعر</a>
                         </div>
                         <div class="col-sm-6">
-                            <h4 class="text-light mb-4">روابط مهمة</h4>
+                            <h5 class="text-light mb-3">روابط مهمة</h5>
                             <a class="btn btn-link" href="team.html">فريق العمل</a>
                             <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
-                            <a class="btn btn-link" href="blog.html">المدونة</a>
+                            <a class="btn btn-link" href="blog.html">المركز المعرفي</a>
                             <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
                             <a class="btn btn-link" href="#">سياسة الخصوصية</a>
                         </div>
                         <div class="col-sm-12">
-                            <h4 class="text-light mb-4">النشرة البريدية</h4>
+                            <h5 class="text-light mb-3">النشرة البريدية</h5>
                             <div class="w-100">
                                 <div class="input-group">
                                     <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="بريدك الإلكتروني"><button class="btn btn-primary px-4">اشتراك</button>
@@ -280,14 +683,17 @@
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark text-white-50 py-4">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; <a href="#">EndoCare Yemen</a>. جميع الحقوق محفوظة.</p>
+                    <p class="mb-0">تطوير / <a href="#" class="text-white">سمارت ون للحلول البرمجية &copy; 2026</a></p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** The author's attribution link below must remain intact on your website. ***/-->
-                    <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
-                    <p class="mb-0">تصميم <a href="https://htmlcodex.com">HTML Codex</a></p>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="tel:+967712345678" title="اتصال"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="https://wa.me/967712345678" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="mailto:info@smartone.com" title="البريد الإلكتروني"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="#" title="الموقع الإلكتروني"><i class="bi bi-globe"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

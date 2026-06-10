@@ -1,0 +1,449 @@
+/******************************************************
+ * EndoCare Service Page - Product Table, Hormone Grid
+ * منقول من style.css - المرحلة 2
+ ******************************************************/
+
+/* --- Product Table --- */
+.product-catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.product-count {
+    font-size: 14px;
+    color: var(--bs-gray);
+    font-weight: 500;
+}
+.product-table-wrapper {
+    background: var(--bs-white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid var(--color-teal-50);
+    overflow-x: auto;
+}
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.product-table thead {
+    background: var(--gradient-light);
+}
+.product-table th {
+    padding: 14px 16px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--bs-primary);
+    border-bottom: 2px solid var(--color-teal-100);
+	border-top: 3px solid var(--color-teal-200);
+    white-space: nowrap;
+}
+.product-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-teal-50);
+    vertical-align: middle;
+}
+.product-table tbody tr {
+    transition: background .2s;
+}
+.product-table tbody tr:hover {
+    background: var(--color-teal-50);
+}
+.product-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.product-cell-name {
+    min-width: 160px;
+}
+.product-name {
+    display: block;
+    font-weight: 600;
+    color: var(--bs-dark);
+    font-size: 14px;
+}
+.product-name-en {
+    display: block;
+    font-size: 11px;
+    direction: ltr;
+    text-align: right;
+}
+
+.product-cell-cas code {
+    font-size: 12px;
+    background: var(--color-teal-50);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--bs-primary);
+    direction: ltr;
+    display: inline-block;
+}
+
+.product-cell-badges {
+    min-width: 100px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.product-cell-origin {
+    font-size: 13px;
+    color: var(--bs-dark);
+    white-space: nowrap;
+}
+
+.product-cell-actions {
+    display: flex;
+    gap: 4px;
+    flex-wrap: nowrap;
+}
+.product-action-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px !important;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .product-catalog-header {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+    
+    .product-count {
+        font-size: 11px;
+    }
+
+    .product-table th {
+        padding: 10px 8px;
+        font-size: 10px;
+    }
+
+    .product-table td {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .product-cell-name {
+        min-width: 118px;
+    }
+
+    .product-name {
+        font-size: 11px;
+    }
+
+    .product-name-en {
+        font-size: 9px;
+    }
+
+    .product-cell-cas code {
+        font-size: 9px;
+        padding: 0px 2px;
+    }
+
+    .product-cell-badges {
+         
+        gap: 1px;
+    }
+
+    .product-cell-origin {
+        font-size: 10px;
+    }
+
+    
+    .product-cell-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        width: max-content;
+    }
+ 
+
+    .product-action-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+        border-radius: 4px !important;
+    }
+}
+
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 48px 16px;
+    color: var(--bs-gray);
+}
+.no-results i {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+    color: var(--color-teal-200);
+}
+.no-results h5 {
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+}
+
+/* --- Hormone Therapeutic Categories Grid --- */
+.hormone-categories-section {
+    margin-top: 48px;
+}
+.hormone-categories-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hormone-categories-subtitle {
+    font-size: 14px;
+    color: var(--bs-gray);
+    margin-bottom: 24px;
+}
+.hormone-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+@media (max-width: 991.98px) {
+    .hormone-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 575.98px) {
+    .hormone-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: increase hormone section sizes by 2px */
+@media (min-width: 992px) {
+    .hormone-categories-title {
+        font-size: 24px;
+    }
+    .hormone-categories-subtitle {
+        font-size: 16px;
+    }
+    .hormone-class-title {
+        font-size: 18px;
+    }
+    .hormone-class-title-en {
+        font-size: 13px;
+    }
+    .hormone-class-desc {
+        font-size: 15px;
+    }
+    .hormone-class-count,
+    .hormone-class-coa {
+        font-size: 14px;
+    }
+    .hormone-class-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+    }
+    .hormone-class-products small {
+        font-size: 13px;
+    }
+    .hormone-whatsapp-btn {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+
+.hormone-class-card {
+    background: var(--bs-white);
+    padding: 28px 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border: 1px solid var(--color-teal-50);
+	 border-top: 5px solid var(--color-teal-100);
+    transition: transform .3s, box-shadow .3s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.hormone-class-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.hormone-class-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+.hormone-class-body {
+    flex: 1;
+}
+.hormone-class-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: var(--bs-dark);
+}
+.hormone-class-title-en {
+    font-size: 13px;
+    color: var(--bs-gray);
+    display: block;
+    margin-bottom: 8px;
+    direction: ltr;
+    text-align: right;
+}
+.hormone-class-desc {
+    font-size: 16px;
+    color: var(--bs-dark);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+.hormone-class-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+.hormone-class-count,
+.hormone-class-coa {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bs-gray);
+    display: inline-flex;
+    align-items: center;
+}
+.hormone-class-count i,
+.hormone-class-coa i {
+    font-size: 13px;
+	color:var(--color-green-300);
+}
+.hormone-class-products small {
+    font-size: 12px;
+    line-height: 1.4;
+    display: block;
+	margin-bottom:5px;
+}
+.hormone-whatsapp-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 100%;
+    transition: opacity .2s;
+	gap:8px;
+	color:var(--color-green-300);
+	border: 1px solid var(--color-green-300);
+	margin-top:20px;
+}
+.hormone-whatsapp-btn:hover {
+    background: var(--bs-success);
+	color: #fff;
+	border-color:var(--bs-success);
+}
+
+@media (max-width: 480px) {
+	.hormone-grid {
+     
+    gap: 10px;
+}
+.hormone-class-card {
+    padding: 22px 18px ;
+}
+
+.hormone-class-icon {
+    font-size: 24px;
+	 width: 48px;
+    height: 48px;
+}
+
+.hormone-class-title {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.hormone-class-title-en {
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.hormone-class-desc {
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.hormone-class-meta {
+    margin-bottom: 5px;
+	gap:10px;
+}
+
+.hormone-class-count,
+.hormone-class-coa {
+    font-size: 11px;
+}
+
+.hormone-class-count i,
+.hormone-class-coa i {
+    font-size: 10px;
+}
+
+.hormone-class-products small {
+    font-size: 10px;
+    margin-bottom: 3px;
+}
+
+.hormone-whatsapp-btn {
+    font-size: 11px;
+    padding: 5px 9px;
+    margin-top: 17px;
+}
+
+}
+
+ 
+
+
+.service-whatsapp-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 100%;
+    transition: opacity .2s;
+	gap:8px;
+	color:var(--color-green-300);
+	background:  #fff;
+	border: 1px solid var(--color-green-300);
+	margin-top:20px;
+}
+.service-whatsapp-btn:hover {
+    
+ color:var(--color-green-300);
+	border-color: #fff;
+}
+
+@media (max-width: 480px) {
+.service-whatsapp-btn  {
+    font-size: 11px;
+    padding: 5px 9px;
+    margin-top: 17px;
+}
+
+}

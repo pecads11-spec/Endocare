@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Services Stylesheet -->
+    <link href="css/services.css" rel="stylesheet">
 </head>
 
 <body>
@@ -105,7 +107,7 @@
                                 <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
                                 <a href="appoinment.html" class="dropdown-item"><i class="bi bi-file-earmark-text me-2"></i>طلب عرض سعر</a>
                                 <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
-                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المدونة</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المركز المعرفي</a>
                                 <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
                             </div>
                         </div>
@@ -124,13 +126,13 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5 mt-4">
-            <h1 class="display-2 text-white mb-3 animated slideInDown">فريق العمل</h1>
+            <h1 class="display-2 text-white mb-3 animated slideInDown">المنتجات والخدمات</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                    <li class="breadcrumb-item" aria-current="page">فريق العمل</li>
+                    <li class="breadcrumb-item" aria-current="page">المنتجات والخدمات</li>
                 </ol>
             </nav>
         </div>
@@ -138,89 +140,205 @@
     <!-- Page Header End -->
 
     
-    <!-- Team Start -->
-    <div class="container-fluid container-team py-5">
-        <div class="container pb-5">
-            <div class="row g-5 align-items-center mb-5">
-                <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                    <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+    <!-- Service Start -->
+    <div class="container-fluid container-service py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <h1 class="display-6 mb-3">كتالوج المواد الفعالة</h1>
+                <p class="mb-4">تصفح كافة الهرمونات والفيتامينات الخام المتوفرة. ابحث بالاسم العلمي أو CAS Number، وصنف حسب الفئة العلاجية والشهادات المعتمدة.</p>
+            </div>
+
+            <!-- === SEARCH + TABS: ROW === -->
+            <div class="d-flex align-items-center gap-3 flex-wrap search-tabs-row wow fadeInUp" data-wow-delay="0.1s">
+                <div class="search-wrapper flex-grow-1 mb-0" style="min-width: 200px;">
+                    <div class="search-input-group">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="ابحث بالاسم العلمي، CAS Number، أو اسم المنتج..." autocomplete="off">
+                        <button type="button" id="clearSearch" class="search-clear-btn d-none" aria-label="مسح البحث">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    <div id="searchResults" class="search-suggestions d-none"></div>
                 </div>
-                <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-3">د. خالد العنسي</h1>
-                    <p class="mb-1">الرئيس التنفيذي</p>
-                    <p class="mb-5">إندوكير، صنعاء - اليمن</p>
-                    <h3 class="mb-3">السيرة الذاتية</h3>
-                    <p class="mb-4">دكتور صيدلة بخبرة تزيد عن 15 عاماً في مجال التوريد الدوائي وإدارة سلاسل الإمداد الطبية. شغل سابقاً منصب مدير المشتريات الدوائية في هيئة مستشفيات الثورة بصنعاء.</p>
-                    <p class="mb-4">حاصل على شهادة الماجستير في إدارة الأعمال الصحية من جامعة القاهرة، وعضو في نقابة الصيادلة اليمنية. يؤمن بأهمية توطين صناعة الدواء في اليمن.</p>
-                    <div class="d-flex">
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
+                <div class="catalog-tabs mb-0 flex-shrink-0">
+                    <button type="button" class="catalog-tab-btn active" data-tab="all">الكل</button>
+                    <button type="button" class="catalog-tab-btn" data-tab="vitamins"><i class="bi bi-droplet me-1"></i>فيتامينات</button>
+                    <button type="button" class="catalog-tab-btn" data-tab="hormones"><i class="bi bi-heart-pulse me-1"></i>هرمونات</button>
+                </div>
+            </div>
+
+            <!-- === ACTIVE FILTERS BAR === -->
+            <div id="activeFilters" class="active-filters-bar wow fadeInUp" data-wow-delay="0.2s"></div>
+
+            <!-- === CATALOG LAYOUT: SIDEBAR + TABLE === -->
+            <div class="row g-4">
+                <!-- Filter Sidebar -->
+                <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div id="filterSidebar" class="filter-sidebar"></div>
+                </div>
+
+                <!-- Product Table -->
+                <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-catalog-header">
+                        <span id="productCount" class="product-count">-- منتج</span>
+                    </div>
+                    <div class="product-table-wrapper">
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th>المنتج</th>
+                                    <th>CAS Number</th>
+                                    <th>الامتثال</th>
+                                    <th>المنشأ</th>
+                                    <th>الإجراء</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody"></tbody>
+                        </table>
+                        <div id="noResults" class="no-results d-none">
+                            <i class="bi bi-search"></i>
+                            <h5>لا توجد نتائج مطابقة</h5>
+                            <p>حاول تعديل معايير البحث أو إزالة بعض الفلاتر</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- === HORMONE THERAPEUTIC CATEGORIES GRID === -->
+            <div class="hormone-categories-section wow fadeInUp" data-wow-delay="0.1s">
+                <div class="text-center mx-auto" style="max-width: 600px;">
+                    <h2 class="hormone-categories-title justify-content-center">
+                        <i class="bi bi-grid-3x3-gap text-primary"></i>
+                        عائلة الهرمونات المتخصصة
+                    </h2>
+                    <p class="hormone-categories-subtitle">تصنيف دقيق حسب الفئة العلاجية الطبية (Therapeutic Class) لتلبية احتياجات الأطباء والمستشفيات</p>
+                </div>
+                <div id="hormoneGrid" class="hormone-grid"></div>
+            </div>
+
+            <!-- === ADDITIONAL SERVICES === -->
+            <div class="mt-5 pt-4">
+                <div class="row g-5">
+                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="mb-4">خدمات إضافية</h3>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-box-seam text-green"></i>
+                            </div>
+                            <h5 class="mb-3">تخصيص الحزم</h5>
+                            <p class="mb-4 flex-grow-1">تجميع حزم خاصة بناءً على وصفة طبية معتمدة حسب احتياج كل عميل.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D8%AE%D8%B5%D9%8A%D8%B5%20%D8%A7%D9%84%D8%AD%D8%B2%D9%85%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>طلب الخدمة</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-thermometer-snow text-green"></i>
+                            </div>
+                            <h5 class="mb-3">التوصيل بدرجة حرارة محكومة</h5>
+                            <p class="mb-4 flex-grow-1">نقل مبرّد (+2 إلى +8) لجميع الهرمونات الحساسة للحرارة مع مراقبة لحظية.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%AA%D9%88%D8%B5%D9%8A%D9%84%20%D8%A8%D8%AF%D8%B1%D8%AC%D8%A9%20%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AD%D9%83%D9%88%D9%85%D8%A9%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>طلب الخدمة</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-headset text-green"></i>
+                            </div>
+                            <h5 class="mb-3">الاستشارة الصيدلانية</h5>
+                            <p class="mb-4 flex-grow-1">فريق صيادلة متخصص للإجابة عن أسئلتكم حول التداخلات الدوائية والجرعات.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%D9%84%D8%A7%D9%86%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>طلب الخدمة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+	
+	
+	 <!-- Team Start -->
+    <div class="container-fluid container-team py-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 mb-3 text-primary">أبرز منتجاتنا</h1>
+                <p class="mb-5">نوفر لكم باقة مختارة من أفضل المكملات الغذائية والفيتامينات العالمية الأكثر طلباً وموثوقية.</p>
+            </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="img/Centrum.png" alt="Centrum (سنتروم)">
+                            </a>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">أ. ماجد الحسني</h5>
-                            <span>مدير سلسلة التوريد</span>
+                            <h5 class="mb-1">Centrum (سنتروم)</h5>
+                            <span>العلامة الأكثر شهرة لدعم المناعة والطاقة اليومية.</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="img/Solgar-Skin.png" alt="Solgar Skin, Nails & Hair">
+                            </a>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">ص. رنا النهمي</h5>
-                            <span>مديرة ضمان الجودة</span>
+                            <h5 class="mb-1">Solgar Skin, Nails & Hair</h5>
+                            <span>تركيبة مشهورة جداً لدعم الجمال والصحة العامة.</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="img/NOW-Foods-Ashwagandha.png" alt="NOW Foods Ashwagandha">
+                            </a>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">د. ياسر القباطي</h5>
-                            <span>مستشار طبي أول</span>
+                            <h5 class="mb-1">NOW Foods Ashwagandha</h5>
+                            <span>عشبة الأشواغاندا لتنظيم هرمون الكورتيزول ودعم التستوستيرون.</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-5.jpg" alt="">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="img/Evlution-Nutrition-EVOTEST.png" alt="Evlution Nutrition EVOTEST">
+                            </a>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-square btn-light mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="عرض التفاصيل"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="طلب عرض سعر"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="استفسار سريع"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">م. علي الحداء</h5>
-                            <span>مدير الشؤون التجارية</span>
+                            <h5 class="mb-1">Evlution Nutrition EVOTEST</h5>
+                            <span>محفز طبيعي لهرمون التستوستيرون للرياضيين.</span>
                         </div>
                     </div>
                 </div>
@@ -263,7 +381,7 @@
                             <h5 class="text-light mb-3">روابط مهمة</h5>
                             <a class="btn btn-link" href="team.html">فريق العمل</a>
                             <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
-                            <a class="btn btn-link" href="blog.html">المدونة</a>
+                            <a class="btn btn-link" href="blog.html">المركز المعرفي</a>
                             <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
                             <a class="btn btn-link" href="#">سياسة الخصوصية</a>
                         </div>
@@ -372,6 +490,8 @@
     <!-- Endocare AI Chatbot End -->
 
 
+ 
+ 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -382,8 +502,10 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Chatbot Javascript -->
-    <script src="js/chatbot.js"></script>
+    <!-- Service Catalog Javascript -->
+    <script src="js/service.js"></script>
+	    <script src="js/chatbot.js"></script>
+
 </body>
 
 </html>

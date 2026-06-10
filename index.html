@@ -93,21 +93,36 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link active"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
                         <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
+						 <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>المنتجات</a>
+						  <a href="quality.html" class="nav-item nav-link"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
                             <div class="dropdown-menu bg-light m-0">
-                                <a href="team.html" class="dropdown-item"><i class="bi bi-people me-2"></i>فريق العمل</a>
-                                <a href="quality.html" class="dropdown-item"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
-                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المدونة</a>
+                               
+                              
+								 <a href="supply-request.html" class="dropdown-item"><i class="bi bi-file-earmark-medical me-2"></i>طلب حصة توريدية</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>المركز المعرفي</a>
                                 <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
+
+                        <!-- Mobile bottom bar: search + language -->
+                        <div class="d-lg-none mobile-nav-bar">
+                            <div class="mobile-search-wrap">
+                                <input type="text" class="mobile-search-input" placeholder="بحث...">
+                                <i class="bi bi-search mobile-search-icon"></i>
+                            </div>
+                            <a href="#" class="mobile-lang-btn" title="English">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
                         <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
                         <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
                         <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href="#" title="English"><i class="bi bi-globe"></i></a>
                     </div>
                 </div>
             </nav>
@@ -118,24 +133,59 @@
 
     <!-- Hero Start -->
     <div class="container-fluid hero-header px-0 mb-5">
-        <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-1.jpg');">
-            <video class="hero-video" autoplay muted loop playsinline poster="img/carousel-1.jpg">
-                <source src="img/hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <span class="hero-tagline animated slideInDown">Vital Ingredients for Better Lives</span>
-                        <h1 class="hero-title animated slideInDown mt-3">شريكك الاستراتيجي في توريد<br>المواد الفعالة والهرمونات الطبية</h1>
-                        <p class="hero-desc animated slideInDown">نحوّل سلاسل التوريد الدوائية إلى ميزة تنافسية للمستشفيات والصيدليات والمصنّعين في جميع محافظات اليمن</p>
-                        <div class="d-flex justify-content-center gap-3 flex-wrap animated slideInUp">
-                            <a href="#portfolio" class="btn btn-primary hero-cta">محفظة الجزيئات</a>
-                            <a href="contact.html" class="btn btn-outline-light hero-cta-outline">تواصل مع فريق التوريد</a>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-1.jpg');">
+                        <video class="hero-video" autoplay muted loop playsinline poster="img/carousel-1.jpg">
+                            <source src="img/hero-bg.mp4" type="video/mp4">
+                        </video>
+                        <div class="hero-overlay"></div>
+                        <div class="container position-relative">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <span class="hero-tagline animated slideInDown">Vital Ingredients for Better Lives</span>
+                                    <h1 class="hero-title animated slideInDown mt-3">شريكك الاستراتيجي في توريد<br>المواد الفعالة والهرمونات الطبية</h1>
+                                    <p class="hero-desc animated slideInDown">نحوّل سلاسل التوريد الدوائية إلى ميزة تنافسية للمستشفيات والصيدليات والمصنّعين في جميع محافظات اليمن</p>
+                                    <div class="d-flex justify-content-center gap-3 flex-wrap animated slideInUp">
+                                        <a href="#portfolio" class="btn btn-primary hero-cta">محفظة الجزيئات</a>
+                                        <a href="contact.html" class="btn btn-outline-light hero-cta-outline">تواصل مع فريق التوريد</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="hero-slide d-flex align-items-center" style="background-image: url('img/carousel-2.jpg');">
+                        <div class="hero-overlay"></div>
+                        <div class="container position-relative">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <span class="hero-tagline animated slideInDown">Quality & Compliance</span>
+                                    <h1 class="hero-title animated slideInDown mt-3">معايير جودة عالمية<br>واعتمادات دولية موثوقة</h1>
+                                    <p class="hero-desc animated slideInDown">نلتزم بتطبيق ممارسات التوزيع الجيد (GDP) ومعايير ISO في جميع مراحل النقل والتخزين لضمان سلامة الأدوية</p>
+                                    <div class="d-flex justify-content-center gap-3 flex-wrap animated slideInUp">
+                                        <a href="quality.html" class="btn btn-primary hero-cta">سياسة الجودة</a>
+                                        <a href="supply-request.html" class="btn btn-outline-light hero-cta-outline">اطلب توريد الآن</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width: 5%; z-index: 5;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 3rem; height: 3rem;"></span>
+                <span class="visually-hidden">السابق</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="width: 5%; z-index: 5;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 3rem; height: 3rem;"></span>
+                <span class="visually-hidden">التالي</span>
+            </button>
         </div>
     </div>
     <!-- Hero End -->
@@ -158,8 +208,8 @@
                             <i class="bi bi-capsule-pill service-icon"></i>
                         </div>
                         <div class="d-flex align-items-baseline justify-content-center mb-2">
-                            <h1 class="display-4 text-primary mb-0 fw-bold">400</h1>
-                            <span class="fs-5 text-muted me-1">+</span>
+                            <h1 class="display-4   mb-0 fw-bold">400</h1>
+                            <span class="fs-5   me-1">+</span>
                         </div>
                         <h5 class="mb-2">مادة فعالة</h5>
                         <p class="mb-0 small">فيتامينات، هرمونات، مكملات، ومواد خام معتمدة بمصادر موثقة</p>
@@ -171,8 +221,8 @@
                             <i class="bi bi-building service-icon"></i>
                         </div>
                         <div class="d-flex align-items-baseline justify-content-center mb-2">
-                            <h1 class="display-4 text-primary mb-0 fw-bold">12</h1>
-                            <span class="fs-5 text-muted me-1">+</span>
+                            <h1 class="display-4   mb-0 fw-bold">12</h1>
+                            <span class="fs-5   me-1">+</span>
                         </div>
                         <h5 class="mb-2">شريك تصنيع عالمي</h5>
                         <p class="mb-0 small">مصنّعون معتمدون بخبرات تمتد لعقود في الأسواق الأوروبية والآسيوية</p>
@@ -184,8 +234,8 @@
                             <i class="bi bi bi-building-check service-icon"></i>
                         </div>
                         <div class="d-flex align-items-baseline justify-content-center mb-2">
-                            <h1 class="display-4 text-primary mb-0 fw-bold">22</h1>
-                            <span class="fs-5 text-muted me-1">محافظة</span>
+                            <h1 class="display-4   mb-0 fw-bold">22</h1>
+                            <span class="fs-5   me-1">محافظة</span>
                         </div>
                         <h5 class="mb-2">تغطية وطنية</h5>
                         <p class="mb-0 small">شبكة توزيع ولوجستيا مبرّدة تغطي جميع محافظات الجمهورية اليمنية</p>
@@ -197,8 +247,8 @@
                             <i class="bi bi-file-earmark-pdf service-icon"></i>
                         </div>
                         <div class="d-flex align-items-baseline justify-content-center mb-2">
-                            <h1 class="display-4 text-primary mb-0 fw-bold">100</h1>
-                            <span class="fs-5 text-muted me-1">%</span>
+                            <h1 class="display-4   mb-0 fw-bold">100</h1>
+                            <span class="fs-5   me-1">%</span>
                         </div>
                         <h5 class="mb-2">توثيق لكل شحنة</h5>
                         <p class="mb-0 small">شهادات تحليل CoA ومستندات المنشأ وسجل الحرارة مرفقة مع كل طلبية</p>
@@ -420,11 +470,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="contact.html" class="btn btn-outline-primary px-5 py-3 partners-btn">اطلب قائمة الشركاء المعتمدين</a>
-            </div>
+            </div>                      
         </div>
     </div>
     <!-- Strategic Partners End -->
@@ -536,6 +582,37 @@
 
 
 
+    <!-- Supply Request Widget Start -->
+    <div class="container-fluid py-5 bg-light wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="supply-widget-card p-4 p-md-5 rounded-4 shadow-sm border-0 position-relative overflow-hidden" style="background: var(--gradient-primary); color: #fff;">
+                        <div class="position-absolute" style="top: -30px; left: -30px; font-size: 180px; opacity: 0.08; pointer-events: none;">
+                            <i class="bi bi-file-earmark-medical"></i>
+                        </div>
+                        <div class="row align-items-center position-relative" style="z-index: 2;">
+                            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0 text-white">
+                                <span class="badge bg-white text-primary px-3 py-2 rounded-pill mb-3 fw-bold shadow-sm" style="font-size: 13px;">تسهيلات التوريد للمنشآت الصحية</span>
+                                <h2 class="display-7 fw-bold text-white mb-3 font-cairo" style="font-size: 1.85rem;">طلب حصة توريدية ذكي</h2>
+                                <p class="mb-0 text-white-50 lh-base" style="font-size: 15px; max-width: 700px;">
+                                    يمكنك الآن جدولة وإرسال متطلبات منشأتك الصحية من الفيتامينات أو الهرمونات الطبية عبر نظامنا اللوجستي الذكي. نضمن التوريد الآمن والمبرد وفق معايير الجودة العالمية (GDP) مع سرعة في التنفيذ وإرسال عروض الأسعار.
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-end">
+                                <a href="supply-request.html" class="btn btn-light text-primary px-4 py-2 rounded-pill fw-bold font-cairo shadow-sm border-0" style="transition: all 0.3s ease; font-size: 15px;">
+                                    تقديم طلب توريد جديد <i class="bi bi-arrow-left ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Supply Request Widget End -->
+
+
     <!-- Quick Inquiry Start -->
     <div class="container-fluid py-5">
         <div class="container">
@@ -618,14 +695,14 @@
                             <h5 class="text-light mb-3">روابط سريعة</h5>
                             <a class="btn btn-link" href="index.html">الرئيسية</a>
                             <a class="btn btn-link" href="about.html">من نحن</a>
-                            <a class="btn btn-link" href="product.html">المنتجات</a>
+                            <a class="btn btn-link" href="supply-request.html">طلب حصة توريدية</a>
                             <a class="btn btn-link" href="contact.html">اتصل بنا</a>
                         </div>
                         <div class="col-sm-6">
                             <h5 class="text-light mb-3">روابط مهمة</h5>
                             <a class="btn btn-link" href="team.html">فريق العمل</a>
                             <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
-                            <a class="btn btn-link" href="blog.html">المدونة</a>
+                            <a class="btn btn-link" href="blog.html">المركز المعرفي</a>
                             <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
                             <a class="btn btn-link" href="#">سياسة الخصوصية</a>
                         </div>

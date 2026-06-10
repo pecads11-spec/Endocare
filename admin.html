@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <title>لوحة التحكم - EndoCare اليمن</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ============================================ -->
+    <!-- LOGIN OVERLAY -->
+    <!-- ============================================ -->
+    <div class="admin-login-overlay" id="adminLogin">
+        <div class="admin-login-box">
+            <div class="login-logo">
+                <img src="img/logo.png" alt="EndoCare">
+            </div>
+            <h3 class="login-title">لوحة التحكم</h3>
+            <p class="login-sub">أدخل بيانات الدخول لإدارة الموقع</p>
+            <form onsubmit="event.preventDefault(); document.getElementById('adminLogin').style.display='none'; document.getElementById('adminWrapper').style.display='flex';">
+                <div class="admin-form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" class="form-control" placeholder="admin@endocare-ye.com" value="admin@endocare-ye.com">
+                </div>
+                <div class="admin-form-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" class="form-control" placeholder="••••••••" value="123456">
+                </div>
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+                <p class="text-center mt-3" style="font-size: 12px; color: var(--bs-gray);">للاختبار: اضغط دخول</p>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- ADMIN WRAPPER -->
+    <!-- ============================================ -->
+    <div class="admin-wrapper" id="adminWrapper" style="display: none;">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-header">
+                <img src="img/logo3.png" alt="EndoCare" onerror="this.src='img/logo3.png'; this.onerror=null;">
+                <h6>إندوكير | لوحة التحكم</h6>
+            </div>
+
+            <div class="nav-label">الرئيسية</div>
+            <a class="nav-item active" data-section="dashboard" onclick="switchSection('dashboard')">
+                <i class="bi bi-speedometer2"></i> لوحة الإحصائيات
+            </a>
+
+            <div class="nav-label">إدارة المحتوى</div>
+            <a class="nav-item" data-section="articles" onclick="switchSection('articles')">
+                <i class="bi bi-journal-text"></i> المقالات
+            </a>
+            <a class="nav-item" data-section="products" onclick="switchSection('products')">
+                <i class="bi bi-capsule"></i> المنتجات
+            </a>
+            <a class="nav-item" data-section="faq" onclick="switchSection('faq')">
+                <i class="bi bi-question-circle"></i> الأسئلة الشائعة
+            </a>
+            <a class="nav-item" data-section="team" onclick="switchSection('team')">
+                <i class="bi bi-people"></i> فريق العمل
+            </a>
+
+            <div class="nav-label">الطلبات والاستفسارات</div>
+            <a class="nav-item" data-section="orders" onclick="switchSection('orders')">
+                <i class="bi bi-truck"></i> طلبات التوريد
+                <span class="status-badge urgent" style="margin-right: auto;">3</span>
+            </a>
+            <a class="nav-item" data-section="inquiries" onclick="switchSection('inquiries')">
+                <i class="bi bi-envelope"></i> الاستفسارات
+                <span class="status-badge pending" style="margin-right: auto;">7</span>
+            </a>
+            <a class="nav-item" data-section="pv" onclick="switchSection('pv')">
+                <i class="bi bi-shield-exclamation"></i> التيقظ الدوائي
+                <span class="status-badge urgent" style="margin-right: auto;">1</span>
+            </a>
+            <a class="nav-item" data-section="subscribers" onclick="switchSection('subscribers')">
+                <i class="bi bi-person-check"></i> المشتركين
+            </a>
+
+            <div class="nav-label">الإعدادات</div>
+            <a class="nav-item" data-section="settings" onclick="switchSection('settings')">
+                <i class="bi bi-gear"></i> إعدادات الموقع
+            </a>
+            <a class="nav-item" data-section="users" onclick="switchSection('users')">
+                <i class="bi bi-shield-lock"></i> المستخدمين
+            </a>
+
+            <div class="nav-item admin-logout-btn" onclick="logout()">
+                <i class="bi bi-box-arrow-right"></i> تسجيل خروج
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+
+            <!-- Topbar -->
+            <div class="admin-topbar">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <button class="admin-mobile-toggle" onclick="toggleSidebar()">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h4 id="pageTitle">لوحة الإحصائيات</h4>
+                </div>
+                <div class="admin-topbar-left">
+                    <div class="admin-notif">
+                        <i class="bi bi-bell"></i>
+                        <span class="admin-notif-dot"></span>
+                    </div>
+                    <div class="admin-user">
+                        <div class="admin-user-avatar"><i class="bi bi-person-fill"></i></div>
+                        <span class="admin-user-name">مشرف الموقع</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- SECTION: DASHBOARD -->
+            <!-- ============================================ -->
+            <section class="admin-section active" id="sec-dashboard">
+
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-icon" style="background:#e8f5e9;color:#168a68;"><i class="bi bi-truck"></i></div>
+                        <div class="admin-stat-info">
+                            <h3>12</h3>
+                            <span>طلبات توريد جديدة</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-icon" style="background:#e3f2fd;color:#105978;"><i class="bi bi-journal-text"></i></div>
+                        <div class="admin-stat-info">
+                            <h3>24</h3>
+                            <span>مقالات منشورة</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-icon" style="background:#fff8e1;color:#f39c12;"><i class="bi bi-envelope"></i></div>
+                        <div class="admin-stat-info">
+                            <h3>7</h3>
+                            <span>استفسارات غير مقروءة</span>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-icon" style="background:#f3e5f5;color:#7b1fa2;"><i class="bi bi-shield-exclamation"></i></div>
+                        <div class="admin-stat-info">
+                            <h3>1</h3>
+                            <span>بلاغ التيقظ الدوائي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <h5>نشاط الطلبات آخر 7 أيام</h5>
+                            </div>
+                            <div class="admin-card-body">
+                                <div class="admin-chart-placeholder">
+                                    <i class="bi bi-bar-chart-fill ms-2" style="font-size: 20px;"></i> رسم بياني سيتم ربطه لاحقاً
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <h5>آخر النشاطات</h5>
+                            </div>
+                            <div class="admin-card-body">
+                                <ul class="admin-activity-list">
+                                    <li class="admin-activity-item">
+                                        <span class="admin-activity-dot" style="background:#168a68;"></span>
+                                        ورد طلب توريد جديد من مستشفى الأمل
+                                        <span class="admin-activity-time">منذ 10 د</span>
+                                    </li>
+                                    <li class="admin-activity-item">
+                                        <span class="admin-activity-dot" style="background:#105978;"></span>
+                                        تم نشر مقال "تحليل سوق الفيتامينات"
+                                        <span class="admin-activity-time">منذ 1 س</span>
+                                    </li>
+                                    <li class="admin-activity-item">
+                                        <span class="admin-activity-dot" style="background:#f39c12;"></span>
+                                        استفسار جديد من د. محمد الحزمي
+                                        <span class="admin-activity-time">منذ 3 س</span>
+                                    </li>
+                                    <li class="admin-activity-item">
+                                        <span class="admin-activity-dot" style="background:#dc3545;"></span>
+                                        بلاغ التيقظ الدوائي - أولوية عالية
+                                        <span class="admin-activity-time">منذ 5 س</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: ARTICLES -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-articles">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إدارة المقالات</h5>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                            <input type="text" class="admin-search-input" placeholder="بحث عن مقال...">
+                            <button class="admin-btn admin-btn-primary" onclick="openModal('articleModal')">
+                                <i class="bi bi-plus-lg"></i> مقال جديد
+                            </button>
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>العنوان</th>
+                                    <th>التصنيف</th>
+                                    <th>المحرر</th>
+                                    <th>التاريخ</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>تحليل سوق الفيتامينات والهرمونات في اليمن 2026</td>
+                                    <td><span class="kc-card-category kc-cat-market" style="position:static;display:inline-block;box-shadow:none;font-size:11px;padding:3px 10px;">تقارير سوقية</span></td>
+                                    <td>د. أمل الصبري</td>
+                                    <td>2026-06-05</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn" href="#" title="معاينة"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>معدلات استهلاك المكملات الغذائية في المنطقة العربية 2025</td>
+                                    <td><span class="kc-card-category kc-cat-market" style="position:static;display:inline-block;box-shadow:none;font-size:11px;padding:3px 10px;">تقارير سوقية</span></td>
+                                    <td>د. محمد الحزمي</td>
+                                    <td>2026-05-20</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn" href="#" title="معاينة"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>إدارة سلسلة التبريد الدوائية في المناخات الحارة</td>
+                                    <td><span class="kc-card-category kc-cat-logistics" style="position:static;display:inline-block;box-shadow:none;font-size:11px;padding:3px 10px;">تحليلات لوجستية</span></td>
+                                    <td>م. عبدالرحمن النهاري</td>
+                                    <td>2026-06-01</td>
+                                    <td><span class="status-badge draft">مسودة</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn" href="#" title="معاينة"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>دور فيتامين D في الوظائف المناعية: مراجعة منهجية</td>
+                                    <td><span class="kc-card-category kc-cat-scientific" style="position:static;display:inline-block;box-shadow:none;font-size:11px;padding:3px 10px;">نشرات علمية</span></td>
+                                    <td>د. أمل الصبري</td>
+                                    <td>2026-06-08</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn" href="#" title="معاينة"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="admin-pagination">
+                            <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn"><i class="bi bi-chevron-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: PRODUCTS -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-products">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إدارة المنتجات (كتالوج المواد الفعالة)</h5>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                            <input type="text" class="admin-search-input" placeholder="بحث عن منتج...">
+                            <button class="admin-btn admin-btn-primary" onclick="openModal('productModal')">
+                                <i class="bi bi-plus-lg"></i> منتج جديد
+                            </button>
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الاسم (عربي)</th>
+                                    <th>الاسم (إنجليزي)</th>
+                                    <th>CAS</th>
+                                    <th>التصنيف</th>
+                                    <th>بلد المنشأ</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>الهيدروكورتيزون</td>
+                                    <td>Hydrocortisone</td>
+                                    <td>50-23-7</td>
+                                    <td><span class="status-badge review">Hormone</span></td>
+                                    <td>USA</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>التستوستيرون</td>
+                                    <td>Testosterone</td>
+                                    <td>58-22-0</td>
+                                    <td><span class="status-badge review">Hormone</span></td>
+                                    <td>Germany</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>فيتامين D3</td>
+                                    <td>Vitamin D3</td>
+                                    <td>67-97-0</td>
+                                    <td><span class="status-badge active">Vitamin</span></td>
+                                    <td>Switzerland</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="تعديل"><i class="bi bi-pencil"></i></a>
+                                        <a class="admin-action-btn danger" href="#" title="حذف"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: FAQ -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-faq">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إدارة الأسئلة الشائعة</h5>
+                        <div style="display:flex;gap:8px;">
+                            <button class="admin-btn admin-btn-primary"><i class="bi bi-plus-lg"></i> سؤال جديد</button>
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>السؤال</th>
+                                    <th>التصنيف</th>
+                                    <th>الترتيب</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>كم تستغرق عملية الشحن من الطلب إلى التسليم؟</td>
+                                    <td><span class="status-badge pending">لوجستية</span></td>
+                                    <td>1</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>هل توفرون مستندات التسجيل والتحليل؟</td>
+                                    <td><span class="status-badge review">جودة</span></td>
+                                    <td>2</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>كيف أتقدم بطلب حصة توريدية؟</td>
+                                    <td><span class="status-badge pending">عقود</span></td>
+                                    <td>3</td>
+                                    <td><span class="status-badge active">منشور</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: TEAM -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-team">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إدارة فريق العمل</h5>
+                        <button class="admin-btn admin-btn-primary"><i class="bi bi-plus-lg"></i> عضو جديد</button>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الاسم</th>
+                                    <th>المنصب</th>
+                                    <th>الترتيب</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>د. خالد العنسي</td>
+                                    <td>الرئيس التنفيذي</td>
+                                    <td>1</td>
+                                    <td><span class="status-badge active">ظاهر</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>أ. ماجد الحسني</td>
+                                    <td>مدير سلسلة الإمداد</td>
+                                    <td>2</td>
+                                    <td><span class="status-badge active">ظاهر</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: ORDERS -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-orders">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>طلبات التوريد</h5>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                            <select class="admin-filter-select">
+                                <option>جميع الحالات</option>
+                                <option>جديد</option>
+                                <option>قيد المراجعة</option>
+                                <option>تم التأكيد</option>
+                                <option>تم التسليم</option>
+                            </select>
+                            <input type="text" class="admin-search-input" placeholder="بحث...">
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>المنشأة</th>
+                                    <th>النشاط</th>
+                                    <th>تاريخ الطلب</th>
+                                    <th>عدد المنتجات</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>101</td>
+                                    <td>مستشفى الأمل التخصصي</td>
+                                    <td>مستشفى</td>
+                                    <td>2026-06-10</td>
+                                    <td>5</td>
+                                    <td><span class="status-badge urgent">جديد</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="عرض"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تحديث الحالة"><i class="bi bi-arrow-right-circle"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تصدير"><i class="bi bi-download"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>صيدلية النهضة</td>
+                                    <td>صيدلية</td>
+                                    <td>2026-06-09</td>
+                                    <td>3</td>
+                                    <td><span class="status-badge review">قيد المراجعة</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="عرض"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تحديث الحالة"><i class="bi bi-arrow-right-circle"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تصدير"><i class="bi bi-download"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>99</td>
+                                    <td>مركز الرعاية الأولية - عدن</td>
+                                    <td>مركز صحي</td>
+                                    <td>2026-06-07</td>
+                                    <td>8</td>
+                                    <td><span class="status-badge completed">تم التسليم</span></td>
+                                    <td>
+                                        <a class="admin-action-btn" href="#" title="عرض"><i class="bi bi-eye"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تحديث الحالة"><i class="bi bi-arrow-right-circle"></i></a>
+                                        <a class="admin-action-btn" href="#" title="تصدير"><i class="bi bi-download"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: INQUIRIES -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-inquiries">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>الاستفسارات</h5>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                            <select class="admin-filter-select">
+                                <option>جميع الأنواع</option>
+                                <option>استفسار سريع</option>
+                                <option>استفسار عام</option>
+                                <option>استفسار طبي</option>
+                                <option>جودة</option>
+                            </select>
+                            <select class="admin-filter-select">
+                                <option>جميع الحالات</option>
+                                <option>بإنتظار الرد</option>
+                                <option>تم الرد</option>
+                                <option>مغلق</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الاسم</th>
+                                    <th>النوع</th>
+                                    <th>التاريخ</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>201</td>
+                                    <td>د. أحمد القباطي</td>
+                                    <td><span class="status-badge review">استفسار طبي</span></td>
+                                    <td>2026-06-10</td>
+                                    <td><span class="status-badge urgent">بإنتظار الرد</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-eye"></i></a><a class="admin-action-btn" href="#"><i class="bi bi-reply"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>200</td>
+                                    <td>مستشفى الثورة</td>
+                                    <td><span class="status-badge pending">استفسار عام</span></td>
+                                    <td>2026-06-09</td>
+                                    <td><span class="status-badge completed">تم الرد</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-eye"></i></a><a class="admin-action-btn" href="#"><i class="bi bi-reply"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>199</td>
+                                    <td>د. أمل الصبري</td>
+                                    <td><span class="status-badge review">جودة</span></td>
+                                    <td>2026-06-08</td>
+                                    <td><span class="status-badge pending">بإنتظار الرد</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-eye"></i></a><a class="admin-action-btn" href="#"><i class="bi bi-reply"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: PHARMACOVIGILANCE -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-pv">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>بلاغات التيقظ الدوائي</h5>
+                        <select class="admin-filter-select">
+                            <option>جميع الحالات</option>
+                            <option>مستلم</option>
+                            <option>قيد التحقيق</option>
+                            <option>تم الإغلاق</option>
+                        </select>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>المنتج</th>
+                                    <th>رقم التشغيلة</th>
+                                    <th>نوع الحدث</th>
+                                    <th>التاريخ</th>
+                                    <th>الأولوية</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>301</td>
+                                    <td>هيدروكورتيزون</td>
+                                    <td>BATCH-8842</td>
+                                    <td>عرض جانبي غير متوقع</td>
+                                    <td>2026-06-10</td>
+                                    <td><span class="status-badge urgent">عالية</span></td>
+                                    <td><span class="status-badge urgent">مستلم</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-eye"></i></a><a class="admin-action-btn" href="#"><i class="bi bi-arrow-right-circle"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td>فيتامين D3</td>
+                                    <td>BATCH-7710</td>
+                                    <td>نقص فعالية</td>
+                                    <td>2026-06-05</td>
+                                    <td><span class="status-badge pending">متوسطة</span></td>
+                                    <td><span class="status-badge review">قيد التحقيق</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-eye"></i></a><a class="admin-action-btn" href="#"><i class="bi bi-arrow-right-circle"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: SUBSCRIBERS -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-subscribers">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>المشتركين في النشرة البريدية</h5>
+                        <div style="display:flex;gap:8px;">
+                            <button class="admin-btn admin-btn-outline"><i class="bi bi-download"></i> تصدير CSV</button>
+                        </div>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>تاريخ الاشتراك</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>401</td>
+                                    <td>info@hospital-alamal.com</td>
+                                    <td>2026-06-01</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>402</td>
+                                    <td>pharmacy@nahda-ye.com</td>
+                                    <td>2026-05-28</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>403</td>
+                                    <td>dr.ahmed@example.com</td>
+                                    <td>2026-05-15</td>
+                                    <td><span class="status-badge cancelled">غير نشط</span></td>
+                                    <td><a class="admin-action-btn danger" href="#"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: SETTINGS -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-settings">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إعدادات الموقع</h5>
+                    </div>
+                    <div class="admin-card-body">
+                        <div class="admin-settings-form">
+                            <div class="admin-form-row">
+                                <div class="admin-form-group">
+                                    <label class="form-label">اسم الموقع</label>
+                                    <input type="text" class="form-control" value="EndoCare اليمن">
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" value="info@endocare-ye.com">
+                                </div>
+                            </div>
+                            <div class="admin-form-row">
+                                <div class="admin-form-group">
+                                    <label class="form-label">رقم الهاتف</label>
+                                    <input type="text" class="form-control" value="+967 712 345 678">
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="form-label">العنوان</label>
+                                    <input type="text" class="form-control" value="شارع حدة، مبنى البركة التجاري، صنعاء">
+                                </div>
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="form-label">وصف الموقع (Meta Description)</label>
+                                <textarea class="form-control" rows="3">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن.</textarea>
+                            </div>
+                            <div class="admin-form-group">
+                                <label class="form-label">شعار الموقع</label>
+                                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                                    <img src="img/logo2.png" style="height:50px;border-radius:6px;border:1px solid var(--color-teal-100);">
+                                    <button class="admin-btn admin-btn-outline">تغيير الشعار</button>
+                                </div>
+                            </div>
+                            <div class="admin-form-row">
+                                <div class="admin-form-group">
+                                    <label class="form-label">رابط فيسبوك</label>
+                                    <input type="url" class="form-control" value="https://facebook.com/endocare">
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="form-label">رابط واتساب</label>
+                                    <input type="url" class="form-control" value="https://wa.me/967712345678">
+                                </div>
+                            </div>
+                            <div style="margin-top:20px;">
+                                <button class="admin-btn admin-btn-primary"><i class="bi bi-check-lg"></i> حفظ الإعدادات</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION: USERS -->
+            <!-- ============================================ -->
+            <section class="admin-section" id="sec-users">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>إدارة المستخدمين</h5>
+                        <button class="admin-btn admin-btn-primary"><i class="bi bi-plus-lg"></i> مستخدم جديد</button>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>اسم المستخدم</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>الصلاحية</th>
+                                    <th>آخر دخول</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>مشرف الموقع</td>
+                                    <td>admin@endocare-ye.com</td>
+                                    <td><span class="status-badge active">Admin</span></td>
+                                    <td>2026-06-10 09:15</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-slash-circle"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>د. أمل الصبري</td>
+                                    <td>amal@endocare-ye.com</td>
+                                    <td><span class="status-badge review">Editor</span></td>
+                                    <td>2026-06-09 14:30</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                    <td><a class="admin-action-btn" href="#"><i class="bi bi-pencil"></i></a><a class="admin-action-btn danger" href="#"><i class="bi bi-slash-circle"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <!-- ============================================ -->
+    <!-- MODAL: Article -->
+    <!-- ============================================ -->
+    <div class="admin-modal-overlay" id="articleModal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h5>إضافة مقال جديد</h5>
+                <button class="admin-modal-close" onclick="closeModal('articleModal')"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="admin-form-group">
+                    <label>عنوان المقال *</label>
+                    <input type="text" class="form-control" placeholder="أدخل عنوان المقال">
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>التصنيف *</label>
+                        <select class="form-control">
+                            <option>تقارير سوقية</option>
+                            <option>تحليلات لوجستية</option>
+                            <option>تحديثات تنظيمية</option>
+                            <option>نشرات علمية</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>المحرر / الكاتب *</label>
+                        <select class="form-control">
+                            <option>د. أمل الصبري</option>
+                            <option>د. خالد العنسي</option>
+                            <option>د. محمد الحزمي</option>
+                            <option>م. عبدالرحمن النهاري</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>الصورة المميزة</label>
+                    <input type="file" class="form-control">
+                </div>
+                <div class="admin-form-group">
+                    <label>ملخص المقال</label>
+                    <textarea class="form-control" rows="3" placeholder="ملخص مختصر عن المقال (300 حرف كحد أقصى)"></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label>متن المقال *</label>
+                    <textarea class="form-control" rows="6" placeholder="محتوى المقال كاملاً..."></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label>المراجع</label>
+                    <textarea class="form-control" rows="3" placeholder="قائمة المراجع العلمية"></textarea>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>حالة النشر</label>
+                        <select class="form-control">
+                            <option>مسودة</option>
+                            <option selected>منشور</option>
+                            <option>مؤرشف</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>تاريخ النشر</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="admin-btn admin-btn-primary"><i class="bi bi-check-lg"></i> حفظ ونشر</button>
+                <button class="admin-btn admin-btn-outline" onclick="closeModal('articleModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MODAL: Product -->
+    <!-- ============================================ -->
+    <div class="admin-modal-overlay" id="productModal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h5>إضافة منتج جديد</h5>
+                <button class="admin-modal-close" onclick="closeModal('productModal')"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>الاسم بالعربية *</label>
+                        <input type="text" class="form-control" placeholder="مثال: هيدروكورتيزون">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>الاسم بالإنجليزية *</label>
+                        <input type="text" class="form-control" placeholder="مثال: Hydrocortisone">
+                    </div>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>رقم CAS</label>
+                        <input type="text" class="form-control" placeholder="مثال: 50-23-7">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>التصنيف *</label>
+                        <select class="form-control">
+                            <option>Vitamin</option>
+                            <option>Hormone</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>بلد المنشأ</label>
+                        <select class="form-control">
+                            <option>USA</option>
+                            <option>Germany</option>
+                            <option>Switzerland</option>
+                            <option>India</option>
+                            <option>China</option>
+                            <option>France</option>
+                            <option>UK</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label>الشكل الدوائي</label>
+                        <select class="form-control">
+                            <option>Powder</option>
+                            <option>Liquid</option>
+                            <option>Lyophilized</option>
+                            <option>Tablet</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>الوصف</label>
+                    <textarea class="form-control" rows="3" placeholder="وصف المنتج"></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label>الحالة</label>
+                    <select class="form-control">
+                        <option selected>نشط</option>
+                        <option>غير نشط</option>
+                    </select>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="admin-btn admin-btn-primary"><i class="bi bi-check-lg"></i> حفظ</button>
+                <button class="admin-btn admin-btn-outline" onclick="closeModal('productModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script>
+    // Section switching
+    function switchSection(id) {
+        document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.admin-sidebar .nav-item').forEach(n => n.classList.remove('active'));
+        document.getElementById('sec-' + id).classList.add('active');
+        document.querySelector('.admin-sidebar .nav-item[data-section="' + id + '"]').classList.add('active');
+
+        const titles = {
+            dashboard: 'لوحة الإحصائيات',
+            articles: 'إدارة المقالات',
+            products: 'إدارة المنتجات',
+            faq: 'الأسئلة الشائعة',
+            team: 'فريق العمل',
+            orders: 'طلبات التوريد',
+            inquiries: 'الاستفسارات',
+            pv: 'بلاغات التيقظ الدوائي',
+            subscribers: 'المشتركين',
+            settings: 'إعدادات الموقع',
+            users: 'المستخدمين'
+        };
+        document.getElementById('pageTitle').textContent = titles[id] || 'لوحة التحكم';
+
+        if (window.innerWidth <= 768) {
+            document.getElementById('adminSidebar').classList.remove('open');
+        }
+    }
+
+    // Sidebar toggle (mobile)
+    function toggleSidebar() {
+        document.getElementById('adminSidebar').classList.toggle('open');
+    }
+
+    // Modal controls
+    function openModal(id) {
+        document.getElementById(id).classList.add('open');
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('open');
+    }
+
+    // Close modal on overlay click
+    document.querySelectorAll('.admin-modal-overlay').forEach(el => {
+        el.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('open');
+            }
+        });
+    });
+
+    // Logout
+    function logout() {
+        if (confirm('تأكيد تسجيل الخروج؟')) {
+            document.getElementById('adminWrapper').style.display = 'none';
+            document.getElementById('adminLogin').style.display = 'flex';
+        }
+    }
+    </script>
+
+</body>
+</html>
