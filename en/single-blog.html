@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Article - EndoCare Yemen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-iteme-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-evenly align-iteme-center">
+                <small><i class="bi bi-snow2 me-2"></i>Guaranteed cold chain delivery from port to warehouse</small>
+                <small><i class="bi bi-patch-check me-2"></i>GMP and ISO certifications for all products</small>
+                <small><i class="bi bi-headset me-2"></i>Technical and emergency support 24/7</small>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-iteme-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Contact Us</h5>
+                        <span class="site-phone-text">+967 712 345 678</span>
+                    </div>
+                </div>
+                <a href="home.html"><img src="../img/logo2.png" alt="EndoCare" class="logo2-img"></a>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Email Us</h5>
+                        <span class="site-email-text">info@endocare-ye.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="home.html" class="navbar-brand d-lg-none">
+                    <img src="../img/logo.png" alt="EndoCare" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <!-- Mobile bottom bar: search + language -->
+                        <div class="d-lg-none mobile-nav-bar">
+                            <div class="mobile-search-wrap">
+                                <input type="text" class="mobile-search-input" placeholder="Search...">
+                                <i class="bi bi-search mobile-search-icon"></i>
+                            </div>
+                            <a href="../ar/single-blog.html" class="mobile-lang-btn" title="العربية">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="home.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>Home</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>About Us</a>
+						 <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>Products</a>
+						  <a href="quality.html" class="nav-item nav-link"><i class="bi bi-shield-check me-2"></i>Quality and Safety</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>More</a>
+                            <div class="dropdown-menu bg-light m-0">
+                               
+                              
+								 <a href="supply-request.html" class="dropdown-item"><i class="bi bi-file-earmark-medical me-2"></i>Supply Quota Request</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>Knowledge Center</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>FAQ</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                        <a href="admin.html" class="nav-item nav-link text-danger fw-bold" title="Temporary link to admin panel"><i class="bi bi-gear-wide-connected me-2"></i>Admin Panel</a>
+                    </div>
+                    <div class="me-auto d-none d-lg-flex align-iteme-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary me-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="Type to search...">
+                        <a class="btn btn-sm-square btn-primary me-2" href="supply-request.html" title="Supply Quota Request"><i class="bi bi-file-earmark-medical"></i></a>
+                         
+<a class="btn btn-sm-square btn-primary me-2" href="../ar/single-blog.html" title="العربية"><i class="bi bi-globe"></i></a>
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">Read Article</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="blog.html">Knowledge Center</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Read Article</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Reading Progress Bar -->
+    <div id="reading-progress" class="sc-progress-bar"></div>
+
+
+    <!-- Single Article Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Article Content -->
+                <div class="col-lg-8" id="article-content">
+
+                    <!-- Category & Actions Row -->
+                    <div class="d-flex flex-wrap align-iteme-center justify-content-between mb-4 wow fadeInUp">
+                        <span class="kc-card-category kc-cat-market" style="position: static; display: inline-block; box-shadow: none;"><i class="bi bi-graph-up kc-card-category-i"></i>Market Reports</span>
+                        <div class="d-flex gap-2 sc-action-toolbar">
+                            <button class="sc-icon-btn" onclick="window.print()" title="Print">
+                                <i class="bi bi-printer"></i>
+                            </button>
+                             
+                        </div>
+                    </div>
+
+                    <!-- Article Title -->
+                    <h1 class="sc-article-title wow fadeInUp">Yemen Vitamins & Hormones Market Analysis 2026</h1>
+
+                    <!-- Article Meta -->
+                    <div class="sc-article-meta wow fadeInUp">
+                        <span><i class="bi bi-calendar"></i>Last updated: 5 June 2026</span>
+                        <span><i class="bi bi-person"></i>Editor: <strong>Dr. Amal Al-Sabri</strong></span>
+                        <span><i class="bi bi-clock"></i>Reading time: 8 minutes</span>
+                    </div>
+
+                    <!-- Featured Image -->
+                    <div class="sc-featured-img-wrap wow fadeInUp">
+                        <img class="sc-featured-img" src="../img/carousel-1.jpg" alt="Vitamins and hormones market">
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <div class="sc-toc wow fadeInUp">
+                        <div class="sc-toc-header" onclick="this.parentElement.classList.toggle('sc-toc-collapsed')">
+                            <span><i class="bi bi-list-ul me-2"></i>Article Contents</span>
+                            <i class="bi bi-chevron-up sc-toc-toggle"></i>
+                        </div>
+                        <div class="sc-toc-body">
+                            <ol class="sc-toc-list">
+                                <li><a href="#section-1">Overview of the Yemeni Market</a></li>
+                                <li><a href="#section-2">Market Size & Growth Rates</a></li>
+                                <li><a href="#section-3">Key Suppliers & Distributors</a></li>
+                                <li><a href="#section-4">Demand by Governorate</a></li>
+                                <li><a href="#section-5">Challenges & Opportunities</a></li>
+                                <li><a href="#section-6">Future Outlook 2026-2028</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <div class="sc-article-body wow fadeInUp" id="article-body">
+
+                       <!-- <div class="sc-key-facts">
+                            <div class="sc-key-facts-title"><i class="bi bi-pin-angle me-2"></i>Key Points</div>
+                            <ul>
+                                <li>The Yemeni vitamins and hormones market is estimated at approximately <strong>47 million USD</strong> in 2026.</li>
+                                <li>Expected annual growth rate ranges between <strong>8-12%</strong> over the next three years.</li>
+                                <li>Sana'a, Aden, and Taiz governorates account for more than <strong>65%</strong> of total demand.</li>
+                            </ul>
+                        </div>-->
+
+                        <h2 id="section-1">1. Overview of the Yemeni Market</h2>
+                        <p>The Yemeni medical vitamins and hormones market has been experiencing steady growth in recent years, driven by increased health awareness and rising rates of chronic diseases requiring alternative hormonal treatments. Despite economic and security challenges, the private health sector has maintained continuity of pharmaceutical supply through flexible distribution networks.</p>
+                        <p>Specialized supply companies like EndoCare play a pivotal role in bridging the gap between global manufacturers and the local market, by applying quality and cold storage standards that ensure heat-sensitive products arrive in optimal condition.</p>
+
+                        <h2 id="section-2">2. Market Size & Growth Rates</h2>
+                        <p>Based on import data and analysis of pharmaceutical shipments, the total value of the vitamins and hormones market in Yemen is estimated at approximately 47 million USD in 2026. This volume is distributed as follows:</p>
+                        <ul>
+                            <li><strong>Biological Hormones</strong> (Growth hormone, insulin, GLP-1 analogs): 22 million USD (47%).</li>
+                            <li><strong>Therapeutic Vitamins</strong> (Vitamin D, B12, injectable iron): 15 million USD (32%).</li>
+                            <li><strong>Specialized Dietary Supplements</strong>: 10 million USD (21%).</li>
+                        </ul>
+                        <p>The compound annual growth rate (CAGR) of the market is approximately 10%, among the highest in the Middle East, reflecting accumulated demand from years of shortage in organized supplies.</p>
+
+                        <h2 id="section-3">3. Key Suppliers & Distributors</h2>
+                        <p>A limited number of specialized companies dominate the supply market in Yemen, holding valid import licenses and distribution networks covering most governorates. The list of key suppliers includes:</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered sc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Market Share</th>
+                                        <th>Main Specialty</th>
+                                        <th>Coverage Scope</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EndoCare</td>
+                                        <td>~28%</td>
+                                        <td>Hormones, therapeutic vitamins</td>
+                                        <td>18 governorates</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Competing companies (others)</td>
+                                        <td>~72%</td>
+                                        <td>Various medicines</td>
+                                        <td>10-15 governorates</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2 id="section-4">4. Demand by Governorate</h2>
+                        <p>Demand for vitamins and hormones is concentrated in major cities with high population density and more developed healthcare infrastructure. Sana'a governorate tops the demand list at 35%, followed by Aden (18%) and Taiz (12%). Eastern and southern governorates are experiencing accelerated demand growth exceeding 15% annually.</p>
+
+                        <h2 id="section-5">5. Challenges & Opportunities</h2>
+                        <p>The pharmaceutical supply market in Yemen faces several key challenges:</p>
+                        <ul>
+                            <li><strong>Supply chain disruption:</strong> Due to security conditions and multiple checkpoints.</li>
+                            <li><strong>Power outages:</strong> Posing a risk to storing heat-sensitive products.</li>
+                            <li><strong>Exchange rate fluctuation:</strong> Affecting import costs and final pricing.</li>
+                        </ul>
+                        <p>On the other hand, promising opportunities emerge such as expanding geographic coverage to underserved governorates, investing in alternative storage solutions (solar energy), and developing partnerships with global manufacturers for preferential pricing.</p>
+
+                        <h2 id="section-6">6. Future Outlook 2026-2028</h2>
+                        <p>The Yemeni vitamins and hormones market is expected to continue its growth at rates between 8% and 12% annually during 2026-2028, supported by several factors:</p>
+                        <ul>
+                            <li>Increased investment in the private health sector.</li>
+                            <li>Higher diagnosis rates of chronic diseases and diabetes.</li>
+                            <li>Gradual improvement in the business environment and relative stability.</li>
+                        </ul>
+                    </div>
+
+                    <!-- References -->
+                    <div class="sc-references wow fadeInUp">
+                        <h3 class="sc-refs-title"><i class="bi bi-journal-text me-2"></i>Scientific References & Sources</h3>
+                        <ol class="sc-refs-list">
+                            <li>World Health Organization (WHO). Essential Medicines Report in the Middle East, 2025.</li>
+                            <li>World Bank. Health and Development Indicators in Yemen, 2026.</li>
+                            <li>Yemen Supreme Authority for Medicines. Annual Statistical Bulletin, 2025.</li>
+                            <li>IQVIA. Market Intelligence Report: Middle East Pharmaceutical Supply, 2026.</li>
+                            <li>The Lancet Endocrinology. Endocrine Disorders in Conflict Zones, 2025.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="kc-disclaimer wow fadeInUp">
+                        <i class="bi bi-exclamation-triangle"></i>This report is for informational and analytical purposes only and does not constitute investment advice or medical recommendations. The information is based on publicly available data and cited sources. Please consult specialists and official sources for updated information.
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="sc-share-section wow fadeInUp">
+                        <span class="sc-share-label"><i class="bi bi-share kc-card-category-i"></i>Share article:</span>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="https://wa.me/?text=Yemen+Vitamins+%26+Hormones+Market+Analysis+2026" target="_blank" class="sc-share-btn sc-share-whatsapp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="sc-share-btn sc-share-facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://telegram.me/share/url?url=" target="_blank" class="sc-share-btn sc-share-telegram" title="Telegram"><i class="bi bi-telegram"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text=Yemen+Vitamins+%26+Hormones+Market+Analysis+2026" target="_blank" class="sc-share-btn sc-share-twitter" title="Twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=" target="_blank" class="sc-share-btn sc-share-linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <button class="sc-share-btn sc-share-link" onclick="copyArticleLink()" title="Copy link"><i class="bi bi-link-45deg"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Citation -->
+                    <div class="sc-citation wow fadeInUp">
+                        <div class="sc-citation-header" onclick="this.parentElement.classList.toggle('sc-citation-open')">
+                            <span><i class="bi bi-quote me-2"></i>Cite this article</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="sc-citation-body">
+                            <pre class="sc-citation-text">Al-Sabri, A. (2026, June 5). Yemen Vitamins & Hormones Market Analysis 2026. Knowledge Center - EndoCare. https://endocare-ye.com/blog/analysis-yemen-vitamins-hormones-market-2026</pre>
+                            <button class="kc-btn-read" onclick="copyCitation()"><i class="bi bi-files me-1"></i>Copy citation</button>
+                        </div>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div class="sc-feedback wow fadeInUp">
+                        <span class="sc-feedback-label">Was this article helpful?</span>
+                        <div class="d-flex gap-2">
+                            <button class="sc-feedback-btn" onclick="feedbackClick('Yes')"><i class="bi bi-hand-thumbs-up kc-card-category-i"></i>Yes</button>
+                            <button class="sc-feedback-btn" onclick="feedbackClick('No')"><i class="bi bi-hand-thumbs-down kc-card-category-i"></i>No</button>
+                        </div>
+                    </div>
+
+                    <!-- Back Button -->
+                    <div class="text-center mt-5 wow fadeInUp">
+                        <a href="blog.html" class="kc-btn-read"><i class="bi bi-arrow-right me-2"></i>Back to Knowledge Center</a>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+
+                    <!-- Author Card 
+                    <div class="sc-sidebar-card wow fadeInUp">
+                        <div class="sc-author-box">
+                            <div class="sc-author-avatar">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div>
+                                <h5 class="sc-author-name">Dr. Amal Al-Sabri</h5>
+                                <span class="sc-author-role">Pharmacist and researcher in pharmaceutical policies</span>
+                                <span class="sc-author-bio">12 years of experience in analyzing pharmaceutical markets and supply chains in the Middle East. Holds a PhD in clinical pharmacy.</span>
+                            </div>
+                        </div>
+                        <div class="sc-author-stats">
+                            <div class="sc-author-stat">
+                                <span class="sc-author-stat-num">15</span>
+                                <span class="sc-author-stat-label">Articles</span>
+                            </div>
+                            <div class="sc-author-stat">
+                                <span class="sc-author-stat-num">8</span>
+                                <span class="sc-author-stat-label">Years Experience</span>
+                            </div>
+                            <div class="sc-author-stat">
+                                <span class="sc-author-stat-num">4</span>
+                                <span class="sc-author-stat-label">Certifications</span>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    
+
+                     
+
+                </div>
+
+            </div>
+
+            
+ 
+
+        </div>
+    </div>
+    <!-- Single Article End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 ps-lg-5">
+                    <a href="home.html" class="navbar-brand">
+                        <img src="../img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                    </a>
+                    <p class="fs-5 mb-4">Your trusted partner for approved medical vitamins and hormones supply in Yemen. Committed to highest quality standards and advanced cold chain logistics.</p>
+                    <p><i class="bi bi-geo-alt me-2"></i><span class="site-address-text">Hadda St, Al-Barakah Commercial Building, Sanaa - Yemen</span></p>
+                    <p><i class="bi bi-telephone me-2"></i><span class="site-phone-text">+967 712 345 678</span></p>
+                    <p><i class="bi bi-envelope me-2"></i><span class="site-email-text">info@endocare-ye.com</span></p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2 site-fb-href" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-tg-href" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-li-href" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-wa-href" href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Quick Links</h5>
+                            <a class="btn btn-link" href="home.html">Home</a>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="supply-request.html">Supply Quota Request</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Important Links</h5>
+                            <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#pvModal">Pharmacovigilance</a>
+                            <a class="btn btn-link" href="quality.html">Quality and Safety</a>
+                            <a class="btn btn-link" href="blog.html">Knowledge Center</a>
+                            <a class="btn btn-link" href="faq.html">FAQ</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5 class="text-light mb-3">Newsletter</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email"><button class="btn btn-primary px-4">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row align-iteme-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">Developed by <a href="#" class="text-white">SmartOne Software Solutions &copy; 2026</a></p>
+                </div>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-iteme-center">
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="tel:+967712345678" title="Call"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="https://wa.me/967712345678" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="mailto:info@smartone.com" title="Email"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="#" title="Website"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Pharmacovigilance FAB -->
+    <button id="Pharmacovigilance" class="Pharmacovigilance-fab" aria-label="Open pharmacovigilance form">
+       <i class="bi bi-shield-plus"> </i>  PharmaVigil
+    </button>
+
+    <!-- Chatbot FAB -->
+    <button id="chatbot-fab" class="chatbot-fab" aria-label="Open AI assistant">
+      Endocare AI  <i class="bi bi-cpu"></i> 
+    </button>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Database JS -->
+    <script src="../js/db.js"></script>
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    <!-- Chatbot Javascript -->
+    <script src="../js/chatbot.js"></script>
+    <!-- Pharmacovigilance Javascript -->
+    <script src="../js/pharmacovigilance.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+
+            if(articleId) {
+                const article = window.db.getArticleById(parseInt(articleId));
+                if(article) {
+                    // Update Title
+                    document.title = "EndoCare Yemen - " + article.title;
+                    const titleEl = document.querySelector('.sc-article-title');
+                    if(titleEl) titleEl.innerText = article.title;
+                    const pageHeaderTitle = document.querySelector('.display-2');
+                    if(pageHeaderTitle) pageHeaderTitle.innerText = article.title;
+
+                    // Update Image
+                    const imgEl = document.querySelector('.sc-featured-img');
+                    if(imgEl) {
+                        imgEl.src = article.image;
+                        imgEl.alt = article.title;
+                    }
+
+                    // Update Meta
+                    const metaEl = document.querySelector('.sc-article-meta');
+                    if(metaEl) {
+                        metaEl.innerHTML = `
+                            <span><i class="bi bi-calendar"></i>Last updated: ${article.date}</span>
+                            <span><i class="bi bi-person"></i>Editor: <strong>${article.editor}</strong></span>
+                        `;
+                    }
+                    
+                    // Update Category Label
+                    const catLabel = document.querySelector('.kc-card-category');
+                    if(catLabel) {
+                        catLabel.className = 'kc-card-category kc-cat-' + article.category;
+                        catLabel.innerHTML = article.categoryLabel;
+                        catLabel.style.position = 'static';
+                        catLabel.style.display = 'inline-block';
+                        catLabel.style.boxShadow = 'none';
+                    }
+
+                    // Update Content
+                    const contentEl = document.getElementById('article-body');
+                    if(contentEl) {
+                        // Replace newlines with <br> or wrap in <p> roughly
+                        const formatted = article.content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+                        contentEl.innerHTML = formatted;
+                    }
+
+                    // Update References
+                    const refsEl = document.querySelector('.sc-refs-list');
+                    if(refsEl && article.refs) {
+                        const refsArr = article.refs.split('\n').filter(r=>r.trim()!=='');
+                        refsEl.innerHTML = refsArr.map(r => `<li>${r}</li>`).join('');
+                    }
+
+                    // Generate Citation
+                    const citationEl = document.querySelector('.sc-citation-text');
+                    if(citationEl) {
+                        let shortUrl = window.location.href;
+                        citationEl.innerText = `${article.editor}. (${article.date.split('-')[0]}, ). ${article.title}. Knowledge Center - EndoCare. ${shortUrl}`;
+                    }
+
+                    // Share URLs
+                    const pageUrl = encodeURIComponent(window.location.href);
+                    const pageTitle = encodeURIComponent(article.title);
+                    
+                    const waBtn = document.querySelector('.sc-share-whatsapp');
+                    if(waBtn) waBtn.href = `https://wa.me/?text=${pageTitle}%0A${pageUrl}`;
+
+                    const fbBtn = document.querySelector('.sc-share-facebook');
+                    if(fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+                    const twBtn = document.querySelector('.sc-share-twitter');
+                    if(twBtn) twBtn.href = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`;
+
+                    const liBtn = document.querySelector('.sc-share-linkedin');
+                    if(liBtn) liBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
+
+                    const tgBtn = document.querySelector('.sc-share-telegram');
+                    if(tgBtn) tgBtn.href = `https://telegram.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quality and Safety - EndoCare Yemen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        @media (max-width: 480px) {
+            /* Page header adjustments */
+            .page-header {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .page-header h1.display-2 {
+                font-size: 1.8rem !important;
+            }
+            
+            /* High-level section headings text-scaling */
+            .display-6 {
+                font-size: 1.4rem !important;
+                margin-bottom: 15px !important;
+            }
+            .text-uppercase.d-block.mb-2 {
+                font-size: 0.8rem !important;
+            }
+            
+            /* Cold chain cards custom scaling */
+            .cold-chain-step-card {
+                padding: 20px 15px !important;
+            }
+            .cold-chain-step-title {
+                font-size: 15px !important;
+                margin-bottom: 8px !important;
+            }
+            .cold-chain-step-icon {
+                font-size: 32px !important;
+                margin-bottom: 15px !important;
+            }
+            .cold-chain-step-number {
+                width: 26px !important;
+                height: 26px !important;
+                font-size: 12px !important;
+                top: 10px !important;
+                right: 10px !important;
+            }
+            .cold-chain-step-desc {
+                font-size: 12.5px !important;
+            }
+            
+            /* Compliance and trace blocks */
+            .compliance-info-card {
+                padding: 18px !important;
+            }
+            .compliance-list-item {
+                gap: 10px !important;
+                margin-bottom: 15px !important;
+            }
+            .compliance-list-icon {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 12px !important;
+            }
+            .compliance-list-text h5 {
+                font-size: 14px !important;
+                margin-bottom: 4px !important;
+            }
+            .compliance-list-text p {
+                font-size: 12.5px !important;
+            }
+            
+            /* Pharmacovigilance safety banner */
+            .safety-alert-banner {
+                padding: 15px !important;
+                gap: 12px !important;
+                margin-top: 25px !important;
+            }
+            .safety-alert-icon {
+                width: 48px !important;
+                height: 48px !important;
+                font-size: 20px !important;
+            }
+            .safety-alert-title {
+                font-size: 15px !important;
+                margin-bottom: 6px !important;
+            }
+            .safety-alert-desc {
+                font-size: 12.5px !important;
+            }
+            
+            /* QA Form container */
+            .qa-form-container {
+                padding: 15px !important;
+                margin-top: 20px !important;
+            }
+            .qa-form-title {
+                font-size: 17px !important;
+                margin-bottom: 15px !important;
+                gap: 8px !important;
+            }
+            .qa-form-label {
+                font-size: 12.5px !important;
+                margin-bottom: 5px !important;
+            }
+            .qa-form-container .form-control,
+            .qa-form-container .form-select {
+                font-size: 13px !important;
+                padding: 8px 12px !important;
+            }
+            .qa-form-submit-btn {
+                padding: 10px 20px !important;
+                font-size: 13.5px !important;
+            }
+            
+            /* Pharmacovigilance interactive form inside page */
+            #inline-pv-form {
+                padding: 15px !important;
+            }
+            #inline-pv-form h5 {
+                font-size: 14.5px !important;
+            }
+            #inline-pv-form label {
+                font-size: 12.5px !important;
+            }
+            #inline-pv-form .form-control,
+            #inline-pv-form .form-select {
+                font-size: 13px !important;
+                padding: 8px 12px !important;
+            }
+            #pv-submit-btn,
+            .pv-action-btn {
+                font-size: 13.5px !important;
+                padding: 10px !important;
+            }
+            .pv-step-indicator {
+                font-size: 11px !important;
+                padding: 6px !important;
+            }
+            
+            /* Credentials & Certifications cards */
+            .verified-credential-card {
+                padding: 15px !important;
+            }
+            .credential-badge {
+                font-size: 12px !important;
+                padding: 4px 12px !important;
+                margin-bottom: 12px !important;
+            }
+            .verified-credential-card h4 {
+                font-size: 15px !important;
+                margin-bottom: 8px !important;
+            }
+            .verified-credential-card p {
+                font-size: 12.5px !important;
+                margin-bottom: 12px !important;
+            }
+            .credential-meta-item {
+                font-size: 12px !important;
+                margin-bottom: 6px !important;
+            }
+            
+            /* Newsletter standard styling */
+            .footer .input-group input {
+                font-size: 13px !important;
+                padding: 10px !important;
+            }
+            .footer .input-group button {
+                font-size: 13px !important;
+                padding: 10px 15px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-iteme-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-evenly align-iteme-center">
+                <small><i class="bi bi-snow2 me-2"></i>Guaranteed cold chain delivery from port to warehouse</small>
+                <small><i class="bi bi-patch-check me-2"></i>GMP and ISO certifications for all products</small>
+                <small><i class="bi bi-headset me-2"></i>Technical and emergency support 24/7</small>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-iteme-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Contact Us</h5>
+                        <span class="site-phone-text">+967 712 345 678</span>
+                    </div>
+                </div>
+                <a href="home.html"><img src="../img/logo2.png" alt="EndoCare" class="logo2-img"></a>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Email Us</h5>
+                        <span class="site-email-text">info@endocare-ye.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="home.html" class="navbar-brand d-lg-none">
+                    <img src="../img/logo.png" alt="EndoCare" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <!-- Mobile bottom bar: search + language -->
+                        <div class="d-lg-none mobile-nav-bar">
+                            <div class="mobile-search-wrap">
+                                <input type="text" class="mobile-search-input" placeholder="Search...">
+                                <i class="bi bi-search mobile-search-icon"></i>
+                            </div>
+                            <a href="../ar/quality.html" class="mobile-lang-btn" title="العربية">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="home.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>Home</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>About Us</a>
+						 <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>Products</a>
+						  <a href="quality.html" class="nav-item nav-link active"><i class="bi bi-shield-check me-2"></i>Quality and Safety</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>More</a>
+                            <div class="dropdown-menu bg-light m-0">
+                               
+                              
+								 <a href="supply-request.html" class="dropdown-item"><i class="bi bi-file-earmark-medical me-2"></i>Supply Quota Request</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>Knowledge Center</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>FAQ</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                        <a href="admin.html" class="nav-item nav-link text-danger fw-bold" title="Temporary link to admin panel"><i class="bi bi-gear-wide-connected me-2"></i>Admin Panel</a>
+                    </div>
+                    <div class="me-auto d-none d-lg-flex align-iteme-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary me-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="Type to search...">
+                        <a class="btn btn-sm-square btn-primary me-2" href="supply-request.html" title="Supply Quota Request"><i class="bi bi-file-earmark-medical"></i></a>
+                         
+<a class="btn btn-sm-square btn-primary me-2" href="../ar/quality.html" title="العربية"><i class="bi bi-globe"></i></a>
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">Quality and Safety</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Quality and Safety</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Quality Intro & Policy Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">Total Quality Management</span>
+                <h1 class="display-6 mb-4">Compliance & Pharmaceutical Supply Quality</h1>
+                <p class="mb-5 fs-5 text-dark" style="line-height: 1.8;">EndoCare adopts a written and strict quality policy governing all stages of the supply chain. We believe that the reliability of hormones, vitamins, and pharmaceutical products begins with selecting licensed sources and ends with secure, digitally monitored storage to ensure patient safety and trustworthy healthcare.</p>
+            </div>
+            
+            <!-- Quality Policy Statement Card -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-primary text-white p-5 rounded-3 shadow-sm text-center position-relative overflow-hidden" style="background: var(--gradient-primary) !important;">
+                        <div class="position-absolute" style="top: -20px; right: -20px; font-size: 150px; opacity: 0.1; color: #fff;">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="mb-3 text-white"><i class="bi bi-patch-check-fill me-2 text-warning"></i> GMP & GDP Regulatory Compliance Statement</h4>
+                        <p class="mb-0 fs-6 text-white-50" style="line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                            We are absolutely committed to prohibiting the import or distribution of any product not manufactured in facilities compliant with internationally approved Good Manufacturing Practices (GMP). We also apply Good Distribution and Storage Practices (GDP) protocols across all our sub-warehouses and refrigerated transport networks to ensure 100% supply chain safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quality Intro & Policy End -->
+
+
+    <!-- Cold Chain Logistics Showcase Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">Specialized Logistics</span>
+                <h1 class="display-6 mb-3">Integrated Cold Chain</h1>
+                <p class="text-secondary mb-5">Digitally monitored cold storage and transport for heat-sensitive pharmaceutical and hormonal compounds.</p>
+            </div>
+            
+            <div class="cold-chain-grid">
+                <!-- Step 1 -->
+                <div class="cold-chain-step-card wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="cold-chain-step-number">1</div>
+                    <div class="cold-chain-step-icon">
+                        <i class="bi bi-snow"></i>
+                    </div>
+                    <h3 class="cold-chain-step-title">Secure Import Storage</h3>
+                    <p class="cold-chain-step-desc">Receiving medical shipments at entry points in certified cooling containers and transporting them directly to our central warehouses equipped with the latest cooling systems (+2°C to +8°C, or +15°C to +25°C depending on the drug type).</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="cold-chain-step-card wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="cold-chain-step-number">2</div>
+                    <div class="cold-chain-step-icon">
+                        <i class="bi bi-thermometer-half"></i>
+                    </div>
+                    <h3 class="cold-chain-step-title">Continuous Digital Monitoring</h3>
+                    <p class="cold-chain-step-desc">Using digital temperature recorders (Data Loggers) to monitor temperature and humidity inside warehouses and shipping containers around the clock, with instant alerts activated upon any deviation from approved temperature ranges.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="cold-chain-step-card wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="cold-chain-step-number">3</div>
+                    <div class="cold-chain-step-icon">
+                        <i class="bi bi-truck-flatbed"></i>
+                    </div>
+                    <h3 class="cold-chain-step-title">Guaranteed Refrigerated Shipping</h3>
+                    <p class="cold-chain-step-desc">Delivering shipments to hospitals, agents, and pharmacies in all governorates using a fleet of equipped refrigerated trucks and insulated thermal shipping bags to ensure uninterrupted cold chain until receipt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cold Chain Logistics Showcase End -->
+
+
+    <!-- Track & Trace & Recall Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-iteme-center">
+                <!-- Text side -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <span class="text-success fw-bold text-uppercase d-block mb-2">Supply & Consumer Safety</span>
+                    <h1 class="display-6 mb-4">Track & Trace / Recall System</h1>
+                    <p class="mb-4 text-dark" style="line-height: 1.8;">EndoCare adopts a precise digital tracking system that documents and records the movement of each pharmaceutical batch (Batch/Lot Number) from the manufacturing source to warehouses and then to the end customer. This system enables us to efficiently manage risks and ensure the safety and quality of all marketed medicines.</p>
+                    
+                    <div class="compliance-info-card">
+                        <div class="compliance-list-item">
+                            <div class="compliance-list-icon">
+                                <i class="bi bi-check2"></i>
+                            </div>
+                            <div class="compliance-list-text">
+                                <h5>Instant Origin Verification</h5>
+                                <p>Linking the batch QR code to the Certificate of Analysis (CoA) and supporting documents to ensure product authenticity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="compliance-list-item">
+                            <div class="compliance-list-icon">
+                                <i class="bi bi-check2"></i>
+                            </div>
+                            <div class="compliance-list-text">
+                                <h5>Emergency Recall Within 2 Hours</h5>
+                                <p>An approved emergency plan ensuring the ability to locate all packages of any batch and fully withdraw them from the market and customers within just 2 hours in case of international safety notifications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QA Form side -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="qa-form-container">
+                        <h3 class="qa-form-title">
+                            <i class="bi bi-envelope-paper-fill"></i>
+                            Direct Contact with Quality Officer
+                        </h3>
+                        <p class="text-secondary small mb-4">To submit a quality complaint, request a Certificate of Analysis (CoA), or inquire about specific batch details, please fill out the form below to contact the Quality and Compliance Department directly:</p>
+                        
+                        <form action="#" method="POST" onsubmit="alert('Your message has been sent to the Quality Assurance and Compliance Officer successfully. You will be contacted within 24 hours maximum.'); this.reset(); return false;">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="qa-name" class="qa-form-label">Full Name / Healthcare Entity *</label>
+                                    <input type="text" id="qa-name" class="form-control qa-form-input" required placeholder="e.g., Al-Amal Hospital / Dr. Ahmed">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="qa-email" class="qa-form-label">Professional Email *</label>
+                                    <input type="email" id="qa-email" class="form-control qa-form-input" required placeholder="name@domain.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="qa-phone" class="qa-form-label">Direct Contact Phone Number *</label>
+                                    <input type="tel" id="qa-phone" class="form-control qa-form-input" required placeholder="+967 712 345 678">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="qa-subject" class="qa-form-label">Request Type *</label>
+                                    <select id="qa-subject" class="form-select qa-form-input" required>
+                                        <option value="" disabled selected>Select type</option>
+                                        <option value="complaint">Submit Complaint About Product Quality</option>
+                                        <option value="coa">Request CoA / Technical Document</option>
+                                        <option value="batch">Batch Verification</option>
+                                        <option value="other">General Compliance & Quality Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="qa-product" class="qa-form-label">Product Name & Batch Number (if any)</label>
+                                    <input type="text" id="qa-product" class="form-control qa-form-input" placeholder="e.g., Growth Hormone HGH - Batch B12345">
+                                </div>
+                                <div class="col-12">
+                                    <label for="qa-message" class="qa-form-label">Request Details or Precise Notes *</label>
+                                    <textarea id="qa-message" class="form-control qa-form-input" rows="4" required placeholder="Write complaint details or required document numbers clearly..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check d-flex align-iteme-start gap-2">
+                                        <input class="qa-form-checkbox" type="checkbox" id="qa-agreement" required>
+                                        <label class="form-check-label text-secondary small" for="qa-agreement">
+                                            I confirm the entered data is correct and intended for quality audit and professional compliance purposes.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 qa-form-submit-btn">Submit Request to Quality Department</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pharmacovigilance safety link banner -->
+            <div class="safety-alert-banner wow fadeInUp" data-wow-delay="0.1s">
+                <div class="safety-alert-icon">
+                    <i class="bi bi-shield-exclamation"></i>
+                </div>
+                <div class="safety-alert-info">
+                    <h4 class="safety-alert-title">Pharmacovigilance & Drug Safety</h4>
+                    <p class="safety-alert-desc">If you are a patient or physician and wish to report any unexpected side effect resulting from the use of one of our products, please proceed immediately to the approved pharmacovigilance portal to submit an official safety report.</p>
+                </div>
+                <div class="text-start">
+                    <button class="btn btn-danger text-white fw-bold px-4 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#inline-pv-form" aria-expanded="false" aria-controls="inline-pv-form">Report Directly</button>
+                </div>
+            </div>
+            
+            <!-- Inline PV Form Collapse -->
+            <div class="collapse mt-4 w-100" id="inline-pv-form">
+                <div class="card card-body pv-glass-modal border-0 shadow-sm bg-white" style="border-radius: 12px; padding: 25px;">
+                    <h5 class="mb-3 text-primary"><i class="bi bi-shield-plus me-2"></i>Direct Pharmacovigilance Form</h5>
+                    <div class="pv-section">
+                        <div class="pv-badge bg-green-light text-dark"><i class="bi bi-box-seam me-1"></i>1. Active Substance Details</div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-sm-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-substance" placeholder="Substance Name or CAS" list="pv-substances" autocomplete="off">
+                                    <label for="pv-substance">Substance Name or CAS</label>
+                                    <datalist id="pv-substances">
+                                        <option value="Hydrocortisone">
+                                        <option value="Testosterone">
+                                        <option value="Vitamin D3">
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-batch" placeholder="Batch number">
+                                    <label for="pv-batch">Batch (Lot)</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control bg-light" id="pv-origin" placeholder="Origin" readonly>
+                                    <label for="pv-origin">Country of Origin</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pv-section mt-3">
+                        <div class="pv-badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>2. Event Type <span id="pv-type-count" class="badge bg-dark me-2">0</span></div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Unexpected Side Effect">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-person-x fs-5 me-2 text-danger"></i> Unexpected Side Effect
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Lack or Weakness of Therapeutic Efficacy">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-graph-down-arrow fs-5 me-2 text-warning"></i> Lack or Weakness of Therapeutic Efficacy
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Suspected Quality Issue in Packaging or Substance">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-box-seam-fill fs-5 me-2 text-info"></i> Suspected Quality Issue in Packaging or Substance
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Medication Error or Dose Mismatch">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-prescription2 fs-5 me-2 text-primary"></i> Medication Error or Dose Mismatch
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating pv-density mt-1">
+                                    <input type="text" class="form-control" id="pv-custom-type" placeholder="Enter other details">
+                                    <label for="pv-custom-type"><i class="bi bi-pencil-square me-1"></i>Custom (Enter other details)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pv-section mt-3 pb-3">
+                        <div class="pv-badge bg-primary text-white"><i class="bi bi-person-badge me-1"></i>3. Reporter Details</div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-12">
+                                <div class="form-floating pv-density">
+                                    <textarea class="form-control" placeholder="Brief Case Description" id="pv-desc" style="height: 50px"></textarea>
+                                    <label for="pv-desc">Brief Case Description</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-name" placeholder="Name">
+                                    <label for="pv-name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-org" placeholder="Entity">
+                                    <label for="pv-org">Entity (Hospital/Pharmacy)</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="tel" class="form-control" id="pv-phone" placeholder="Phone number">
+                                    <label for="pv-phone">Emergency Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating pv-density mt-1">
+                                    <textarea class="form-control" placeholder="Additional Notes" id="pv-notes" style="height: 60px"></textarea>
+                                    <label for="pv-notes">Additional Notes</label>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pv-consent">
+                                    <label class="form-check-label small" for="pv-consent">
+                                        I agree to transfer my data and the reported case data to EndoCare's Pharmacovigilance Department and process it in accordance with the privacy policy.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pv-footer text-center pt-3 border-top mt-3">
+                        <button type="button" class="btn btn-danger fw-bold pv-action-btn pv-submit-btn w-100" style="padding: 12px; font-size: 16px;" id="pv-submit-btn">
+                            <i class="bi bi-send-check me-2"></i>Submit Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Track & Trace & Recall End -->
+
+
+    <!-- Verified Credentials & Certificates Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <span class="text-success fw-bold text-uppercase d-block mb-2">Professional Documentation</span>
+                <h1 class="display-6 mb-3">Verified Certifications & Accreditations</h1>
+                <p class="text-secondary mb-5">EndoCare undergoes periodic auditing to ensure all licenses and certificates remain valid and compliant.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- GDP Certificate -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="verified-credential-card text-center text-md-start">
+                        <span class="credential-badge">Certified GDP Certificate</span>
+                        <h4 class="mb-3 text-dark">Certified Pharmaceutical Distribution & Storage</h4>
+                        <p class="text-secondary small mb-4">Full compliance with Good Distribution Practices requirements issued by the World Health Organization.</p>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Certificate No.:</span>
+                            <span class="credential-meta-val">EU-GDP-2024-8849</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Issuing Authority:</span>
+                            <span class="credential-meta-val text-primary fw-bold">European Drug Supply Institute</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Expiry Date:</span>
+                            <span class="credential-meta-val text-danger">31 December 2027</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ISO 9001:2015 Certificate -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="verified-credential-card text-center text-md-start">
+                        <span class="credential-badge">ISO 9001:2015</span>
+                        <h4 class="mb-3 text-dark">Global Quality Management System</h4>
+                        <p class="text-secondary small mb-4">Official accreditation for the quality management system and auditing of logistics operations for raw materials and biological supplements.</p>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Certificate No.:</span>
+                            <span class="credential-meta-val">ISO-9001-2015-YE</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Issuing Authority:</span>
+                            <span class="credential-meta-val text-success fw-bold">Bureau Veritas Certification</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Expiry Date:</span>
+                            <span class="credential-meta-val text-danger">15 May 2028</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ministry of Health License -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="verified-credential-card text-center text-md-start">
+                        <span class="credential-badge">Ministry of Health License</span>
+                        <h4 class="mb-3 text-dark">Import & Distribution License</h4>
+                        <p class="text-secondary small mb-4">A valid official legal license to practice import, storage, and supply of vitamins and hormones in Yemen.</p>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">License No.:</span>
+                            <span class="credential-meta-val">MOH-YE-452-2024</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Issuing Authority:</span>
+                            <span class="credential-meta-val text-dark fw-bold">Ministry of Public Health and Population</span>
+                        </div>
+                        <div class="credential-meta-item">
+                            <span class="credential-meta-label">Regulatory Status:</span>
+                            <span class="credential-meta-val text-success fw-bold">Active and regularly updated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Verified Credentials & Certificates End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 ps-lg-5">
+                    <a href="home.html" class="navbar-brand">
+                        <img src="../img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                    </a>
+                    <p class="fs-5 mb-4">Your trusted partner for approved medical vitamins and hormones supply in Yemen. Committed to highest quality standards and advanced cold chain logistics.</p>
+                    <p><i class="bi bi-geo-alt me-2"></i><span class="site-address-text">Hadda St, Al-Barakah Commercial Building, Sanaa - Yemen</span></p>
+                    <p><i class="bi bi-telephone me-2"></i><span class="site-phone-text">+967 712 345 678</span></p>
+                    <p><i class="bi bi-envelope me-2"></i><span class="site-email-text">info@endocare-ye.com</span></p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2 site-fb-href" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-tg-href" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-li-href" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-wa-href" href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Quick Links</h5>
+                            <a class="btn btn-link" href="home.html">Home</a>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="supply-request.html">Supply Quota Request</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Important Links</h5>
+                            <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#pvModal">Pharmacovigilance</a>
+                            <a class="btn btn-link" href="quality.html">Quality and Safety</a>
+                            <a class="btn btn-link" href="blog.html">Knowledge Center</a>
+                            <a class="btn btn-link" href="faq.html">FAQ</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5 class="text-light mb-3">Newsletter</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email"><button class="btn btn-primary px-4">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row align-iteme-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">Developed by <a href="#" class="text-white">SmartOne Software Solutions &copy; 2026</a></p>
+                </div>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-iteme-center">
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="tel:+967712345678" title="Call"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="https://wa.me/967712345678" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="mailto:info@smartone.com" title="Email"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="#" title="Website"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Pharmacovigilance FAB -->
+    <button id="Pharmacovigilance" class="Pharmacovigilance-fab" aria-label="Open pharmacovigilance form">
+       <i class="bi bi-shield-plus"> </i>  PharmaVigil
+    </button>
+
+    <!-- Chatbot FAB -->
+    <button id="chatbot-fab" class="chatbot-fab" aria-label="Open AI assistant">
+      Endocare AI  <i class="bi bi-cpu"></i> 
+    </button>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    <!-- Chatbot Javascript -->
+    <script src="../js/chatbot.js"></script>
+    <!-- Pharmacovigilance Javascript -->
+    <script src="../js/pharmacovigilance.js"></script>
+</body>
+
+</html>

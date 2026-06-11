@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Products and Services - EndoCare Yemen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Services Stylesheet -->
+    <link href="css/services.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-iteme-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-evenly align-iteme-center">
+                <small><i class="bi bi-snow2 me-2"></i>Guaranteed cold chain delivery from port to warehouse</small>
+                <small><i class="bi bi-patch-check me-2"></i>GMP and ISO certifications for all products</small>
+                <small><i class="bi bi-headset me-2"></i>Technical and emergency support 24/7</small>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-iteme-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Contact Us</h5>
+                        <span class="site-phone-text">+967 712 345 678</span>
+                    </div>
+                </div>
+                <a href="home.html"><img src="../img/logo2.png" alt="EndoCare" class="logo2-img"></a>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">Email Us</h5>
+                        <span class="site-email-text">info@endocare-ye.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="home.html" class="navbar-brand d-lg-none">
+                    <img src="../img/logo.png" alt="EndoCare" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <!-- Mobile bottom bar: search + language -->
+                        <div class="d-lg-none mobile-nav-bar">
+                            <div class="mobile-search-wrap">
+                                <input type="text" class="mobile-search-input" placeholder="Search...">
+                                <i class="bi bi-search mobile-search-icon"></i>
+                            </div>
+                            <a href="../ar/service.html" class="mobile-lang-btn" title="العربية">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="home.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>Home</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>About Us</a>
+						 <a href="service.html" class="nav-item nav-link active"><i class="bi bi-capsule me-2"></i>Products</a>
+						  <a href="quality.html" class="nav-item nav-link"><i class="bi bi-shield-check me-2"></i>Quality and Safety</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>More</a>
+                            <div class="dropdown-menu bg-light m-0">
+                               
+                              
+								 <a href="supply-request.html" class="dropdown-item"><i class="bi bi-file-earmark-medical me-2"></i>Supply Quota Request</a>
+                                <a href="blog.html" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>Knowledge Center</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>FAQ</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+                        <a href="admin.html" class="nav-item nav-link text-danger fw-bold" title="Temporary link to admin panel"><i class="bi bi-gear-wide-connected me-2"></i>Admin Panel</a>
+                    </div>
+                    <div class="me-auto d-none d-lg-flex align-iteme-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary me-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="Type to search...">
+                        <a class="btn btn-sm-square btn-primary me-2" href="supply-request.html" title="Supply Quota Request"><i class="bi bi-file-earmark-medical"></i></a>
+                         
+<a class="btn btn-sm-square btn-primary me-2" href="../ar/service.html" title="العربية"><i class="bi bi-globe"></i></a>
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">Products & Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Products & Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    
+    <!-- Service Start -->
+    <div class="container-fluid container-service py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+                <h1 class="display-6 mb-3">Active Ingredients Catalog</h1>
+                <p class="mb-4">Browse all available raw hormones and vitamins. Search by scientific name or CAS Number, and filter by therapeutic category and approved certifications.</p>
+            </div>
+
+            <!-- === SEARCH + TABS: ROW === -->
+            <div class="d-flex align-iteme-center gap-3 flex-wrap search-tabs-row wow fadeInUp" data-wow-delay="0.1s">
+                <div class="search-wrapper flex-grow-1 mb-0" style="min-width: 200px;">
+                    <div class="search-input-group">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" id="productSearch" class="search-input" placeholder="Search by scientific name, CAS Number, or product name..." autocomplete="off">
+                        <button type="button" id="clearSearch" class="search-clear-btn d-none" aria-label="Clear search">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    <div id="searchResults" class="search-suggestions d-none"></div>
+                </div>
+                <div class="catalog-tabs mb-0 flex-shrink-0">
+                    <button type="button" class="catalog-tab-btn active" data-tab="all">All</button>
+                    <button type="button" class="catalog-tab-btn" data-tab="vitamins"><i class="bi bi-droplet me-1"></i>Vitamins</button>
+                    <button type="button" class="catalog-tab-btn" data-tab="hormones"><i class="bi bi-heart-pulse me-1"></i>Hormones</button>
+                </div>
+            </div>
+
+            <!-- === ACTIVE FILTERS BAR === -->
+            <div id="activeFilters" class="active-filters-bar wow fadeInUp" data-wow-delay="0.2s"></div>
+
+            <!-- === CATALOG LAYOUT: SIDEBAR + TABLE === -->
+            <div class="row g-4">
+                <!-- Filter Sidebar -->
+                <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div id="filterSidebar" class="filter-sidebar"></div>
+                </div>
+
+                <!-- Product Table -->
+                <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="product-catalog-header">
+                        <span id="productCount" class="product-count">-- Products</span>
+                    </div>
+                    <div class="product-table-wrapper">
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>CAS Number</th>
+                                    <th>Compliance</th>
+                                    <th>Origin</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody"></tbody>
+                        </table>
+                        <div id="noResults" class="no-results d-none">
+                            <i class="bi bi-search"></i>
+                            <h5>No matching results</h5>
+                            <p>Try adjusting search criteria or removing some filters</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === HORMONE THERAPEUTIC CATEGORIES GRID === -->
+            <div class="hormone-categories-section wow fadeInUp" data-wow-delay="0.1s">
+                <div class="text-center mx-auto" style="max-width: 600px;">
+                    <h2 class="hormone-categories-title justify-content-center">
+                        <i class="bi bi-grid-3x3-gap text-primary"></i>
+                        Specialized Hormones Family
+                    </h2>
+                    <p class="hormone-categories-subtitle">Precise classification by Therapeutic Class to meet the needs of physicians and hospitals</p>
+                </div>
+                <div id="hormoneGrid" class="hormone-grid"></div>
+            </div>
+
+            <!-- === ADDITIONAL SERVICES === -->
+            <div class="mt-5 pt-4">
+                <div class="row g-5">
+                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="mb-4">Additional Services</h3>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-box-seam text-green"></i>
+                            </div>
+                            <h5 class="mb-3">Customized Packages</h5>
+                            <p class="mb-4 flex-grow-1">Assembling special packages based on approved prescriptions according to each customer's needs.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D8%AE%D8%B5%D9%8A%D8%B5%20%D8%A7%D9%84%D8%AD%D8%B2%D9%85%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-thermometer-snow text-green"></i>
+                            </div>
+                            <h5 class="mb-3">Controlled Temperature Delivery</h5>
+                            <p class="mb-4 flex-grow-1">Refrigerated transport (+2 to +8) for all heat-sensitive hormones with real-time monitoring.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%AA%D9%88%D8%B5%D9%8A%D9%84%20%D8%A8%D8%AF%D8%B1%D8%AC%D8%A9%20%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AD%D9%83%D9%88%D9%85%D8%A9%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>Request Service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex flex-column">
+                            <div class="icon-box-primary mb-4">
+                                <i class="bi bi-headset text-green"></i>
+                            </div>
+                            <h5 class="mb-3">Pharmaceutical Consultation</h5>
+                            <p class="mb-4 flex-grow-1">Specialized pharmacist team to answer your questions about drug interactions and dosages.</p>
+                            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%D9%84%D8%A7%D9%86%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="  service-whatsapp-btn"><i class="bi bi-whatsapp  "></i>Request Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+	
+	
+	 <!-- Team Start -->
+    <div class="container-fluid container-team py-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-6 mb-3 text-primary">Our Featured Products</h1>
+                <p class="mb-5">We offer you a selected range of the best global nutritional supplements and vitamins, most in-demand and reliable.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="../img/Centrum.png" alt="Centrum">
+                            </a>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="View details"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="Request price quote"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="Quick inquiry"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Centrum</h5>
+                            <span>The most famous brand for immune support and daily energy.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="../img/Solgar-Skin.png" alt="Solgar Skin, Nails & Hair">
+                            </a>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="View details"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="Request price quote"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="Quick inquiry"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Solgar Skin, Nails & Hair</h5>
+                            <span>Very popular formula for beauty and general health support.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="../img/NOW-Foods-Ashwagandha.png" alt="NOW Foods Ashwagandha">
+                            </a>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="View details"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="Request price quote"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="Quick inquiry"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">NOW Foods Ashwagandha</h5>
+                            <span>Ashwagandha herb for cortisol regulation and testosterone support.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <a href="service.html">
+                                <img class="img-fluid w-100" src="../img/Evlution-Nutrition-EVOTEST.png" alt="Evlution Nutrition EVOTEST">
+                            </a>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light mx-1" href="service.html" title="View details"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="appoinment.html" title="Request price quote"><i class="bi bi-cart"></i></a>
+                                <a class="btn btn-square btn-light mx-1" href="https://wa.me/967712345678" title="Quick inquiry"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Evlution Nutrition EVOTEST</h5>
+                            <span>Natural testosterone booster for athletes.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 ps-lg-5">
+                    <a href="home.html" class="navbar-brand">
+                        <img src="../img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                    </a>
+                    <p class="fs-5 mb-4">Your trusted partner for approved medical vitamins and hormones supply in Yemen. Committed to highest quality standards and advanced cold chain logistics.</p>
+                    <p><i class="bi bi-geo-alt me-2"></i><span class="site-address-text">Hadda St, Al-Barakah Commercial Building, Sanaa - Yemen</span></p>
+                    <p><i class="bi bi-telephone me-2"></i><span class="site-phone-text">+967 712 345 678</span></p>
+                    <p><i class="bi bi-envelope me-2"></i><span class="site-email-text">info@endocare-ye.com</span></p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2 site-fb-href" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-tg-href" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-li-href" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-wa-href" href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Quick Links</h5>
+                            <a class="btn btn-link" href="home.html">Home</a>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="supply-request.html">Supply Quota Request</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">Important Links</h5>
+                            <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#pvModal">Pharmacovigilance</a>
+                            <a class="btn btn-link" href="quality.html">Quality and Safety</a>
+                            <a class="btn btn-link" href="blog.html">Knowledge Center</a>
+                            <a class="btn btn-link" href="faq.html">FAQ</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5 class="text-light mb-3">Newsletter</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email"><button class="btn btn-primary px-4">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row align-iteme-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">Developed by <a href="#" class="text-white">SmartOne Software Solutions &copy; 2026</a></p>
+                </div>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-iteme-center">
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="tel:+967712345678" title="Call"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="https://wa.me/967712345678" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="mailto:info@smartone.com" title="Email"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square me-2" href="#" title="Website"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Pharmacovigilance FAB -->
+    <button id="Pharmacovigilance" class="Pharmacovigilance-fab" aria-label="Open pharmacovigilance form">
+       <i class="bi bi-shield-plus"> </i>  PharmaVigil
+    </button>
+
+    <!-- Chatbot FAB -->
+    <button id="chatbot-fab" class="chatbot-fab" aria-label="Open AI assistant">
+      Endocare AI  <i class="bi bi-cpu"></i> 
+    </button>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    <!-- Chatbot Javascript -->
+    <script src="../js/chatbot.js"></script>
+    <!-- Pharmacovigilance Javascript -->
+    <script src="../js/pharmacovigilance.js"></script>
+</body>
+
+</html>

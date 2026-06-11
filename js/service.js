@@ -7,218 +7,304 @@
   'use strict';
 
   /* =====================================================
-     1. PRODUCT DATA (قاعدة بيانات المنتجات)
+     1. PRODUCT DATA (قاعدة بيانات المنتجات - محتوى تجريبي)
      ===================================================== */
-  const products = [
+  const mockProducts = [
     {
       id: 1,
       name: 'فيتامين D3',
+      nameAr: 'فيتامين D3',
       nameEn: 'Vitamin D3',
       cas: '67-97-0',
       category: 'vitamin',
       form: 'powder',
       badges: ['GMP', 'CoA'],
       origin: 'ألمانيا',
+      originAr: 'ألمانيا',
+      originEn: 'Germany',
       description: 'فيتامين D3 5000 IU لدعم المناعة والعظام',
+      descriptionAr: 'فيتامين D3 5000 IU لدعم المناعة والعظام',
+      descriptionEn: 'Vitamin D3 5000 IU for immunity and bone support',
       dosage: '5000 IU',
       therapeuticClass: null,
     },
     {
       id: 2,
       name: 'فيتامين C مع زنك',
+      nameAr: 'فيتامين C مع زنك',
       nameEn: 'Vitamin C + Zinc',
       cas: '50-81-7',
       category: 'vitamin',
       form: 'powder',
       badges: ['GMP', 'CoA', 'MoH'],
       origin: 'سويسرا',
+      originAr: 'سويسرا',
+      originEn: 'Switzerland',
       description: 'مكمل غذائي عالي التركيز لدعم المناعة',
+      descriptionAr: 'مكمل غذائي عالي التركيز لدعم المناعة',
+      descriptionEn: 'High concentration dietary supplement to support immunity',
       dosage: '1000 mg',
       therapeuticClass: null,
     },
     {
       id: 3,
       name: 'فيتامين B-Complex',
+      nameAr: 'فيتامين B-Complex',
       nameEn: 'Vitamin B-Complex',
       cas: '12001-76-2',
       category: 'vitamin',
       form: 'liquid',
       badges: ['GMP'],
       origin: 'الأردن',
+      originAr: 'الأردن',
+      originEn: 'Jordan',
       description: 'مجموعة فيتامينات B للطاقة والتمثيل الغذائي',
+      descriptionAr: 'مجموعة فيتامينات B للطاقة والتمثيل الغذائي',
+      descriptionEn: 'B-complex vitamin group for energy and metabolism',
       dosage: 'مجمع',
       therapeuticClass: null,
     },
     {
       id: 4,
       name: 'سوماتروبين (HGH)',
+      nameAr: 'سوماتروبين (HGH)',
       nameEn: 'Somatropin (HGH)',
       cas: '12629-01-5',
       category: 'hormone',
       form: 'lyophilized',
       badges: ['GMP', 'CoA'],
       origin: 'ألمانيا',
+      originAr: 'ألمانيا',
+      originEn: 'Germany',
       description: 'هرمون النمو البشري لعلاج تأخر النمو',
+      descriptionAr: 'هرمون النمو البشري لعلاج تأخر النمو',
+      descriptionEn: 'Human growth hormone for treating growth retardation',
       dosage: '4-12 IU',
       therapeuticClass: 'growth',
     },
     {
       id: 5,
       name: 'ليفوثيروكسين',
+      nameAr: 'ليفوثيروكسين',
       nameEn: 'Levothyroxine',
       cas: '51-48-9',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP', 'MoH'],
       origin: 'الهند',
+      originAr: 'الهند',
+      originEn: 'India',
       description: 'هرمون الغدة الدرقية لعلاج قصور الغدة',
+      descriptionAr: 'هرمون الغدة الدرقية لعلاج قصور الغدة',
+      descriptionEn: 'Thyroid hormone for treating hypothyroidism',
       dosage: '25-200 mcg',
       therapeuticClass: 'thyroid',
     },
     {
       id: 6,
       name: 'تستوستيرون أونديكانوات',
+      nameAr: 'تستوستيرون أونديكانوات',
       nameEn: 'Testosterone Undecanoate',
       cas: '5949-44-0',
       category: 'hormone',
       form: 'liquid',
       badges: ['GMP', 'CoA'],
       origin: 'ألمانيا',
+      originAr: 'ألمانيا',
+      originEn: 'Germany',
       description: 'هرمون ذكري لعلاج نقص التستوستيرون',
+      descriptionAr: 'هرمون ذكري لعلاج نقص التستوستيرون',
+      descriptionEn: 'Male hormone for treating testosterone deficiency',
       dosage: '250 mg/ml',
       therapeuticClass: 'fertility',
     },
     {
       id: 7,
       name: 'FSH (يوروفوليتروبين)',
+      nameAr: 'FSH (يوروفوليتروبين)',
       nameEn: 'FSH (Urofollitropin)',
       cas: '97048-13-0',
       category: 'hormone',
       form: 'lyophilized',
       badges: ['GMP'],
       origin: 'سويسرا',
+      originAr: 'سويسرا',
+      originEn: 'Switzerland',
       description: 'هرمون منبه للجريب لعلاج العقم',
+      descriptionAr: 'هرمون منبه للجريب لعلاج العقم',
+      descriptionEn: 'Follicle-stimulating hormone for treating infertility',
       dosage: '75-150 IU',
       therapeuticClass: 'fertility',
     },
     {
       id: 8,
       name: 'هيدروكورتيزون',
+      nameAr: 'هيدروكورتيزون',
       nameEn: 'Hydrocortisone',
       cas: '50-23-7',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP', 'CoA', 'MoH'],
       origin: 'إيطاليا',
+      originAr: 'إيطاليا',
+      originEn: 'Italy',
       description: 'ستيرويد قشري لعلاج الالتهابات والحساسية',
+      descriptionAr: 'ستيرويد قشري لعلاج الالتهابات والحساسية',
+      descriptionEn: 'Corticosteroid for treating inflammation and allergies',
       dosage: '10-100 mg',
       therapeuticClass: 'corticosteroid',
     },
     {
       id: 9,
       name: 'أنسولين جلارجين',
+      nameAr: 'أنسولين جلارجين',
       nameEn: 'Insulin Glargine',
       cas: '160337-95-1',
       category: 'hormone',
       form: 'liquid',
       badges: ['GMP', 'CoA'],
       origin: 'فرنسا',
+      originAr: 'فرنسا',
+      originEn: 'France',
       description: 'أنسولين طويل المفعول لمرضى السكري',
+      descriptionAr: 'أنسولين طويل المفعول لمرضى السكري',
+      descriptionEn: 'Long-acting insulin for diabetic patients',
       dosage: '100 IU/ml',
       therapeuticClass: null,
     },
     {
       id: 10,
       name: 'إستراديول',
+      nameAr: 'إستراديول',
       nameEn: 'Estradiol',
       cas: '50-28-2',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP'],
       origin: 'ألمانيا',
+      originAr: 'ألمانيا',
+      originEn: 'Germany',
       description: 'هرمون أنثوي للعلاج الهرموني البديل',
+      descriptionAr: 'هرمون أنثوي للعلاج الهرموني البديل',
+      descriptionEn: 'Female hormone for hormone replacement therapy',
       dosage: '1-2 mg',
       therapeuticClass: 'fertility',
     },
     {
       id: 11,
       name: 'بروجسترون',
+      nameAr: 'بروجسترون',
       nameEn: 'Progesterone',
       cas: '57-83-0',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP', 'CoA'],
       origin: 'إيطاليا',
+      originAr: 'إيطاليا',
+      originEn: 'Italy',
       description: 'هرمون أنثوي لدعم الحمل والخصوبة',
+      descriptionAr: 'هرمون أنثوي لدعم الحمل والخصوبة',
+      descriptionEn: 'Female hormone for supporting pregnancy and fertility',
       dosage: '100-200 mg',
       therapeuticClass: 'fertility',
     },
     {
       id: 12,
       name: 'حمض الفوليك 5 مجم',
+      nameAr: 'حمض الفوليك 5 مجم',
       nameEn: 'Folic Acid 5mg',
       cas: '59-30-3',
       category: 'vitamin',
       form: 'tablet',
       badges: ['GMP', 'MoH'],
       origin: 'الأردن',
+      originAr: 'الأردن',
+      originEn: 'Jordan',
       description: 'حمض الفوليك لدعم الحمل وصحة الجنين',
+      descriptionAr: 'حمض الفوليك لدعم الحمل وصحة الجنين',
+      descriptionEn: 'Folic acid for pregnancy support and fetal health',
       dosage: '5 mg',
       therapeuticClass: null,
     },
     {
       id: 13,
       name: 'بريدنيزولون',
+      nameAr: 'بريدنيزولون',
       nameEn: 'Prednisolone',
       cas: '50-24-8',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP', 'CoA'],
       origin: 'الهند',
+      originAr: 'الهند',
+      originEn: 'India',
       description: 'ستيرويد قشري مضاد للالتهابات',
+      descriptionAr: 'ستيرويد قشري مضاد للالتهابات',
+      descriptionEn: 'Anti-inflammatory corticosteroid',
       dosage: '5-40 mg',
       therapeuticClass: 'corticosteroid',
     },
     {
       id: 14,
       name: 'ديكساميثازون',
+      nameAr: 'ديكساميثازون',
       nameEn: 'Dexamethasone',
       cas: '50-02-2',
       category: 'hormone',
       form: 'liquid',
       badges: ['GMP', 'CoA', 'MoH'],
       origin: 'إيطاليا',
+      originAr: 'إيطاليا',
+      originEn: 'Italy',
       description: 'ستيرويد قشري قوي للحالات الحرجة',
+      descriptionAr: 'ستيرويد قشري قوي للحالات الحرجة',
+      descriptionEn: 'Strong corticosteroid for critical cases',
       dosage: '4-8 mg',
       therapeuticClass: 'corticosteroid',
     },
     {
       id: 15,
       name: 'ليوثيرونين',
+      nameAr: 'ليوثيرونين',
       nameEn: 'Liothyronine',
       cas: '6893-02-3',
       category: 'hormone',
       form: 'powder',
       badges: ['GMP'],
       origin: 'الهند',
+      originAr: 'الهند',
+      originEn: 'India',
       description: 'هرمون الغدة الدرقية ثلاثي اليود',
+      descriptionAr: 'هرمون الغدة الدرقية ثلاثي اليود',
+      descriptionEn: 'Triiodothyronine thyroid hormone',
       dosage: '5-50 mcg',
       therapeuticClass: 'thyroid',
     },
     {
       id: 16,
       name: 'نوردوتروبين (سوماتروبين)',
+      nameAr: 'نوردوتروبين (سوماتروبين)',
       nameEn: 'Norditropin (Somatropin)',
       cas: '12629-01-5',
       category: 'hormone',
       form: 'liquid',
       badges: ['GMP', 'CoA', 'MoH'],
       origin: 'الدنمارك',
+      originAr: 'الدنمارك',
+      originEn: 'Denmark',
       description: 'هرمون نمو مخصص للأطفال والبالغين',
+      descriptionAr: 'هرمون نمو مخصص للأطفال والبالغين',
+      descriptionEn: 'Growth hormone for children and adults',
       dosage: '4-8 IU',
       therapeuticClass: 'growth',
     },
   ];
+
+  const isEnglish = window.location.pathname.includes('/en/');
+
+  // دمج مع بيانات لوحة التحكم إن وجدت (Fallback logic)
+  const adminProducts = window.db && window.db.getProducts ? window.db.getProducts().filter(p => p.status === 'نشط' || !p.status) : [];
+  const products = adminProducts.length > 0 ? adminProducts : mockProducts;
 
   /* =====================================================
      2. HORMONE THERAPEUTIC CLASSES
@@ -230,6 +316,7 @@
       titleEn: 'Corticosteroids',
       icon: 'bi-prescription2',
       description: 'مضادات التهابات قشرية للحالات الحرجة والحساسية المزمنة',
+      descriptionEn: 'Corticosteroid anti-inflammatories for critical cases and chronic allergies',
       color: '#dc3545',
     },
     {
@@ -238,6 +325,7 @@
       titleEn: 'Growth Hormones',
       icon: 'bi-graph-up-arrow',
       description: 'هرمونات النمو البشري لعلاج تأخر النمو واضطرابات الغدة النخامية',
+      descriptionEn: 'Human growth hormones for treating growth retardation and pituitary disorders',
       color: '#168a68',
     },
     {
@@ -246,6 +334,7 @@
       titleEn: 'Fertility Hormones',
       icon: 'bi-heart-pulse',
       description: 'هرمونات تنظيم الخصوبة والتبويض ودعم الحمل',
+      descriptionEn: 'Fertility and ovulation regulating hormones and pregnancy support',
       color: '#e83e8c',
     },
     {
@@ -254,6 +343,7 @@
       titleEn: 'Thyroid Hormones',
       icon: 'bi-shield',
       description: 'بدائل هرمونات الغدة الدرقية لعلاج قصور وفرط النشاط',
+      descriptionEn: 'Thyroid hormone replacements for treating hypo- and hyper-activity',
       color: '#105978',
     },
   ];
@@ -261,7 +351,37 @@
   /* =====================================================
      3. FILTER DATA
      ===================================================== */
-  const filterGroups = {
+  const filterGroups = isEnglish ? {
+    form: {
+      label: 'Physical Form',
+      options: [
+        { value: 'powder', label: 'Powder' },
+        { value: 'liquid', label: 'Liquid' },
+        { value: 'lyophilized', label: 'Lyophilized' },
+        { value: 'tablet', label: 'Tablets' },
+      ],
+    },
+    badges: {
+      label: 'Certificate Type',
+      options: [
+        { value: 'GMP', label: 'GMP' },
+        { value: 'CoA', label: 'CoA' },
+        { value: 'MoH', label: 'MoH' },
+      ],
+    },
+    origin: {
+      label: 'Country of Origin',
+      options: [
+        { value: 'ألمانيا', label: 'Germany' },
+        { value: 'سويسرا', label: 'Switzerland' },
+        { value: 'الأردن', label: 'Jordan' },
+        { value: 'الهند', label: 'India' },
+        { value: 'إيطاليا', label: 'Italy' },
+        { value: 'فرنسا', label: 'France' },
+        { value: 'الدنمارك', label: 'Denmark' },
+      ],
+    },
+  } : {
     form: {
       label: 'حالة المادة',
       options: [
@@ -344,15 +464,17 @@
     const maxShow = Math.min(results.length, 8);
     for (let i = 0; i < maxShow; i++) {
       const p = results[i];
+      const dispName = isEnglish ? (p.nameEn || p.name) : (p.nameAr || p.name);
+      const dispSub = isEnglish ? (p.nameAr || p.name) : (p.nameEn || p.name);
       html += `
         <button type="button" class="search-suggest-item" data-id="${p.id}">
-          <span class="suggest-name">${p.name} <small class="text-muted">${p.nameEn}</small></span>
+          <span class="suggest-name">${dispName} <small class="text-muted">${dispSub}</small></span>
           <span class="suggest-cas">${p.cas}</span>
         </button>
       `;
     }
     if (results.length > maxShow) {
-      html += `<div class="search-suggest-more">+ ${results.length - maxShow} نتائج إضافية</div>`;
+      html += `<div class="search-suggest-more">${isEnglish ? `+ ${results.length - maxShow} more results` : `+ ${results.length - maxShow} نتائج إضافية`}</div>`;
     }
     container.innerHTML = html;
     container.classList.remove('d-none');
@@ -423,7 +545,7 @@
       container.innerHTML = '';
       return;
     }
-    let html = '<span class="active-filter-label">مرشّحات نشطة:</span>';
+    let html = `<span class="active-filter-label">${isEnglish ? 'Active Filters:' : 'مرشّحات نشطة:'}</span>`;
     for (const f of allActive) {
       html += `
         <span class="active-filter-tag">
@@ -432,7 +554,7 @@
         </span>
       `;
     }
-    html += `<button type="button" class="active-filter-clear-all btn btn-sm btn-link">مسح الكل</button>`;
+    html += `<button type="button" class="active-filter-clear-all btn btn-sm btn-link">${isEnglish ? 'Clear All' : 'مسح الكل'}</button>`;
     container.innerHTML = html;
 
     container.querySelectorAll('.active-filter-remove').forEach((btn) => {
@@ -474,9 +596,9 @@
       const showing = state.searchQuery || state.hasActiveFilters ? results.length : products.length;
       const total = products.length;
       if (state.searchQuery || state.hasActiveFilters) {
-        countEl.textContent = `${showing} من أصل ${total} منتج`;
+        countEl.textContent = isEnglish ? `${showing} of ${total} products` : `${showing} من أصل ${total} منتج`;
       } else {
-        countEl.textContent = `${total} منتج`;
+        countEl.textContent = isEnglish ? `${total} products` : `${total} منتج`;
       }
     }
 
@@ -495,26 +617,31 @@
           return `<span class="reg-badge ${cls}">${b}</span>`;
         })
         .join(' ');
+      
+      const dispName = isEnglish ? (p.nameEn || p.name) : (p.nameAr || p.name);
+      const dispSubName = isEnglish ? (p.nameAr || p.name) : (p.nameEn || p.name);
+      const dispOrigin = isEnglish ? (p.originEn || p.origin) : (p.originAr || p.origin);
+
       html += `
         <tr class="product-row">
-          <td class="product-cell-name" data-label="المنتج">
-            <span class="product-name">${p.name}</span>
-            <small class="product-name-en text-muted">${p.nameEn}</small>
+          <td class="product-cell-name" data-label="${isEnglish ? 'Product' : 'المنتج'}">
+            <span class="product-name">${dispName}</span>
+            <small class="product-name-en text-muted">${dispSubName}</small>
           </td>
           <td class="product-cell-cas" data-label="CAS Number"><code>${p.cas}</code></td>
-          <td class="product-cell-badges" data-label="الامتثال">${badgesHtml}</td>
-          <td class="product-cell-origin" data-label="المنشأ">${p.origin}</td>
-          <td class="product-cell-actions" data-label="الإجراء">
-            <a href="appoinment.html" class="btn btn-sm text-green product-action-btn" title="طلب عرض سعر">
+          <td class="product-cell-badges" data-label="${isEnglish ? 'Compliance' : 'الامتثال'}">${badgesHtml}</td>
+          <td class="product-cell-origin" data-label="${isEnglish ? 'Origin' : 'المنشأ'}">${dispOrigin}</td>
+          <td class="product-cell-actions" data-label="${isEnglish ? 'Action' : 'الإجراء'}">
+            <a href="appoinment.html" class="btn btn-sm text-green product-action-btn" title="${isEnglish ? 'Request Quote' : 'طلب عرض سعر'}">
               <i class="bi bi-cart-plus"></i>
             </a>
-            <a href="#" class="btn btn-sm  text-green product-action-btn" title="طلب عينة">
+            <a href="#" class="btn btn-sm text-green product-action-btn" title="${isEnglish ? 'Request Sample' : 'طلب عينة'}">
               <i class="bi bi-droplet-half"></i>
             </a>
-            <a href="https://wa.me/967712345678" class="btn btn-sm text-green product-action-btn" title="استفسار سريع">
+            <a href="https://wa.me/967712345678" class="btn btn-sm text-green product-action-btn" title="${isEnglish ? 'Quick Inquiry' : 'استفسار سريع'}">
               <i class="bi bi-chat-dots"></i>
             </a>
-			<a href="#" class="btn btn-sm text-green product-action-btn" title="تفاصيل أكثر">
+			<a href="#" class="btn btn-sm text-green product-action-btn" title="${isEnglish ? 'More Details' : 'تفاصيل أكثر'}">
   <i class="bi bi-info-circle"></i>
 </a>
           </td>
@@ -533,7 +660,10 @@
     for (const cls of hormoneClasses) {
       const classProducts = products.filter((p) => p.therapeuticClass === cls.id);
       const count = classProducts.length;
-      const names = classProducts.map((p) => p.name).join('، ');
+      const names = classProducts.map((p) => isEnglish ? (p.nameEn || p.name) : (p.nameAr || p.name)).join(isEnglish ? ', ' : '، ');
+      const dispTitle = isEnglish ? (cls.titleEn || cls.title) : (cls.title || cls.titleEn);
+      const dispSubTitle = isEnglish ? (cls.title || cls.titleEn) : (cls.titleEn || cls.title);
+      const dispDesc = isEnglish ? (cls.descriptionEn || cls.description) : (cls.description || cls.descriptionEn);
 
       html += `
         <div class="hormone-class-card wow fadeInUp" data-wow-delay="0.1s">
@@ -541,18 +671,18 @@
             <i class="bi ${cls.icon}"></i>
           </div>
           <div class="hormone-class-body">
-            <h5 class="hormone-class-title">${cls.title}</h5>
-            <span class="hormone-class-title-en">${cls.titleEn}</span>
-            <p class="hormone-class-desc">${cls.description}</p>
+            <h5 class="hormone-class-title">${dispTitle}</h5>
+            <span class="hormone-class-title-en">${dispSubTitle}</span>
+            <p class="hormone-class-desc">${dispDesc}</p>
             <div class="hormone-class-meta">
-              <span class="hormone-class-count"><i class="bi bi-capsule me-1"></i>${count} مكونات</span>
-              <span class="hormone-class-coa"><i class="bi bi-file-check me-1"></i>CoA متاح</span>
+              <span class="hormone-class-count"><i class="bi bi-capsule me-1"></i>${count} ${isEnglish ? 'ingredients' : 'مكونات'}</span>
+              <span class="hormone-class-coa"><i class="bi bi-file-check me-1"></i>${isEnglish ? 'CoA available' : 'CoA متاح'}</span>
             </div>
             <div class="hormone-class-products">
               <small class="text-muted">${names}</small>
             </div>
-            <a href="https://wa.me/967770249300?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20${encodeURIComponent(cls.title)}%20(${cls.titleEn})%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1" target="_blank" class="    hormone-whatsapp-btn  ">
-              <i class="bi bi-whatsapp  "></i>تواصل بالمبيعات
+            <a href="https://wa.me/967770249300?text=${isEnglish ? 'I%20want%20to%20inquire%20about%20' + encodeURIComponent(dispTitle) + '%20products%20from%20Endocare' : '%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20' + encodeURIComponent(dispTitle) + '%20%D9%85%D9%86%20%D8%A5%D9%86%D8%AF%D9%88%D9%83%D9%8A%D8%B1'}" target="_blank" class="hormone-whatsapp-btn">
+              <i class="bi bi-whatsapp"></i>${isEnglish ? 'Contact Sales' : 'تواصل بالمبيعات'}
             </a>
           </div>
         </div>
@@ -572,11 +702,13 @@
     if (q) {
       results = results.filter(
         (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.nameEn.toLowerCase().includes(q) ||
-          p.cas.includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.origin.toLowerCase().includes(q)
+          (p.name && p.name.toLowerCase().includes(q)) ||
+          (p.nameEn && p.nameEn.toLowerCase().includes(q)) ||
+          (p.cas && p.cas.includes(q)) ||
+          (p.description && p.description.toLowerCase().includes(q)) ||
+          (p.descriptionEn && p.descriptionEn.toLowerCase().includes(q)) ||
+          (p.origin && p.origin.toLowerCase().includes(q)) ||
+          (p.originEn && p.originEn.toLowerCase().includes(q))
       );
     }
 
@@ -703,11 +835,13 @@
     if (q) {
       results = results.filter(
         (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.nameEn.toLowerCase().includes(q) ||
-          p.cas.includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.origin.toLowerCase().includes(q)
+          (p.name && p.name.toLowerCase().includes(q)) ||
+          (p.nameEn && p.nameEn.toLowerCase().includes(q)) ||
+          (p.cas && p.cas.includes(q)) ||
+          (p.description && p.description.toLowerCase().includes(q)) ||
+          (p.descriptionEn && p.descriptionEn.toLowerCase().includes(q)) ||
+          (p.origin && p.origin.toLowerCase().includes(q)) ||
+          (p.originEn && p.originEn.toLowerCase().includes(q))
       );
     }
 

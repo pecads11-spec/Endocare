@@ -1,6 +1,8 @@
 (function () {
     "use strict";
 
+    const isEnglish = window.location.pathname.includes('/en/');
+
     // ─── State ───────────────────────────────────────────────────────────────
     const STATE = {
         sessionId: null,
@@ -31,7 +33,7 @@
 
     function formatTime(iso) {
         const d = new Date(iso);
-        return d.toLocaleTimeString('ar-YE', { hour: '2-digit', minute: '2-digit' });
+        return d.toLocaleTimeString(isEnglish ? 'en-US' : 'ar-YE', { hour: '2-digit', minute: '2-digit' });
     }
 
     // ─── Storage ─────────────────────────────────────────────────────────────
@@ -97,7 +99,7 @@
         if (msg.role === 'bot' && msg.type === 'error') {
             const retry = document.createElement('button');
             retry.className = 'retry-btn';
-            retry.textContent = 'إعادة المحاولة';
+            retry.textContent = isEnglish ? 'Retry' : 'إعادة المحاولة';
             retry.addEventListener('click', function () {
                 retrySend(msg._originalText || '');
             });
@@ -137,11 +139,11 @@
     }
 
     function showQuickReplies() {
-        quickRepliesEl.classList.remove('hidden');
+        if (quickRepliesEl) quickRepliesEl.classList.remove('hidden');
     }
 
     function hideQuickReplies() {
-        quickRepliesEl.classList.add('hidden');
+        if (quickRepliesEl) quickRepliesEl.classList.add('hidden');
     }
 
     // ─── Bot messages ────────────────────────────────────────────────────────
@@ -184,43 +186,128 @@
         saveConversation();
     }
 
-    // ─── Static demo responses ────────────────────────────────────────────────
-    function getDemoResponse(userText) {
-        var text = userText.trim();
+    let companyProfile = null;
 
-        var answers = {
-            'شحنة': 'بخصوص الشحنات والتوريد، نعمل وفق أعلى معايير سلسلة التبريد (Cold Chain) لضمان وصول المنتجات بحالة ممتازة. جميع شحناتنا مغطاة بوثائق التخليص الجمركي وشهادات المنشأ. هل تود الاستفسار عن شحنة محددة؟',
-            'علمي': 'يسعدني تقديم معلومات علمية دقيقة! الفيتامينات مثل D3 و B-complex تلعب دوراً محورياً في دعم المناعة والطاقة. أما الهرمونات البديلة مثل HGH والتستوستيرون فتستخدم تحت إشراف طبي لعلاج قصور الغدد. هل هناك فيتامين أو هرمون معين تود معرفة المزيد عنه؟',
-            'كتالوج': 'يتوفر لدينا كتالوج شامل يشمل: الفيتامينات المتعددة (Centrum، Solgar)، الهرمونات البديلة (HGH، التستوستيرون)، هرمونات الخصوبة (FSH، hCG)، والمكملات المتخصصة (أوميغا 3، الحديد الوريدي). يمكنك زيارة صفحة المنتجات للاطلاع على الكتالوج الكامل.',
+    async function loadCompanyProfile() {
+        if (!companyProfile) {
+            try {
+                const path = isEnglish ? '/en/bot_core/company_profile.json' : '/ar/bot_core/company_profile.json';
+                let res = await fetch(path);
+                if (!res.ok && isEnglish) {
+                    res = await fetch('/ar/bot_core/company_profile.json');
+                }
+                if (res.ok) {
+                    companyProfile = await res.json();
+                }
+            } catch (e) {
+                console.error("Error loading company profile:", e);
+            }
+        }
+        return companyProfile;
+    }
+
+    async function processBotQuery(userText) {
+        const text = userText.trim();
+        const lowerText = text.toLowerCase();
+
+        // 1. Triage: Check for Operations & Sales (Company Profile)
+        const matchesSales = isEnglish ?
+            (lowerText.includes('buy') || lowerText.includes('purchase') || lowerText.includes('contact') || lowerText.includes('management') || lowerText.includes('support') || lowerText.includes('address') || lowerText.includes('phone') || lowerText.includes('customer service') || lowerText.includes('hours') || lowerText.includes('order')) :
+            (text.includes('شراء') || text.includes('تواصل') || text.includes('ادارة') || text.includes('دعم') || text.includes('عنوان') || text.includes('هاتف') || text.includes('خدمة عملاء') || text.includes('مواعيد') || text.includes('طلب'));
+
+        if (matchesSales) {
+            const profile = await loadCompanyProfile();
+            if (profile) {
+                if (isEnglish) {
+                    return {
+                        answer: `You can contact us via the following methods:\n- Customer Service: ${profile.contact.customerService}\n- Email: ${profile.contact.email}\n- Working Hours: ${profile.workingHoursEn || profile.workingHours}\n- Address: ${profile.location.mainBranch.addressEn || profile.location.mainBranch.address}, ${profile.location.countryEn || profile.location.country}.`,
+                        type: 'normal'
+                    };
+                } else {
+                    return {
+                        answer: `يمكنك التواصل معنا عبر الطرق التالية:\n- خدمة العملاء: ${profile.contact.customerService}\n- البريد الإلكتروني: ${profile.contact.email}\n- أوقات العمل: ${profile.workingHours}\n- العنوان: ${profile.location.mainBranch.address}، ${profile.location.country}.`,
+                        type: 'normal'
+                    };
+                }
+            }
+        }
+
+        // 2. Local Database Sync (Products checking)
+        try {
+            let syncModule;
+            try {
+                syncModule = await import(isEnglish ? '../en/bot_core/site_sync_config.js' : '../ar/bot_core/site_sync_config.js');
+            } catch (importErr) {
+                // Fallback to ar/bot_core/site_sync_config.js if en/ doesn't exist
+                syncModule = await import('../ar/bot_core/site_sync_config.js');
+            }
+            const SiteSyncConfig = syncModule.default;
+            const matchedProducts = SiteSyncConfig.searchProducts(text);
+
+            if (matchedProducts && matchedProducts.length > 0) {
+                const p = matchedProducts[0];
+                if (isEnglish) {
+                    return {
+                        answer: `We found a product matching your inquiry in our medical catalog:\n\n**${p.nameEn || p.nameAr}**\n- Category: ${p.categoryEn || p.category}\n- Country of Origin: ${p.originEn || p.origin}\n- Description: ${p.descEn || p.desc || 'No description available'}\n\nWould you like to know more?`,
+                        type: 'normal'
+                    };
+                } else {
+                    return {
+                        answer: `وجدنا منتجاً يطابق استفسارك من الكتالوج الطبي الخاص بنا:\n\n**${p.nameAr} (${p.nameEn})**\n- التصنيف: ${p.category}\n- بلد المنشأ: ${p.origin}\n- الوصف: ${p.desc || 'لا يوجد وصف متاح'}\n\nهل ترغب في معرفة المزيد؟`,
+                        type: 'normal'
+                    };
+                }
+            }
+        } catch (e) {
+            console.error("Error linking with site sync logic:", e);
+        }
+
+        // 3. Fallback (Knowledge Base / Web logic simplified simulation)
+        var answersAr = {
+            'شحنة': 'بخصوص الشحنات والتوريد، نعمل وفق أعلى معايير سلسلة التبريد لضمان الجودة. يمكنك طلب توريد من قسم الطلبات.',
+            'كتالوج': 'يتوفر لدينا كتالوج شامل يشمل الفيتامينات والهرمونات. يمكنك استخدام محرك البحث في قسم المنتجات.',
+            'علمي': 'الفيتامينات مثل D3 تلعب دوراً محورياً في دعم المناعة. الهرمونات البديلة تستخدم تحت إشراف طبي. تُعد هذه المعلومات إرشادية وتثقيفية، ويُنصح دائماً باستشارة طبيبك المختص.'
         };
 
-        var reply = answers['علمي'];
-        var type = 'normal';
+        var answersEn = {
+            'شحنة': 'Regarding shipments and supply, we operate according to the highest cold chain standards to guarantee quality. You can request supply from the orders section.',
+            'كتالوج': 'We have a comprehensive catalog that includes vitamins and hormones. You can use the search bar in the products section.',
+            'علمي': 'Vitamins such as D3 play a pivotal role in supporting immunity. Hormone replacement therapies are used under medical supervision. This information is for guidance and educational purposes only; it is always recommended to consult your specialist doctor.'
+        };
 
-        if (text.includes('شحن') || text.includes('توريد') || text.includes('لوجست')) {
+        var answers = isEnglish ? answersEn : answersAr;
+        var reply = answers['علمي'];
+
+        const matchesShipment = isEnglish ?
+            (lowerText.includes('ship') || lowerText.includes('supply') || lowerText.includes('logist')) :
+            (text.includes('شحن') || text.includes('توريد') || text.includes('لوجست'));
+
+        const matchesCatalog = isEnglish ?
+            (lowerText.includes('catalog') || lowerText.includes('product')) :
+            (text.includes('كتالوج') || text.includes('منتجات'));
+
+        const matchesPrice = isEnglish ?
+            (lowerText.includes('price') || lowerText.includes('discount')) :
+            (text.includes('سعر') || text.includes('خصم'));
+
+        if (matchesShipment) {
             reply = answers['شحنة'];
-        } else if (text.includes('كتالوج') || text.includes('منتج') || text.includes('هرمون')) {
+        } else if (matchesCatalog) {
             reply = answers['كتالوج'];
-        } else if (text.includes('فيتامين') || text.includes('علم') || text.includes('صحي')) {
-            reply = answers['علمي'];
-        } else if (text.includes('سعر') || text.includes('شراء') || text.includes('خصم')) {
-            reply = 'أعتذر منك، تخصصي ينحصر في علم الهرمونات والفيتامينات والخدمات اللوجستية لشركة Endocare. كيف يمكنني مساعدتك في هذا النطاق؟';
-            type = 'out-of-scope';
+        } else if (matchesPrice) {
+            reply = isEnglish ? 
+                'For commercial pricing inquiries, please contact sales directly. How else can I help you?' :
+                'للاستفسار عن الأسعار التجارية، يرجى التواصل مع المبيعات مباشرة. كيف يمكنني مساعدتك بخلاف ذلك؟';
         }
 
         return {
             answer: reply,
-            category: 'General',
-            type: type,
+            type: 'normal'
         };
     }
 
     function callBotAPI(userText, sessionId) {
-        return new Promise(function (resolve) {
-            setTimeout(function () {
-                resolve(getDemoResponse(userText));
-            }, 800);
-        });
+        return processBotQuery(userText);
     }
 
     // ─── Send flow ───────────────────────────────────────────────────────────
@@ -272,7 +359,9 @@
             })
             .catch(function (err) {
                 hideTyping();
-                const errorMsg = 'عذراً، واجهت مشكلة في الاتصال. يرجى التحقق من الإنترنت وإعادة المحاولة.';
+                const errorMsg = isEnglish ? 
+                    'Sorry, I encountered a connection issue. Please check your internet and try again.' :
+                    'عذراً، واجهت مشكلة في الاتصال. يرجى التحقق من الإنترنت وإعادة المحاولة.';
                 const msg = {
                     id: generateUUID(),
                     role: 'bot',
@@ -305,7 +394,11 @@
         STATE.messages = [];
         saveConversation();
 
-        addBotMessage('مرحباً بك في Endocare! أنا مساعدك الذكي. هل تبحث عن معلومات حول شحنات وتوريد الهرمونات، أم لديك سؤال علمي حول الفيتامينات؟');
+        if (isEnglish) {
+            addBotMessage('Welcome to Endocare! I am your AI assistant. Are you looking for information about hormone shipments and supply, or do you have a scientific question about vitamins?');
+        } else {
+            addBotMessage('مرحباً بك في Endocare! أنا مساعدك الذكي. هل تبحث عن معلومات حول شحنات وتوريد الهرمونات، أم لديك سؤال علمي حول الفيتامينات؟');
+        }
         showQuickReplies();
     }
 
@@ -377,7 +470,49 @@
     function injectChatbotHTML() {
         if (document.getElementById('chatbot-overlay')) return; // Already injected
         
-        const html = `
+        const html = isEnglish ? `
+    <!-- Chat Overlay -->
+    <div id="chatbot-overlay" class="chatbot-overlay" style="direction: ltr;">
+        <div class="chatbot-container">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <div>
+                        <h5 class="chatbot-title">Endocare AI Assistant</h5>
+                        <span class="chatbot-status">Online - Ready to answer your medical and logistical inquiries</span>
+                    </div>
+                </div>
+                <button id="chatbot-close" class="btn btn-sm chatbot-close-btn" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <!-- Messages -->
+            <div id="chatbot-messages" class="chatbot-messages">
+                <!-- Messages will be rendered here by JS -->
+            </div>
+
+            <!-- Network Banner -->
+            <div id="chatbot-network-banner" class="chatbot-network-banner d-none">
+                <i class="bi bi-wifi-off me-2"></i>
+                <span>Sorry, you are offline. Your message will be saved.</span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chatbot-input-area">
+                <div class="chatbot-input-wrapper">
+                    <textarea id="chatbot-input" class="chatbot-input" rows="1" placeholder="Type your question here about hormones, vitamins, or our services..." maxlength="500"></textarea>
+                    <button id="chatbot-send" class="btn btn-primary chatbot-send-btn" aria-label="Send">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+                <div class="chatbot-char-count"><span id="chatbot-char-count">0</span>/500</div>
+            </div>
+        </div>
+    </div>` : `
     <!-- Chat Overlay -->
     <div id="chatbot-overlay" class="chatbot-overlay">
         <div class="chatbot-container">
@@ -400,19 +535,6 @@
             <!-- Messages -->
             <div id="chatbot-messages" class="chatbot-messages">
                 <!-- Messages will be rendered here by JS -->
-            </div>
-
-            <!-- Quick Replies (Triage) -->
-            <div id="chatbot-quick-replies" class="chatbot-quick-replies">
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="شحنة">
-                    <i class="bi bi-truck ms-1"></i>استفسار عن شحنة
-                </button>
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="علمي">
-                    <i class="bi bi-flask ms-1"></i>أسئلة علمية عن الفيتامينات
-                </button>
-                <button class="btn btn-outline-primary btn-sm quick-reply-btn" data-query="كتالوج">
-                    <i class="bi bi-book ms-1"></i>كتالوج الهرمونات المتاحة
-                </button>
             </div>
 
             <!-- Network Banner -->

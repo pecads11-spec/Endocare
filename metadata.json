@@ -1,6 +1,8 @@
 {
-  "name": "Endocare Plus",
-  "description": "تطبيق اندوكير بلس - هيكل فارغ",
+  "name": "Endocare Plus-v7",
+  "description": "موقع اندوكير بلس ",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

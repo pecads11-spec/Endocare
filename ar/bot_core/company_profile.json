@@ -1,0 +1,82 @@
+{
+  "companyName": "EndoCare اليمن",
+  "legalName": "شركة إندوكير للتوريدات الدوائية",
+  "specialty": "استيراد وتوزيع الفيتامينات، الهرمونات، المواد الفعالة الصيدلانية، والمستلزمات الطبية",
+  "description": "شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.",
+  "slogan": "Vital Ingredients for Better Lives",
+  "founded": "2019",
+  "experience": "7+ سنوات التزام مهني",
+  "coverage": "22 محافظة يمنية",
+  "partners": "12+ شريك تصنيع عالمي",
+  "activeSubstances": "400+ مادة فعالة",
+  "medicalPartners": "200+ مؤسسة طبية شريكة",
+  "location": {
+    "country": "اليمن",
+    "mainBranch": {
+      "city": "صنعاء",
+      "address": "شارع حدة، مبنى البركة التجاري، الطابق الثالث، بجوار مستشفى الثورة العام",
+      "phone": "+967 712 345 678",
+      "landline": "+967 1 234 567",
+      "email": "sanaa@endocare-ye.com",
+      "workingHours": "الأحد - الخميس: 9:00 صباحاً - 8:00 مساءً",
+      "type": "المركز الرئيسي والمستودع المركزي",
+      "coordinates": { "lat": 15.325997, "lng": 44.205247 }
+    },
+    "branches": [
+      {
+        "city": "عدن",
+        "address": "مديرية المنصورة، شارع الستين، مجمع الفردوس الصحي",
+        "phone": "+967 2 345 678",
+        "mobile": "+967 712 345 679",
+        "email": "aden@endocare-ye.com",
+        "workingHours": "الأحد - الخميس: 9:00 صباحاً - 8:00 مساءً",
+        "type": "مستودع إقليمي - مركز لوجستي للمحافظات الجنوبية والشرقية",
+        "coordinates": { "lat": 12.833333, "lng": 45.033333 }
+      }
+    ],
+    "regionalHubs": [
+      { "city": "المكلا", "role": "فرع الشرق - حضرموت" },
+      { "city": "تعز", "role": "مركز توزيع إقليمي" },
+      { "city": "الحديدة", "role": "مركز توزيع إقليمي" }
+    ]
+  },
+  "contact": {
+    "customerService": "+967 712 345 678",
+    "email": "info@endocare-ye.com",
+    "sales": "+967 712 345 678",
+    "whatsapp": "https://wa.me/967712345678",
+    "technicalSupport": "+967 712 345 678"
+  },
+  "workingHours": "الأحد - الخميس: 9:00 صباحاً - 8:00 مساءً",
+  "socialMedia": {
+    "facebook": "https://facebook.com/endocare",
+    "telegram": "https://telegram.me/endocare",
+    "linkedin": "https://linkedin.com/company/endocare",
+    "whatsapp": "https://wa.me/967712345678"
+  },
+  "quickLinks": {
+    "products": "/service.html",
+    "pv": "/quality.html",
+    "contact": "/contact.html",
+    "supplyRequest": "/supply-request.html",
+    "blog": "/blog.html",
+    "faq": "/faq.html",
+    "about": "/about.html"
+  },
+  "certifications": [
+    { "name": "ترخيص الهيئة العليا للأدوية والمستلزمات الطبية", "number": "MOH-YE-452-2024", "authority": "وزارة الصحة العامة والسكان", "status": "نشط ومحدث دورياً" },
+    { "name": "ISO 9001:2015 - نظام إدارة الجودة", "number": "ISO-9001-2015-YE", "authority": "بيرو فيريتاس الاعتمادية", "expiry": "15 مايو 2028" },
+    { "name": "GDP - ممارسات التوزيع الجيد", "number": "EU-GDP-2024-8849", "authority": "معهد توريد الدواء الأوروبي", "expiry": "31 ديسمبر 2027" }
+  ],
+  "qualityStandards": ["GMP", "GDP", "ISO 9001:2015", "CoA", "سلسلة تبريد متكاملة (2°-8°م)"],
+  "services": [
+    "توريد الهرمونات الطبية",
+    "توريد الفيتامينات والمكملات",
+    "توفير المواد الخام الفعالة (APIs)",
+    "التوصيل بدرجة حرارة محكومة (+2 إلى +8)",
+    "الاستشارة الصيدلانية",
+    "تخصيص الحزم الدوائية",
+    "عقود توريد سنوية للمستشفيات"
+  ],
+  "distributorNote": "بصفتنا شركة توريد دوائية متخصصة، لا نقوم بصرف الأدوية أو الهرمونات مباشرة للجمهور بدون وصفة طبية أصلية ومعتمدة."
+}

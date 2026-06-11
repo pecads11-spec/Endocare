@@ -1,10 +1,12 @@
 (function () {
     "use strict";
 
+    const isEnglish = window.location.pathname.includes('/en/');
+
     const SUBSTANCE_DB = {
-        'Hydrocortisone': { origin: 'ألمانيا', batch: 'HYD-2026-01' },
-        'Testosterone': { origin: 'بلجيكا', batch: 'TST-2026-03' },
-        'Vitamin D3': { origin: 'سويسرا', batch: 'VD3-2026-02' },
+        'Hydrocortisone': { originAr: 'ألمانيا', originEn: 'Germany', batch: 'HYD-2026-01' },
+        'Testosterone': { originAr: 'بلجيكا', originEn: 'Belgium', batch: 'TST-2026-03' },
+        'Vitamin D3': { originAr: 'سويسرا', originEn: 'Switzerland', batch: 'VD3-2026-02' },
     };
 
     const STATE = {
@@ -22,9 +24,143 @@
     }
 
     function injectPVHTML() {
-        if (document.getElementById('pvModal')) return;
+        if (document.getElementById('pvModal') || document.getElementById('inline-pv-form')) return;
 
-        const html = `
+        const html = isEnglish ? `
+    <div class="modal fade" id="pvModal" tabindex="-1" aria-labelledby="pvModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content pv-glass-modal" dir="ltr" style="text-align: left;">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title text-start" id="pvModalLabel"><i class="bi bi-shield-plus me-2 text-primary"></i>Pharmacovigilance</h5>
+                    <button type="button" class="btn-close ms-auto me-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <div class="pv-section">
+                        <div class="pv-badge bg-green-light text-dark"><i class="bi bi-box-seam me-1"></i>1. Active Substance Data</div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-sm-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-substance" placeholder="Substance Name or CAS" list="pv-substances" autocomplete="off">
+                                    <label for="pv-substance">Substance Name or CAS</label>
+                                    <datalist id="pv-substances">
+                                        <option value="Hydrocortisone">
+                                        <option value="Testosterone">
+                                        <option value="Vitamin D3">
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-batch" placeholder="Batch Number">
+                                    <label for="pv-batch">Batch Number</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control bg-light" id="pv-origin" placeholder="Origin" readonly>
+                                    <label for="pv-origin">Country of Origin</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pv-section mt-3">
+                        <div class="pv-badge bg-warning text-dark"><i class="bi bi-exclamation-triangle me-1"></i>2. Event Type <span id="pv-type-count" class="badge bg-dark ms-2">0</span></div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Unexpected side effect">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-person-x fs-5 me-2 text-danger"></i> Unexpected side effect
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Lack or weakness of efficacy">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-graph-down-arrow fs-5 me-2 text-warning"></i> Lack or weakness of efficacy
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Suspicion of quality">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-box-seam-fill fs-5 me-2 text-info"></i> Suspicion of quality
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="pv-check-card w-100">
+                                    <input type="checkbox" name="pv-type" class="pv-check-input" value="Medication error or mismatched dosage">
+                                    <span class="pv-check-content">
+                                        <i class="bi bi-prescription2 fs-5 me-2 text-primary"></i> Medication error or mismatched dosage
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating pv-density mt-1">
+                                    <input type="text" class="form-control" id="pv-custom-type" placeholder="Enter other details">
+                                    <label for="pv-custom-type"><i class="bi bi-pencil-square me-1"></i>Custom (enter other details)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pv-section mt-3">
+                        <div class="pv-badge bg-primary text-white"><i class="bi bi-person-badge me-1"></i>3. Reporter Information</div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-12">
+                                <div class="form-floating pv-density">
+                                    <textarea class="form-control" placeholder="Brief description of the case" id="pv-desc" style="height: 50px"></textarea>
+                                    <label for="pv-desc">Brief description of the case</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-name" placeholder="Name">
+                                    <label for="pv-name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="text" class="form-control" id="pv-org" placeholder="Organization">
+                                    <label for="pv-org">Organization (Hospital/Pharmacy)</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-floating pv-density">
+                                    <input type="tel" class="form-control" id="pv-phone" placeholder="Emergency Phone">
+                                    <label for="pv-phone">Emergency Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating pv-density mt-1">
+                                    <textarea class="form-control" placeholder="Additional Notes" id="pv-notes" style="height: 60px"></textarea>
+                                    <label for="pv-notes">Additional Notes</label>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pv-consent">
+                                    <label class="form-check-label small" for="pv-consent">
+                                        I agree to transfer my data and the reported case data to the Pharmacovigilance Department at EndoCare and process it in accordance with the Privacy Policy.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 justify-content-center gap-2">
+                    <button type="button" class="btn btn-outline-secondary pv-action-btn" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger fw-bold pv-action-btn pv-submit-btn" id="pv-submit-btn">
+                        <i class="bi bi-send-check me-2"></i>Submit Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>` : `
     <div class="modal fade" id="pvModal" tabindex="-1" aria-labelledby="pvModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content pv-glass-modal">
@@ -173,7 +309,7 @@
         const originField = get$('pv-origin');
         const batchField = get$('pv-batch');
         if (SUBSTANCE_DB[substance]) {
-            originField.value = SUBSTANCE_DB[substance].origin;
+            originField.value = isEnglish ? SUBSTANCE_DB[substance].originEn : SUBSTANCE_DB[substance].originAr;
             if (!batchField.value) {
                 batchField.value = SUBSTANCE_DB[substance].batch;
             }
@@ -210,8 +346,12 @@
         alertDiv.className = 'alert alert-' + type + ' pv-alert text-center mt-3';
         alertDiv.setAttribute('role', 'alert');
         alertDiv.innerHTML = message;
-        var footer = modalEl.querySelector('.modal-footer');
-        footer.parentNode.insertBefore(alertDiv, footer);
+        var footer = document.querySelector('.modal-footer') || document.querySelector('.pv-footer');
+        if (footer) {
+            footer.parentNode.insertBefore(alertDiv, footer);
+        } else if (submitBtn) {
+            submitBtn.parentNode.insertBefore(alertDiv, submitBtn);
+        }
         setTimeout(function () {
             if (alertDiv.parentNode) alertDiv.remove();
         }, 5000);
@@ -227,10 +367,10 @@
         var phone = get$('pv-phone').value.trim();
         var consent = get$('pv-consent').checked;
 
-        if (!substance) { showAlert('يرجى إدخال اسم المادة الفعالة.', 'danger'); return; }
-        if (!batch) { showAlert('يرجى إدخال رقم التشغيلة (Batch).', 'danger'); return; }
-        if (!name) { showAlert('يرجى إدخال اسم مقدم البلاغ.', 'danger'); return; }
-        if (!consent) { showAlert('يرجى الموافقة على سياسة الخصوصية لإرسال التقرير.', 'danger'); return; }
+        if (!substance) { showAlert(isEnglish ? 'Please enter the active substance name.' : 'يرجى إدخال اسم المادة الفعالة.', 'danger'); return; }
+        if (!batch) { showAlert(isEnglish ? 'Please enter the batch number (Batch).' : 'يرجى إدخال رقم التشغيلة (Batch).', 'danger'); return; }
+        if (!name) { showAlert(isEnglish ? 'Please enter the reporter name.' : 'يرجى إدخال اسم مقدم البلاغ.', 'danger'); return; }
+        if (!consent) { showAlert(isEnglish ? 'Please agree to the privacy policy to submit the report.' : 'يرجى الموافقة على سياسة الخصوصية لإرسال التقرير.', 'danger'); return; }
 
         var selectedTypes = [];
         document.querySelectorAll('input[name="pv-type"]:checked').forEach(function (cb) {
@@ -244,7 +384,7 @@
             timestamp: isoNow(),
             substance: substance,
             batch: batch,
-            origin: get$('pv-origin').value || 'غير محدد',
+            origin: get$('pv-origin').value || (isEnglish ? 'Not Specified' : 'غير محدد'),
             eventTypes: selectedTypes,
             description: get$('pv-desc').value.trim(),
             reporter: {
@@ -257,14 +397,31 @@
 
         STATE.isSubmitting = true;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>جارٍ الإرسال...';
+        submitBtn.innerHTML = isEnglish ? '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending...' : '<span class="spinner-border spinner-border-sm me-2" role="status"></span>جارٍ الإرسال...';
 
         setTimeout(function () {
             STATE.isSubmitting = false;
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="bi bi-send-check me-2"></i>إرسال التقرير';
+            submitBtn.innerHTML = isEnglish ? '<i class="bi bi-send-check me-2"></i>Submit Report' : '<i class="bi bi-send-check me-2"></i>إرسال التقرير';
 
-            var successMsg = '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> تم استلام التقرير بنجاح. رقم التذكرة: <strong>' + report.ticket + '</strong>. سيتم التواصل معكم خلال 24 ساعة عمل.';
+            if (window.db && window.db.addPVReport) {
+                // transform object slightly to match admin table expectations if needed
+                window.db.addPVReport({
+                    id: Date.now(),
+                    ticket: report.ticket,
+                    product: report.substance,
+                    batch: report.batch,
+                    eventType: report.eventTypes.join(', '),
+                    date: new Date().toISOString().split('T')[0],
+                    status: isEnglish ? 'New' : 'جديد',
+                    severity: isEnglish ? 'Medium' : 'متوسطة',
+                    reporter: report.reporter.name
+                });
+            }
+
+            var successMsg = isEnglish ? 
+                '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> Report received successfully. Ticket number: <strong>' + report.ticket + '</strong>. We will contact you within 24 working hours.' :
+                '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> تم استلام التقرير بنجاح. رقم التذكرة: <strong>' + report.ticket + '</strong>. سيتم التواصل معكم خلال 24 ساعة عمل.';
             showAlert(successMsg, 'success');
             resetForm();
 
@@ -279,12 +436,15 @@
         modalEl = document.getElementById('pvModal');
         submitBtn = document.getElementById('pv-submit-btn');
 
-        if (!fab || !modalEl || !submitBtn) return;
+        // We only really strictly need the submitBtn to be present to function.
+        if (!submitBtn) return;
 
         var substanceInput = get$('pv-substance');
         var batchInput = get$('pv-batch');
 
-        substanceInput.addEventListener('input', updateOrigin);
+        if (substanceInput) {
+            substanceInput.addEventListener('input', updateOrigin);
+        }
 
         document.querySelectorAll('input[name="pv-type"]').forEach(function (cb) {
             cb.addEventListener('change', updateTypeCount);
@@ -292,11 +452,13 @@
 
         submitBtn.addEventListener('click', handleSubmit);
 
-        modalEl.addEventListener('hidden.bs.modal', function () {
-            resetForm();
-            var alert = document.querySelector('.pv-alert');
-            if (alert) alert.remove();
-        });
+        if (modalEl) {
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                resetForm();
+                var alert = document.querySelector('.pv-alert');
+                if (alert) alert.remove();
+            });
+        }
 
         updateOrigin();
     }

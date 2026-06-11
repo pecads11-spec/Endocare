@@ -1,0 +1,142 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-06-11",
+  "description": "الفهرس المرجعي لمصادر المعرفة الطبية والعلمية لـ EndoBot - مستمد من كتالوج المنتجات الفعلي للموقع",
+  "documentCategories": {
+    "vitamins": "الفيتامينات والمكملات الغذائية",
+    "hormones": "الهرمونات والعلاجات الهرمونية",
+    "corticosteroids": "الستيرويدات القشرية",
+    "thyroid": "هرمونات الغدة الدرقية",
+    "fertility": "هرمونات الخصوبة",
+    "growth": "هرمونات النمو",
+    "other": "مواد فعالة أخرى"
+  },
+  "documents": [
+    {
+      "filenames": ["vitamin_d3.md"],
+      "topic": "فيتامين D3 (كوليكالسيفيرول)",
+      "tags": ["فيتامين D3", "كوليكالسيفيرول", "Cholecalciferol", "CAS: 67-97-0", "فيتامينات"],
+      "description": "ملف علمي عن فيتامين D3 (كوليكالسيفيرول) - المصادر، آلية العمل، الجرعات، الاستخدامات السريرية.",
+      "products": ["Vitamin D3"],
+      "category": "vitamins"
+    },
+    {
+      "filenames": ["vitamin_c_zinc.md"],
+      "topic": "فيتامين C مع الزنك",
+      "tags": ["فيتامين C", "حمض الأسكوربيك", "زنك", "CAS: 50-81-7", "مناعة"],
+      "description": "ملف علمي عن فيتامين C والزنك - دعم المناعة، الجرعات، الفوائد المشتركة.",
+      "products": ["Vitamin C + Zinc"],
+      "category": "vitamins"
+    },
+    {
+      "filenames": ["vitamin_b_complex.md"],
+      "topic": "مجموعة فيتامينات B المركبة",
+      "tags": ["B-Complex", "فيتامين B1", "B2", "B6", "B12", "CAS: 12001-76-2", "طاقة"],
+      "description": "ملف علمي عن مجموعة فيتامينات B المركبة - التمثيل الغذائي، إنتاج الطاقة، دعم الجهاز العصبي.",
+      "products": ["Vitamin B-Complex"],
+      "category": "vitamins"
+    },
+    {
+      "filenames": ["folic_acid.md"],
+      "topic": "حمض الفوليك 5 مجم",
+      "tags": ["حمض الفوليك", "Folic Acid", "CAS: 59-30-3", "الحمل", "صحة الجنين"],
+      "description": "ملف علمي عن حمض الفوليك - الأهمية في فترة الحمل، الوقاية من عيوب الأنبوب العصبي، الجرعات.",
+      "products": ["Folic Acid 5mg"],
+      "category": "vitamins"
+    },
+    {
+      "filenames": ["somatropin_hgh.md"],
+      "topic": "سوماتروبين (هرمون النمو البشري HGH)",
+      "tags": ["سوماتروبين", "Somatropin", "HGH", "هرمون النمو", "CAS: 12629-01-5", "قزامة"],
+      "description": "ملف علمي عن هرمون النمو البشري (سوماتروبين) - دواعي الاستعمال، آلية العمل، الجرعات، التأثيرات.",
+      "products": ["Somatropin (HGH)", "Norditropin (Somatropin)"],
+      "category": "growth"
+    },
+    {
+      "filenames": ["testosterone_undecanoate.md"],
+      "topic": "تستوستيرون أونديكانوات",
+      "tags": ["تستوستيرون", "Testosterone Undecanoate", "CAS: 5949-44-0", "نقص التستوستيرون", "العلاج الهرموني"],
+      "description": "ملف علمي عن هرمون التستوستيرون (أونديكانوات) - قصور الغدد التناسلية الذكرية، العلاج الهرموني البديل، الجرعات.",
+      "products": ["Testosterone Undecanoate"],
+      "category": "hormones"
+    },
+    {
+      "filenames": ["levothyroxine.md"],
+      "topic": "ليفوثيروكسين (هرمون الغدة الدرقية)",
+      "tags": ["ليفوثيروكسين", "Levothyroxine", "CAS: 51-48-9", "الغدة الدرقية", "قصور الدرقية"],
+      "description": "ملف علمي عن هرمون الغدة الدرقية (T4) - علاج قصور الغدة الدرقية، الجرعات، المراقبة المخبرية.",
+      "products": ["Levothyroxine"],
+      "category": "thyroid"
+    },
+    {
+      "filenames": ["fsh_urofollitropin.md"],
+      "topic": "FSH (يوروفوليتروبين) - هرمون منبه للجريب",
+      "tags": ["FSH", "Urofollitropin", "CAS: 97048-13-0", "خصوبة", "عقم", "تبويض"],
+      "description": "ملف علمي عن الهرمون المنبه للجريب - علاج العقم، تحريض الإباضة، الإخصاب المساعد.",
+      "products": ["FSH (Urofollitropin)"],
+      "category": "fertility"
+    },
+    {
+      "filenames": ["hydrocortisone.md"],
+      "topic": "هيدروكورتيزون (ستيرويد قشري)",
+      "tags": ["هيدروكورتيزون", "Hydrocortisone", "CAS: 50-23-7", "كورتيكوستيرويد", "مضاد التهاب"],
+      "description": "ملف علمي عن الهيدروكورتيزون - مضاد التهاب قشري، قصور الغدة الكظرية، الاستخدامات السريرية.",
+      "products": ["Hydrocortisone"],
+      "category": "corticosteroids"
+    },
+    {
+      "filenames": ["insulin_glargine.md"],
+      "topic": "أنسولين جلارجين (طويل المفعول)",
+      "tags": ["أنسولين جلارجين", "Insulin Glargine", "CAS: 160337-95-1", "سكري", "السكري"],
+      "description": "ملف علمي عن الأنسولين طويل المفعول - إدارة مرض السكري من النوع 1 و 2، آلية العمل.",
+      "products": ["Insulin Glargine"],
+      "category": "hormones"
+    },
+    {
+      "filenames": ["estradiol.md"],
+      "topic": "إستراديول (هرمون أنثوي)",
+      "tags": ["إستراديول", "Estradiol", "CAS: 50-28-2", "هرمون أنثوي", "العلاج الهرموني البديل"],
+      "description": "ملف علمي عن هرمون الإستراديول - العلاج الهرموني البديل، الخصوبة، انقطاع الطمث.",
+      "products": ["Estradiol"],
+      "category": "fertility"
+    },
+    {
+      "filenames": ["progesterone.md"],
+      "topic": "بروجسترون (هرمون الحمل)",
+      "tags": ["بروجسترون", "Progesterone", "CAS: 57-83-0", "هرمون أنثوي", "الحمل", "الخصوبة"],
+      "description": "ملف علمي عن هرمون البروجسترون - دعم الحمل، تنظيم الدورة، علاج العقم.",
+      "products": ["Progesterone"],
+      "category": "fertility"
+    },
+    {
+      "filenames": ["prednisolone_dexamethasone.md"],
+      "topic": "بريدنيزولون وديكساميثازون (ستيرويدات قشرية)",
+      "tags": ["بريدنيزولون", "ديكساميثازون", "Prednisolone", "Dexamethasone", "CAS: 50-24-8", "CAS: 50-02-2", "كورتيكوستيرويد"],
+      "description": "ملف علمي عن الستيرويدات القشرية - مضادات الالتهاب، الاستطبابات، الفروقات بين بريدنيزولون وديكساميثازون.",
+      "products": ["Prednisolone", "Dexamethasone"],
+      "category": "corticosteroids"
+    },
+    {
+      "filenames": ["liothyronine.md"],
+      "topic": "ليوثيرونين (T3 - هرمون الغدة الدرقية)",
+      "tags": ["ليوثيرونين", "Liothyronine", "CAS: 6893-02-3", "الغدة الدرقية", "T3"],
+      "description": "ملف علمي عن هرمون T3 ثلاثي اليود - الاستخدام في قصور الدرقية، المقارنة مع T4.",
+      "products": ["Liothyronine"],
+      "category": "thyroid"
+    }
+  ],
+  "futureDocuments": [
+    {
+      "filenames": ["ashwagandha.md"],
+      "topic": "الأشواغاندا (Withania somnifera)",
+      "tags": ["أشواغاندا", "Ashwagandha", "عشبة", "الكورتيزول", "التستوستيرون", "تكيف"],
+      "description": "ملف طبيعي عن عشبة الأشواغاندا وفوائدها في تنظيم الهرمونات وتقليل التوتر."
+    },
+    {
+      "filenames": ["centrum_multivitamin.md"],
+      "topic": "سنتروم (Centrum) - المكمل المتعدد",
+      "tags": ["سنتروم", "Centrum", "فيتامينات متعددة", "معادن"],
+      "description": "ملف علمي عن المكمل الغذائي المتعدد سنتروم - المكونات والفوائد."
+    }
+  ]
+}

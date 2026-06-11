@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <title>EndoCare اليمن - المركز المعرفي والمكتبة العلمية</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Cairo:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar py-2 d-none d-lg-flex">
+        <div class="container">
+            <div class="d-flex justify-content-evenly align-items-center">
+                <small><i class="bi bi-snow2 me-2"></i>توصيل مبرد مضمون من الميناء إلى المستودع</small>
+                <small><i class="bi bi-patch-check me-2"></i>شهادات GMP و ISO لجميع المنتجات</small>
+                <small><i class="bi bi-headset me-2"></i>دعم فني وطوارئ 24/7</small>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid bg-primary text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">اتصل بنا</h5>
+                        <span class="site-phone-text">+967 712 345 678</span>
+                    </div>
+                </div>
+                <a href="home.html"><img src="../img/logo2.png" alt="EndoCare" class="logo2-img"></a>
+                <div class="d-flex">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-0">راسلنا</h5>
+                        <span class="site-email-text">info@endocare-ye.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-0 px-lg-3">
+                <a href="home.html" class="navbar-brand d-lg-none">
+                    <img src="../img/logo.png" alt="EndoCare" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <!-- Mobile bottom bar: search + language -->
+                        <div class="d-lg-none mobile-nav-bar">
+                            <div class="mobile-search-wrap">
+                                <input type="text" class="mobile-search-input" placeholder="بحث...">
+                                <i class="bi bi-search mobile-search-icon"></i>
+                            </div>
+                            <a href="../en/blog.html" class="mobile-lang-btn" title="English">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="home.html" class="nav-item nav-link"><i class="bi bi-house-door me-2"></i>الرئيسية</a>
+                        <a href="about.html" class="nav-item nav-link"><i class="bi bi-info-circle me-2"></i>من نحن</a>
+						 <a href="service.html" class="nav-item nav-link"><i class="bi bi-capsule me-2"></i>المنتجات</a>
+						  <a href="quality.html" class="nav-item nav-link"><i class="bi bi-shield-check me-2"></i>الجودة والسلامة</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-grid me-2"></i>المزيد</a>
+                            <div class="dropdown-menu bg-light m-0">
+                               
+                              
+								 <a href="supply-request.html" class="dropdown-item"><i class="bi bi-file-earmark-medical me-2"></i>طلب حصة توريدية</a>
+                                <a href="blog.html" class="dropdown-item active"><i class="bi bi-journal-text me-2"></i>المركز المعرفي</a>
+                                <a href="faq.html" class="dropdown-item"><i class="bi bi-question-circle me-2"></i>الأسئلة الشائعة</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link"><i class="bi bi-envelope me-2"></i>اتصل بنا</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex align-items-center nav-search-container">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="javascript:void(0);" id="navSearchToggle"><i class="bi bi-search"></i></a>
+                        <input type="text" class="form-control nav-search-input" id="navSearchInput" placeholder="اكتب للبحث...">
+                        <a class="btn btn-sm-square btn-primary ms-2" href="supply-request.html" title="طلب حصة توريدية"><i class="bi bi-file-earmark-medical"></i></a>
+                        
+
+<a class="btn btn-sm-square btn-primary ms-2" href="../en/blog.html" title="English"><i class="bi bi-globe"></i></a>
+
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">المركز المعرفي والمكتبة العلمية</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="home.html">الرئيسية</a></li>
+                    <li class="breadcrumb-item" aria-current="page">المركز المعرفي</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Knowledge Center Intro Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <span class="text-primary fw-bold text-uppercase d-block mb-2">منصة المعرفة الدوائية</span>
+                <h1 class="display-6 mb-4">المركز المعرفي والمكتبة العلمية</h1>
+                <p class="mb-4 fs-5 text-dark" style="line-height: 1.8;">مصدرك الموثوق للمعلومات الدوائية واللوجستية والتنظيمية. نقدم محتوى علمياً دقيقاً بإشراف فريق من المتخصصين في الصيدلة وسلسلة الإمداد الدوائي. جميع المقالات تستند إلى مراجع طبية معتمدة ومنشورات علمية محكمة.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="kc-stats-row wow fadeInUp" data-wow-delay="0.2s">
+                <div class="kc-stat-card">
+                    <div class="kc-stat-number">40+</div>
+                    <div class="kc-stat-label">مقال ومطبوع علمي</div>
+                </div>
+                <div class="kc-stat-card">
+                    <div class="kc-stat-number">12</div>
+                    <div class="kc-stat-label">خبير ومحرر معتمد</div>
+                </div>
+               
+            </div>
+
+            <!-- Category Filter -->
+            <div class="kc-category-nav wow fadeInUp" data-wow-delay="0.3s">
+                <button class="kc-cat-btn active" data-cat="all">الكل</button>
+                <button class="kc-cat-btn" data-cat="market"><i class="bi bi-graph-up ms-1"></i>تقارير سوقية</button>
+                <button class="kc-cat-btn" data-cat="logistics"><i class="bi bi-truck ms-1"></i>تحليلات لوجستية</button>
+                <button class="kc-cat-btn" data-cat="regulatory"><i class="bi bi-shield-check ms-1"></i>تحديثات تنظيمية</button>
+                <button class="kc-cat-btn" data-cat="scientific"><i class="bi bi-journal-text"></i>نشرات علمية</button>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="row g-4" id="kc-articles-grid">
+                
+                <!-- Mock Element 1 -->
+                <div class="col-lg-4 col-md-6 kc-article-wrapper mock-placeholder" data-cat="market">
+                    <div class="kc-article-card">
+                        <div class="kc-card-img-wrap">
+                            <img class="kc-card-img" src="../img/about-1.jpg" alt="تحليلات سوق الدواء 2026">
+                            <span class="kc-card-category kc-cat-market">تقارير سوقية</span>
+                        </div>
+                        <div class="kc-card-body">
+                            <h3 class="kc-card-title">تحليلات سوق الدواء 2026</h3>
+                            <div class="kc-card-meta">
+                                <span><i class="bi bi-calendar"></i>آخر تحديث: 2026-06-01</span>
+                                <span class="kc-card-editor"><i class="bi bi-person"></i>د. محمد العبسي</span>
+                            </div>
+                            <p class="kc-card-excerpt">نظرة عامة على توجهات سوق الدواء اليمني وأهم التحديات اللوجستية التي تواجه عملية الاستيراد.</p>
+                            <div class="kc-card-refs">
+                                <i class="bi bi-journal-text"></i>المراجع: تقارير منظمة الصحة العالمية
+                            </div>
+                            <div class="kc-card-actions">
+                                <a href="#" class="kc-btn-read"><i class="bi bi-book"></i>قراءة</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Element 2 -->
+                <div class="col-lg-4 col-md-6 kc-article-wrapper mock-placeholder" data-cat="logistics">
+                    <div class="kc-article-card">
+                        <div class="kc-card-img-wrap">
+                            <img class="kc-card-img" src="../img/about-2.jpg" alt="سلسلة التبريد المعتمدة">
+                            <span class="kc-card-category kc-cat-logistics">تحليلات لوجستية</span>
+                        </div>
+                        <div class="kc-card-body">
+                            <h3 class="kc-card-title">معايير سلسلة التبريد لللقاحات</h3>
+                            <div class="kc-card-meta">
+                                <span><i class="bi bi-calendar"></i>آخر تحديث: 2026-05-15</span>
+                                <span class="kc-card-editor"><i class="bi bi-person"></i>م. أحمد سعيد</span>
+                            </div>
+                            <p class="kc-card-excerpt">استعراض تفصيلي للمعايير القياسية لنقل اللقاحات والهرمونات ضمن بروتوكولات (GDP).</p>
+                            <div class="kc-card-refs">
+                                <i class="bi bi-journal-text"></i>المراجع: منظمة الدواء الأوروبية
+                            </div>
+                            <div class="kc-card-actions">
+                                <a href="#" class="kc-btn-read"><i class="bi bi-book"></i>قراءة</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Element 3 -->
+                <div class="col-lg-4 col-md-6 kc-article-wrapper mock-placeholder" data-cat="regulatory">
+                    <div class="kc-article-card">
+                        <div class="kc-card-img-wrap">
+                            <img class="kc-card-img" src="../img/about-3.jpg" alt="الهيئة العليا للأدوية">
+                            <span class="kc-card-category kc-cat-regulatory">تحديثات تنظيمية</span>
+                        </div>
+                        <div class="kc-card-body">
+                            <h3 class="kc-card-title">توجيهات الهيئة لعام 2026</h3>
+                            <div class="kc-card-meta">
+                                <span><i class="bi bi-calendar"></i>آخر تحديث: 2026-04-22</span>
+                                <span class="kc-card-editor"><i class="bi bi-person"></i>د. سامي عبدالله</span>
+                            </div>
+                            <p class="kc-card-excerpt">شرح مبسط للإجراءات التنظيمية الجديدة الخاصة باستيراد الأدوية الحيوية وفحص المنشأ.</p>
+                            <div class="kc-card-refs">
+                                <i class="bi bi-journal-text"></i>المراجع: الهيئة العليا للأدوية
+                            </div>
+                            <div class="kc-card-actions">
+                                <a href="#" class="kc-btn-read"><i class="bi bi-book"></i>قراءة</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+        </div>
+    </div>
+    <!-- Knowledge Center End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="home.html" class="navbar-brand">
+                        <img src="../img/logo3.png" alt="EndoCare" class="footer-logo-img" style="height: 110px; border-radius: 6px; margin-bottom: 15px;">
+                    </a>
+                    <p class="fs-5 mb-4">شريكك الموثوق لتوريد الفيتامينات والهرمونات الطبية المعتمدة في اليمن. نلتزم بأعلى معايير الجودة وسلسلة التبريد المتطورة.</p>
+                    <p><i class="bi bi-geo-alt me-2"></i><span class="site-address-text">شارع حدة، مبنى البركة التجاري، صنعاء - اليمن</span></p>
+                    <p><i class="bi bi-telephone me-2"></i><span class="site-phone-text">+967 712 345 678</span></p>
+                    <p><i class="bi bi-envelope me-2"></i><span class="site-email-text">info@endocare-ye.com</span></p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2 site-fb-href" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-tg-href" href="#"><i class="bi bi-telegram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-li-href" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2 site-wa-href" href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">روابط سريعة</h5>
+                            <a class="btn btn-link" href="home.html">الرئيسية</a>
+                            <a class="btn btn-link" href="about.html">من نحن</a>
+                            <a class="btn btn-link" href="supply-request.html">طلب حصة توريدية</a>
+                            <a class="btn btn-link" href="contact.html">اتصل بنا</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-light mb-3">روابط مهمة</h5>
+                            <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#pvModal">التيقظ الدوائي</a>
+                            <a class="btn btn-link" href="quality.html">الجودة والسلامة</a>
+                            <a class="btn btn-link" href="blog.html">المركز المعرفي</a>
+                            <a class="btn btn-link" href="faq.html">الأسئلة الشائعة</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5 class="text-light mb-3">النشرة البريدية</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="بريدك الإلكتروني"><button class="btn btn-primary px-4">اشتراك</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">تطوير / <a href="#" class="text-white">سمارت ون للحلول البرمجية &copy; 2026</a></p>
+                </div>
+                <div class="col-md-5 text-center text-md-end mt-3 mt-md-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="tel:+967712345678" title="اتصال"><i class="bi bi-telephone"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="https://wa.me/967712345678" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="mailto:info@smartone.com" title="البريد الإلكتروني"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-sm-square ms-2" href="#" title="الموقع الإلكتروني"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Pharmacovigilance FAB -->
+    <button id="Pharmacovigilance" class="Pharmacovigilance-fab" aria-label="فتح نموذج التيقظ الدوائي">
+      التيقظ الدوائي  <i class="bi bi-shield-plus"></i> 
+    </button>
+
+    <!-- Chatbot FAB -->
+    <button id="chatbot-fab" class="chatbot-fab" aria-label="فتح المساعد الذكي">
+        <i class="bi bi-cpu"></i> Endocare AI
+    </button>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    <!-- Chatbot Javascript -->
+    <script src="../js/chatbot.js"></script>
+    <!-- Pharmacovigilance Javascript -->
+    <script src="../js/pharmacovigilance.js"></script>
+    <!-- Database JS -->
+    <script src="../js/db.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById('kc-articles-grid');
+            if(!grid) return;
+
+            const articles = window.db && window.db.getPublicArticles ? window.db.getPublicArticles() : [];
+            const mocks = grid.querySelectorAll('.mock-placeholder');
+
+            if (articles && articles.length > 0) {
+                // يخفي المحتوى التجريبي
+                mocks.forEach(m => m.style.display = 'none');
+                
+                // إزالة المحتوى الديناميكي السابق إن وُجد (للأمان)
+                grid.querySelectorAll('.dynamic-article').forEach(el => el.remove());
+
+                let html = '';
+                articles.forEach((a, idx) => {
+                    let delay = (idx % 3 + 1) * 0.1;
+                    html += `
+                    <div class="col-lg-4 col-md-6 kc-article-wrapper dynamic-article" data-cat="${a.category}">
+                        <div class="kc-article-card wow fadeInUp" data-wow-delay="${delay}s">
+                            <div class="kc-card-img-wrap">
+                                <img class="kc-card-img" src="${a.image}" alt="${a.title}">
+                                <span class="kc-card-category kc-cat-${a.category}">
+                                    ${a.categoryLabel}
+                                </span>
+                            </div>
+                            <div class="kc-card-body">
+                                <h3 class="kc-card-title">${a.title}</h3>
+                                <div class="kc-card-meta">
+                                    <span><i class="bi bi-calendar"></i>آخر تحديث: ${a.date}</span>
+                                    <span class="kc-card-editor"><i class="bi bi-person"></i>${a.editor}</span>
+                                </div>
+                                <p class="kc-card-excerpt">${a.excerpt}</p>
+                                <div class="kc-card-refs">
+                                    <i class="bi bi-journal-text"></i>المراجع: ${a.refs}
+                                </div>
+                                <div class="kc-card-actions">
+                                    <a href="single-blog.html?id=${a.id}" class="kc-btn-read"><i class="bi bi-book"></i>قراءة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                });
+                grid.insertAdjacentHTML('beforeend', html);
+            } else {
+                // يعرض المحتوى التجريبي إذا كانت المصفوفة فارغة
+                mocks.forEach(m => m.style.display = '');
+            }
+
+            const filterBtns = document.querySelectorAll('.kc-cat-btn');
+            const getActiveWrappers = () => document.querySelectorAll('.kc-article-wrapper');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-cat');
+                    const articleWrappers = getActiveWrappers();
+                    
+                    articleWrappers.forEach(wrapper => {
+                        // لا نفلتر العناصر التجريبية في حال كانت مخفية أصلاً وتوجد بيانات حقيقية
+                        if (articles && articles.length > 0 && wrapper.classList.contains('mock-placeholder')) return;
+                        
+                        const itemCat = wrapper.getAttribute('data-cat');
+                        if(filterValue === 'all' || filterValue === itemCat) {
+                            wrapper.style.display = 'block';
+                            setTimeout(() => {
+                                wrapper.style.opacity = '1';
+                                wrapper.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            wrapper.style.opacity = '0';
+                            wrapper.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                wrapper.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
