@@ -564,7 +564,7 @@ h6,
 .page-header {
   background:
     linear-gradient(135deg, rgba(3, 30, 44, 0.7), rgba(5, 59, 42, 0.7)),
-    url(../img/testimonial.jpg) center center no-repeat;
+    url(../../img/10.png) center center no-repeat;
   background-size: cover;
 }
 
@@ -823,6 +823,7 @@ h6,
     display: block;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: auto !important;
     overflow: hidden !important;
   }
   
@@ -860,11 +861,19 @@ h6,
     box-sizing: border-box !important;
   }
   
-  #itemsTable td input.form-control,
-  #itemsTable td select.form-select,
-  #itemsTable td div {
+  #itemsTable td input,
+  #itemsTable td select {
     max-width: 100% !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
+  }
+  
+  #itemsTable td .d-flex {
+    gap: 0.5rem !important;
+  }
+  
+  #itemsTable td .form-check-inline {
+    margin-left: 0.5rem;
   }
   
   /* Add label prefix before inputs to know what fields they are since headers are hidden */
@@ -905,8 +914,8 @@ h6,
     padding-bottom: 1.5rem !important;
   }
   
-  .container,
-  .container-fluid {
+  .container:not(.px-0),
+  .container-fluid:not(.px-0) {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
@@ -941,8 +950,8 @@ h6,
 /* Mobile bottom bar: search + language */
 .mobile-nav-bar {
   display: flex;
-  height: 36px;
-  border-bottom: 1px solid var(--color-teal-100);
+  height: 32px;
+  margin-top: 8px;
   margin-bottom: 8px;
   padding-bottom: 8px;
   width: 100%;
@@ -958,7 +967,7 @@ h6,
 
 .mobile-search-input {
   width: 100%;
-  height: 36px;
+  height: 32px;
   border: 1px solid var(--color-teal-100);
   border-radius: 6px;
   padding: 0 32px 0 8px;
@@ -977,8 +986,8 @@ h6,
 
 .mobile-search-icon {
   position: absolute;
-  right: 12px;
-  top: 50%;
+  left: 22px;
+  top: 60%;
   transform: translateY(-50%);
   color: var(--bs-gray);
   font-size: 15px;
@@ -988,7 +997,7 @@ h6,
 .mobile-lang-btn {
   flex: 0 0 20%;
   max-width: 20%;
-  height: 36px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -996,9 +1005,10 @@ h6,
   border: 1px solid var(--color-teal-100);
   border-radius: 6px;
   color: var(--bs-primary);
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   transition: all 0.2s;
+  gap:5px;
 }
 
 .mobile-lang-btn:hover {
@@ -1824,6 +1834,13 @@ h6,
   }
 }
 
+.typing-status {
+  font-size: 12px;
+  color: var(--bs-gray);
+  margin-right: 8px;
+  align-self: center;
+}
+
 /* Quick Replies */
 .chatbot-quick-replies {
   display: flex;
@@ -2463,15 +2480,15 @@ h6,
 }
 
 .pharma-card.card-hospitals::before {
-  background-image: url("../img/about-1.jpg");
+  background-image: url("../../img/4.png");
 }
 
 .pharma-card.card-pharmacies::before {
-  background-image: url("../img/about-2.jpg");
+  background-image: url("../../img/5.png");
 }
 
 .pharma-card.card-manufacturers::before {
-  background-image: url("../img/about-3.jpg");
+  background-image: url("../../img/3.png");
 }
 
 .pharma-card:hover::before {
@@ -6130,4 +6147,48 @@ h6,
 .map-wrapper {
   border-radius: 8px !important;
 }
+
+/* Related Articles */
+.related-articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 16px 4px;
+}
+.related-article-btn {
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--color-teal-50, #e8f5e9);
+  color: var(--color-teal-700, #00796b);
+  text-decoration: none;
+  border: 1px solid var(--color-teal-200, #b2dfdb);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.related-article-btn:hover {
+  background: var(--color-teal-100, #c8e6c9);
+  color: var(--color-teal-800, #004d40);
+  border-color: var(--color-teal-300, #80cbc4);
+}
+
+/* ========== TEMPORARILY HIDDEN - START ========== */
+/* Re-enable by removing these rules */
+
+/* 1. Company address & location (footer) */
+p:has(> .site-address-text) { display: none !important; }
+
+/* 2. Newsletter section (footer) */
+.footer .row.g-5 > .col-sm-12:last-child { display: none !important; }
+
+/* 3. Branch address lines (contact page) */
+.branch-card ul li:first-of-type { display: none !important; }
+
+/* 4. Google Maps iframes (contact page) */
+.map-wrapper iframe { display: none !important; }
+
+/* ========== TEMPORARILY HIDDEN - END ========== */
 
