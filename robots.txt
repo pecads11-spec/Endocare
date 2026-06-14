@@ -1,0 +1,10 @@
+# Robots.txt for EndoCare Yemen
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# Sitemap
+Sitemap: https://endocare-ye.com/sitemap.xml
+
+# Crawl-delay for gentle crawling
+Crawl-delay: 10

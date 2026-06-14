@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>لوحة التحكم - EndoCare اليمن</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="لوحة التحكم, EndoCare, إدارة المحتوى, مقالات, منتجات, طلبات توريد, إعدادات الموقع" name="keywords">
+    <meta content="لوحة التحكم - EndoCare اليمن | إدارة المحتوى والمنتجات والمقالات وطلبات التوريد وإعدادات الموقع." name="description">
 
     <link href="img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Cairo:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="ar/css/style.css" rel="stylesheet">
+    <script type="module" src="js/env.js"></script>
 </head>
 
 <body>
@@ -25,21 +26,21 @@
     <div class="admin-login-overlay" id="adminLogin">
         <div class="admin-login-box">
             <div class="login-logo">
-                <img src="img/logo.png" alt="EndoCare">
+                <img src="img/logo.png" alt="EndoCare" loading="lazy">
             </div>
             <h3 class="login-title">لوحة التحكم</h3>
             <p class="login-sub">أدخل بيانات الدخول لإدارة الموقع</p>
-            <form onsubmit="event.preventDefault(); document.getElementById('adminLogin').style.display='none'; document.getElementById('adminWrapper').style.display='flex';">
+            <form onsubmit="event.preventDefault(); checkLogin();">
                 <div class="admin-form-group">
                     <label>البريد الإلكتروني</label>
-                    <input type="email" class="form-control" placeholder="admin@endocare-ye.com" value="admin@endocare-ye.com">
+                    <input type="email" id="loginEmail" class="form-control" placeholder="admin@endocare-ye.com" value="admin@endocare-ye.com">
                 </div>
                 <div class="admin-form-group">
                     <label>كلمة المرور</label>
-                    <input type="password" class="form-control" placeholder="••••••••" value="123456">
+                    <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" value="">
                 </div>
-                <button type="submit" class="login-btn">تسجيل الدخول</button>
-                <p class="text-center mt-3" style="font-size: 12px; color: var(--bs-gray);">للاختبار: اضغط دخول</p>
+                <div id="loginError" style="color: #dc3545; font-size: 13px; margin-bottom: 10px; display: none;">البريد الإلكتروني أو كلمة المرور غير صحيحة</div>
+                <button type="submit" class="login-btn" id="loginBtn">تسجيل الدخول</button>
             </form>
         </div>
     </div>
@@ -53,7 +54,7 @@
         <!-- SIDEBAR -->
         <aside class="admin-sidebar" id="adminSidebar">
             <div class="admin-sidebar-header">
-                <img src="img/logo3.png" alt="EndoCare" onerror="this.src='img/logo3.png'; this.onerror=null;">
+                <img src="img/logo3.png" alt="EndoCare" onerror="this.src='img/logo3.png'; this.onerror=null;" loading="lazy">
                 <h6>إندوكير | لوحة التحكم</h6>
             </div>
 
@@ -535,7 +536,7 @@
                             <div class="admin-form-group">
                                 <label class="form-label">شعار الموقع</label>
                                 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                                    <img src="img/logo2.png" id="setting-siteLogoPreview" style="height:50px;border-radius:6px;border:1px solid var(--color-teal-100);">
+                                    <img src="img/logo2.png" id="setting-siteLogoPreview" style="height:50px;border-radius:6px;border:1px solid var(--color-teal-100);" loading="lazy">
                                     <button class="admin-btn admin-btn-outline" type="button" onclick="alert('خاصية رفع الشعار قيد التطوير.')">تغيير الشعار</button>
                                 </div>
                             </div>
@@ -829,8 +830,8 @@
         document.getElementById('articleEditor').value = article.editor;
         document.getElementById('articleImage').value = article.image;
         document.getElementById('articleExcerpt').value = article.excerpt;
-        document.getElementById('articleContent').value = article.content || '';
-        document.getElementById('articleRefs').value = article.refs || '';
+        document.getElementById('articleContent').value = article.content || 'لوحة التحكم';
+        document.getElementById('articleRefs').value = article.refs || 'لوحة التحكم';
         document.getElementById('articleStatus').value = article.status;
         document.getElementById('articleDate').value = article.date;
         openModal('articleModal');
@@ -849,7 +850,7 @@
             category: selCat.value,
             categoryLabel: catLabel,
             editor: document.getElementById('articleEditor').value,
-            image: document.getElementById('articleImage').value || 'img/carousel-1.jpg',
+            image: document.getElementById('articleImage').value || 'لوحة التحكم',
             excerpt: document.getElementById('articleExcerpt').value,
             content: document.getElementById('articleContent').value,
             refs: document.getElementById('articleRefs').value,
@@ -928,12 +929,12 @@
         document.getElementById('editProductId').value = product.id;
         document.getElementById('prodNameAr').value = product.nameAr;
         document.getElementById('prodNameEn').value = product.nameEn;
-        document.getElementById('prodCas').value = product.cas || '';
+        document.getElementById('prodCas').value = product.cas || 'لوحة التحكم';
         document.getElementById('prodCategory').value = product.category;
         document.getElementById('prodOrigin').value = product.origin;
-        document.getElementById('prodForm').value = product.form || 'Powder';
+        document.getElementById('prodForm').value = product.form || 'لوحة التحكم';
         document.getElementById('prodStatus').value = product.status;
-        document.getElementById('prodDesc').value = product.desc || '';
+        document.getElementById('prodDesc').value = product.desc || 'لوحة التحكم';
         
         if (product.featured === 'yes') {
             document.getElementById('featuredYes').checked = true;
@@ -1094,6 +1095,11 @@
 
     // Call on load
     document.addEventListener("DOMContentLoaded", () => {
+        // Auth check
+        if (localStorage.getItem('endocare_admin_auth') === 'true') {
+            document.getElementById('adminLogin').style.display = 'none';
+            document.getElementById('adminWrapper').style.display = 'flex';
+        }
         renderArticlesTable();
         renderProductsTable();
         renderOrdersTable();
@@ -1106,15 +1112,15 @@
     function loadAdminSettings() {
         if(!window.db) return;
         const settings = window.db.getSiteSettings();
-        document.getElementById('setting-siteName').value = settings.siteName || '';
-        document.getElementById('setting-siteEmail').value = settings.siteEmail || '';
-        document.getElementById('setting-sitePhone').value = settings.sitePhone || '';
-        document.getElementById('setting-siteAddress').value = settings.siteAddress || '';
-        document.getElementById('setting-siteDesc').value = settings.siteDesc || '';
-        document.getElementById('setting-siteFb').value = settings.siteFb || '';
-        document.getElementById('setting-siteWa').value = settings.siteWa || '';
-        document.getElementById('setting-siteTg').value = settings.siteTg || '';
-        document.getElementById('setting-siteLi').value = settings.siteLi || '';
+        document.getElementById('setting-siteName').value = settings.siteName || 'لوحة التحكم';
+        document.getElementById('setting-siteEmail').value = settings.siteEmail || 'لوحة التحكم';
+        document.getElementById('setting-sitePhone').value = settings.sitePhone || 'لوحة التحكم';
+        document.getElementById('setting-siteAddress').value = settings.siteAddress || 'لوحة التحكم';
+        document.getElementById('setting-siteDesc').value = settings.siteDesc || 'لوحة التحكم';
+        document.getElementById('setting-siteFb').value = settings.siteFb || 'لوحة التحكم';
+        document.getElementById('setting-siteWa').value = settings.siteWa || 'لوحة التحكم';
+        document.getElementById('setting-siteTg').value = settings.siteTg || 'لوحة التحكم';
+        document.getElementById('setting-siteLi').value = settings.siteLi || 'لوحة التحكم';
     }
 
     function saveAdminSettings() {
@@ -1195,9 +1201,34 @@
         });
     });
 
-    // Logout
+    // --- Auth ---------------------------------------------------------------
+    const ADMIN_CREDENTIALS = {
+        email: 'admin@endocare-ye.com',
+        passwordHash: 'YWRtaW4xMjM=' // base64 of 'admin123'
+    };
+
+    function checkLogin() {
+        var email = document.getElementById('loginEmail').value.trim();
+        var password = document.getElementById('loginPassword').value;
+        var errorEl = document.getElementById('loginError');
+        var btn = document.getElementById('loginBtn');
+
+        if (email === ADMIN_CREDENTIALS.email && btoa(password) === ADMIN_CREDENTIALS.passwordHash) {
+            localStorage.setItem('endocare_admin_auth', 'true');
+            document.getElementById('adminLogin').style.display = 'none';
+            document.getElementById('adminWrapper').style.display = 'flex';
+            document.getElementById('loginPassword').value = '';
+            errorEl.style.display = 'none';
+        } else {
+            errorEl.style.display = 'block';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('loginPassword').focus();
+        }
+    }
+
     function logout() {
         if (confirm('تأكيد تسجيل الخروج؟')) {
+            localStorage.removeItem('endocare_admin_auth');
             document.getElementById('adminWrapper').style.display = 'none';
             document.getElementById('adminLogin').style.display = 'flex';
         }
