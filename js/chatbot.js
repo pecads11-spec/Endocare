@@ -96,6 +96,21 @@
 
         div.appendChild(bubble);
 
+        if (msg.role === 'bot' && msg.relatedArticles && msg.relatedArticles.length > 0) {
+            var relDiv = document.createElement('div');
+            relDiv.className = 'related-articles';
+            for (var ri = 0; ri < msg.relatedArticles.length; ri++) {
+                var ra = msg.relatedArticles[ri];
+                var aBtn = document.createElement('a');
+                aBtn.className = 'related-article-btn';
+                aBtn.href = ra.url;
+                aBtn.target = '_blank';
+                aBtn.innerHTML = '<i class="bi ' + ra.icon + ' me-1"></i>' + ra.label;
+                relDiv.appendChild(aBtn);
+            }
+            div.appendChild(relDiv);
+        }
+
         if (msg.role === 'bot' && msg.type === 'error') {
             const retry = document.createElement('button');
             retry.className = 'retry-btn';
@@ -119,18 +134,36 @@
         messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
-    function showTyping() {
+    var STATUS_SEARCHING = isEnglish ? 'Searching knowledge base...' : 'جاري البحث في قاعدة المعرفة العلمية...';
+    var STATUS_PROCESSING = isEnglish ? 'Processing...' : 'جاري المعالجة...';
+
+    function showTyping(statusText) {
         let el = document.querySelector('.typing-indicator');
         if (!el) {
             el = document.createElement('div');
             el.className = 'typing-indicator active';
             el.id = 'chatbot-typing';
-            el.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+            el.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div><div class="typing-status">' + (statusText || '') + '</div>';
             messagesEl.appendChild(el);
         } else {
             el.classList.add('active');
+            var statusEl = el.querySelector('.typing-status');
+            if (statusEl && statusText) statusEl.textContent = statusText;
         }
         scrollToBottom();
+    }
+
+    function updateTypingStatus(text) {
+        var el = document.querySelector('.typing-indicator');
+        if (el) {
+            var statusEl = el.querySelector('.typing-status');
+            if (!statusEl) {
+                statusEl = document.createElement('div');
+                statusEl.className = 'typing-status';
+                el.appendChild(statusEl);
+            }
+            statusEl.textContent = text;
+        }
     }
 
     function hideTyping() {
@@ -147,13 +180,14 @@
     }
 
     // ─── Bot messages ────────────────────────────────────────────────────────
-    function addBotMessage(text, type) {
+    function addBotMessage(text, type, relatedArticles) {
         const msg = {
             id: generateUUID(),
             role: 'bot',
             text: text,
             timestamp: isoNow(),
             type: type || 'normal',
+            relatedArticles: relatedArticles || [],
         };
         STATE.messages.push(msg);
         appendMessageDOM(msg);
@@ -306,8 +340,66 @@
         };
     }
 
-    function callBotAPI(userText, sessionId) {
-        return processBotQuery(userText);
+    async function callGeminiAPI(userText) {
+        var apiKey = (window.__ENV__ && window.__ENV__.GEMINI_API_KEY) || '';
+        if (!apiKey) return null;
+
+        try {
+            var genai = await import('@google/genai');
+            var genAI = new genai.GoogleGenerativeAI(apiKey);
+            var model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+            // Load system prompt (step 8)
+            var systemPrompt = '';
+            try {
+                var promptPath = isEnglish ? '/en/bot_core/system_prompt.md' : '/ar/bot_core/system_prompt.md';
+                var promptRes = await fetch(promptPath);
+                if (promptRes.ok) {
+                    systemPrompt = await promptRes.text();
+                }
+            } catch (e) {
+                console.warn("Failed to load system prompt:", e);
+            }
+
+            // Load scientific context
+            var contextDocs = '';
+            try {
+                var manifestPath = isEnglish ? '/en/bot_core/sources_manifest.json' : '/ar/bot_core/sources_manifest.json';
+                var manifestRes = await fetch(manifestPath);
+                if (manifestRes.ok) {
+                    var manifest = await manifestRes.json();
+                    if (manifest.description) {
+                        contextDocs = "Context: " + manifest.description + "\n\n";
+                    }
+                }
+            } catch (e) { /* ignore */ }
+
+            var fullPrompt = contextDocs + userText;
+
+            var result = await model.generateContent({
+                contents: [{ role: "user", parts: [{ text: fullPrompt }] }],
+                systemInstruction: systemPrompt ? { parts: [{ text: systemPrompt }] } : undefined,
+            });
+
+            var answer = result.response?.text?.();
+            if (answer && answer.trim()) {
+                return answer;
+            }
+        } catch (e) {
+            console.warn("Gemini API failed, falling back to local:", e);
+        }
+        return null;
+    }
+
+    function callBotAPI(userText, sessionId, onStatus) {
+        if (onStatus) onStatus(STATUS_SEARCHING);
+        return callGeminiAPI(userText).then(function (geminiAnswer) {
+            if (geminiAnswer) {
+                return { answer: geminiAnswer, type: 'normal' };
+            }
+            if (onStatus) onStatus(STATUS_PROCESSING);
+            return processBotQuery(userText);
+        });
     }
 
     // ─── Send flow ───────────────────────────────────────────────────────────
@@ -344,12 +436,13 @@
         markLastUserSent();
         inputEl.value = '';
         updateCharCount();
-        showTyping();
+        showTyping(STATUS_SEARCHING);
 
-        callBotAPI(text, STATE.sessionId)
+        callBotAPI(text, STATE.sessionId, updateTypingStatus)
             .then(function (res) {
                 hideTyping();
-                addBotMessage(res.answer, res.type);
+                var related = getRelatedArticles(text);
+                addBotMessage(res.answer, res.type, related);
                 STATE.isProcessing = false;
                 sendBtn.disabled = false;
                 if (res.type !== 'out-of-scope') {
@@ -377,6 +470,47 @@
                 showQuickReplies();
                 saveConversation();
             });
+    }
+
+    // ─── Related Articles (step 19) ──────────────────────────────────────────
+    var RELATED_ARTICLES = {
+        ar: [
+            { keywords: ['فيتامين', 'd3', 'b12', 'c', 'مكمل', 'فيتامينات'], url: '../ar/products.html', label: 'منتجات الفيتامينات', icon: 'bi-capsule' },
+            { keywords: ['هرمون', 'ثيروكسين', 'استروجين', 'بروجسترون', 'fsh', 'lh', 'هرمونات'], url: '../ar/products.html', label: 'منتجات الهرمونات', icon: 'bi-droplet' },
+            { keywords: ['جودة', 'gmp', 'gdp', 'iso', 'شهادة', 'امتثال'], url: '../ar/quality.html', label: 'سياسة الجودة', icon: 'bi-shield-check' },
+            { keywords: ['سعر', 'شراء', 'طلب', 'توريد', 'شحن', 'لوجست'], url: '../ar/faq.html', label: 'الأسئلة الشائعة', icon: 'bi-question-circle' },
+            { keywords: ['اتصال', 'هاتف', 'عنوان', 'بريد', 'موقع'], url: '../ar/contact.html', label: 'اتصل بنا', icon: 'bi-envelope' },
+            { keywords: ['علمي', 'بحث', 'دراسة', 'جرعة'], url: '../ar/faq.html', label: 'معلومات علمية', icon: 'bi-journal-text' },
+        ],
+        en: [
+            { keywords: ['vitamin', 'd3', 'b12', 'c', 'supplement', 'vitamins'], url: '../en/products.html', label: 'Vitamin Products', icon: 'bi-capsule' },
+            { keywords: ['hormone', 'thyroxine', 'estrogen', 'progesterone', 'fsh', 'lh', 'hormones'], url: '../en/products.html', label: 'Hormone Products', icon: 'bi-droplet' },
+            { keywords: ['quality', 'gmp', 'gdp', 'iso', 'certificate', 'compliance'], url: '../en/quality.html', label: 'Quality Policy', icon: 'bi-shield-check' },
+            { keywords: ['price', 'buy', 'order', 'supply', 'ship', 'logistic'], url: '../en/faq.html', label: 'FAQ', icon: 'bi-question-circle' },
+            { keywords: ['contact', 'phone', 'address', 'email', 'location'], url: '../en/contact.html', label: 'Contact Us', icon: 'bi-envelope' },
+            { keywords: ['scientific', 'research', 'study', 'dosage'], url: '../en/faq.html', label: 'Scientific Info', icon: 'bi-journal-text' },
+        ],
+    };
+
+    function getRelatedArticles(userText) {
+        var lang = isEnglish ? 'en' : 'ar';
+        var lowerText = userText.toLowerCase();
+        var matched = [];
+        var seen = {};
+        var articles = RELATED_ARTICLES[lang];
+        for (var i = 0; i < articles.length; i++) {
+            var a = articles[i];
+            for (var j = 0; j < a.keywords.length; j++) {
+                if (lowerText.indexOf(a.keywords[j]) !== -1) {
+                    if (!seen[a.url]) {
+                        seen[a.url] = true;
+                        matched.push(a);
+                    }
+                    break;
+                }
+            }
+        }
+        return matched;
     }
 
     // ─── Welcome / Triage ────────────────────────────────────────────────────
